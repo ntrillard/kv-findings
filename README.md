@@ -51,3 +51,4 @@ component (mean), exposing the intrinsic W_K/W_V difference.
 Run on any model: collect K, V from the KV cache, compute per-head cosine
 similarity between consecutive tokens. K will be 2-4x higher than V across
 all layers. Use per-channel quantization to exploit the asymmetry.
+# kv-findings
