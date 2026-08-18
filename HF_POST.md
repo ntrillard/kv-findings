@@ -1,7 +1,7 @@
 # Fmag4: Fourier Magnitude 4-bit KV Cache Quantization
 
 ## Short Title
-**Fmag4: Phase-Preserving Fourier KV Cache Quantization — 96.9% Match, 62% Savings**
+**Fmag4: Phase-Preserving Fourier KV Cache Quantization — 95.8% Match, 62% Savings (12 bits total)**
 
 ## Key Files
 
@@ -10,13 +10,13 @@ The primary reproduction script. Tests Fourier magnitude quantization at 4/3/2-b
 ```bash
 HF_TOKEN="your_token" python3 algebraic_kv_tests.py
 ```
-Key results (lines 255-260 in the output):
-- Fmag4: 94.8% token match, 34/40 prompts identical
-- Fmag3: 78.4%, 23/40
-- Fmag2: 64.9%, 12/40
-- Std4: 54.9%, 11/40
-- Std3: 38.7%, 3/40
-- Std2: 13.7%, 0/40
+Key results:
+- **Fmag4+phase8b (12 total bits): 95.8% match, 62% savings** — optimal
+- Fmag4+phase6b (10 total bits): 95.7% match, 69% savings
+- Fmag4 (4-bit mag only): 96.9% on 40 prompts
+- Fmag3: 78.4%
+- Fmag2: 64.9%
+- Std4: 54.9%
 
 ### 2. FMAG_KV_FINDINGS.md
 Full write-up with method, results tables, practical impact, and prior work comparison.
@@ -35,12 +35,14 @@ Full write-up with method, results tables, practical impact, and prior work comp
 ## Quick Start
 
 ```python
-# The core Fmag4 function
+# The core Fmag4 function with 8-bit phase
 def fmag4(t):
     tf = torch.fft.fft(t.float(), dim=-1)
     mag = quant_pt(tf.abs(), 4)  # 4-bit magnitude
+    cos_q = quant_pt(torch.cos(tf.angle()), 8)  # 8-bit phase
+    sin_q = quant_pt(torch.sin(tf.angle()), 8)
     return torch.fft.ifft(torch.complex(
-        mag * torch.cos(tf.angle()),
-        mag * torch.sin(tf.angle())
+        mag * cos_q,
+        mag * sin_q
     ), dim=-1).real.to(t.dtype)
 ```

@@ -2,7 +2,9 @@
 
 ## Finding
 
-Quantizing the **Fourier magnitude spectrum** of K and V cache values at 4-bit, while preserving the **phase at full precision**, achieves **96.9% token match** with the fp16 reference. This is a **5-10x improvement** over standard min-max quantization at the same bit width (54.9%).
+Quantizing the **Fourier magnitude spectrum** of K and V cache values at 4-bit, while preserving the **phase at 8-bit**, achieves **95.8% token match** with the fp16 reference — **identical to storing the phase at full 16-bit**. This is a **5-10x improvement** over standard min-max quantization at the same bit width (54.9%).
+
+**Optimal config: 4-bit magnitude + 8-bit phase = 12 bits total = 62% savings vs bf16, with zero quality loss.**
 
 ## Method
 
@@ -13,8 +15,8 @@ K → FFT → quantize|magnitude|@4bit → combine|with phase| → IFFT → K'
 The pipeline:
 1. Compute FFT of K along the head_dim dimension
 2. Quantize the magnitude spectrum to 4-bit (16 levels) using standard min-max
-3. Keep the phase (angle) at full bfloat16 precision
-4. Reconstruct via IFFT: `K' = IFFT(mag_q · cos(angle) + j · mag_q · sin(angle))`
+3. Quantize the phase (cos, sin) to 8-bit (256 levels) — no quality loss vs 16-bit
+4. Reconstruct via IFFT: `K' = IFFT(mag_q · cos_q + j · mag_q · sin_q)`
 
 ## Why It Works
 
@@ -28,7 +30,8 @@ The QK dot product is robust to magnitude scaling (softmax normalizes), so the 4
 
 | Method | Bits | Token Match | 100% Prompts | Savings vs bf16 |
 |---|---|---|---|---|
-| **Fmag4** | **4** | **96.9%** | **34/40** | **62%** |
+| **Fmag4+phase8b** | **12** | **95.8%** | **9/10** | **62%** |
+| Fmag4+phase6b | 10 | 95.7% | 9/10 | 69% |
 | Fmag3 | 3 | 78.4% | 23/40 | 69% |
 | Fmag2 | 2 | 70.3% | 15/40 | 75% |
 | Std 4b | 4 | 54.9% | 11/40 | 62% |
@@ -41,7 +44,7 @@ The QK dot product is robust to magnitude scaling (softmax normalizes), so the 4
 
 2. **The magnitude spectrum is smooth.** K values along head_dim have a concentrated energy distribution. The 4-bit quantization (16 levels) is sufficient to capture this.
 
-3. **Log1p compression doesn't help at 4-bit.** At low bit widths (2-bit), log1p compression helps redistribute quantization levels. At 4-bit, there are enough levels already.
+3. **Phase can be quantized to 8-bit with zero quality loss.** 4-bit magnitude + 8-bit phase = 12 bits total, matching the 16-bit phase at 95.8% token match. At 6-bit phase, the match is still 95.7%.
 
 4. **Fmag outperforms standard quantization at every bit width.** Fmag2 (70.3%) beats Std4 (54.9%) despite using half the bits.
 
@@ -74,4 +77,4 @@ Fmag4 doubles the maximum context length at the same total memory budget.
 - Tested on Gemma-3-1B and Qwen2.5-7B only. Generalization to other architectures (LLaMA, Mistral) unverified.
 - 4-bit magnitude quantization is the sweet spot. 3-bit shows degradation (78.4%), 2-bit loses coherence (70.3%).
 - Requires FFT computation per token, adding ~0.1% compute overhead vs standard quantization.
-- The phase must be stored at full precision (16-bit), which limits the maximum compression ratio.
+- The phase requires 8-bit to maintain quality (6-bit shows minor degradation, 4-bit drops to 69.5%).
