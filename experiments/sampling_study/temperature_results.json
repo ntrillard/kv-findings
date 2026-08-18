@@ -1,0 +1,65 @@
+[
+  {
+    "config": "greedy T=0",
+    "temperature": 0.1,
+    "top_p": 1.0,
+    "avg_diversity": 0.85815,
+    "avg_repetitions": 0.0,
+    "avg_length": 225.45,
+    "sentence_pct": 100.0
+  },
+  {
+    "config": "low T=0.3",
+    "temperature": 0.3,
+    "top_p": 1.0,
+    "avg_diversity": 0.85815,
+    "avg_repetitions": 0.0,
+    "avg_length": 225.45,
+    "sentence_pct": 100.0
+  },
+  {
+    "config": "mid T=0.7",
+    "temperature": 0.7,
+    "top_p": 1.0,
+    "avg_diversity": 0.85815,
+    "avg_repetitions": 0.0,
+    "avg_length": 225.45,
+    "sentence_pct": 100.0
+  },
+  {
+    "config": "standard T=1.0",
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "avg_diversity": 0.85815,
+    "avg_repetitions": 0.0,
+    "avg_length": 225.45,
+    "sentence_pct": 100.0
+  },
+  {
+    "config": "high T=1.5",
+    "temperature": 1.5,
+    "top_p": 1.0,
+    "avg_diversity": 0.85815,
+    "avg_repetitions": 0.0,
+    "avg_length": 225.45,
+    "sentence_pct": 100.0
+  },
+  {
+    "config": "nucleus p=0.9",
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "avg_diversity": 0.87965,
+    "avg_repetitions": 0.0,
+    "avg_length": 214.25,
+    "sentence_pct": 90.0
+  },
+  {
+    "config": "nucleus p=0.95",
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "avg_diversity": 0.87105,
+    "avg_repetitions": 0.0,
+    "avg_length": 215.5,
+    "sentence_pct": 100.0
+  }
+]
