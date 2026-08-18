@@ -32,3 +32,24 @@ For a 7B model with 8K context:
 - Symmetric 8-bit: ~1.3 GB
 - K=3b V=8b: ~0.9 GB (saves 0.4 GB)
 - Leaves more room for batch size or longer context
+
+## Dependency on base model precision
+
+Tested on Qwen2.5-7B (4-bit NF4 weights):
+
+| Config | Quality | Notes |
+|---|---|---|
+| fp16 KV | ✅ Good | "The theory of evolution, primarily developed by Charles Darwin..." |
+| sym 8-bit KV | ✅ Good | Same as fp16 |
+| K=6b V=8b | ⚠️ Degraded | Repetition appears |
+| K=5b V=8b | ❌ Bad | "theory theory're referringtheory theory of of" |
+| K=4b V=8b | ❌ Bad | "pérdida pérdida pérdida" (garbage) |
+
+**The asymmetric KV cache benefit depends on base model precision.**
+On full-precision models (GPT-2 bfloat16), K=3b V=8b works with 31% savings.
+On 4-bit quantized models, the KV cache can only tolerate K=8b V=8b
+(symmetric), because the weight quantization already consumes error budget.
+
+The asymmetry finding (K more temporally redundant than V) still holds, but
+the practical savings depend on how much quantization error the rest of the
+model can tolerate.
