@@ -1,0 +1,662 @@
+[
+  {
+    "condition": "fp16 baseline",
+    "k_bits": 16,
+    "v_bits": 16,
+    "ppl_mean": 1.53,
+    "ppl_std": 0.11,
+    "ppl_ci": 0.05,
+    "pass_rate": 0.0,
+    "n": 20,
+    "per_prompt": [
+      {
+        "prompt": "Explain quantum computing in simple terms.",
+        "ppl": 1.44,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "What is the capital of France and what it is known",
+        "ppl": 1.56,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "How does a transformer neural network work?",
+        "ppl": 1.47,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "What are the main causes of climate change?",
+        "ppl": 1.63,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "Describe the process of photosynthesis.",
+        "ppl": 1.51,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "What is the difference between TCP and UDP?",
+        "ppl": 1.44,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "Explain how vaccines work in the human body.",
+        "ppl": 1.5,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "What is the meaning of the term 'machine learning'",
+        "ppl": 1.87,
+        "quality": "REP",
+        "output": "# 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "How do search engines rank web pages?",
+        "ppl": 1.45,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "Describe the structure of a cell.",
+        "ppl": 1.43,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "What is cryptocurrency and how does it work?",
+        "ppl": 1.48,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "Explain the concept of supply and demand.",
+        "ppl": 1.47,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "How does a car engine work?",
+        "ppl": 1.48,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "What is the Fibonacci sequence used for?",
+        "ppl": 1.61,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "Describe the lifecycle of a butterfly.",
+        "ppl": 1.64,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "What is the difference between HTTP and HTTPS?",
+        "ppl": 1.39,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "How do solar panels generate electricity?",
+        "ppl": 1.51,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "What are the major organs of the human body?",
+        "ppl": 1.5,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "Explain how encryption keeps data secure.",
+        "ppl": 1.52,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "What is the history of the internet?",
+        "ppl": 1.63,
+        "quality": "REP",
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      }
+    ]
+  },
+  {
+    "condition": "sym int8 8b+8b",
+    "k_bits": 8,
+    "v_bits": 8,
+    "ppl_mean": 1.51,
+    "ppl_std": 0.31,
+    "ppl_ci": 0.13,
+    "pass_rate": 100.0,
+    "n": 20,
+    "per_prompt": [
+      {
+        "prompt": "Explain quantum computing in simple terms.",
+        "ppl": 1.14,
+        "quality": "PASS",
+        "output": "Quantum computing is a type of computing that uses quantum-mechanical phenomena,"
+      },
+      {
+        "prompt": "What is the capital of France and what it is known",
+        "ppl": 1.45,
+        "quality": "PASS",
+        "output": "The capital of France is Paris. It is known for its beautiful architecture, art,"
+      },
+      {
+        "prompt": "How does a transformer neural network work?",
+        "ppl": 2.64,
+        "quality": "PASS",
+        "output": "I am trying to understand how a transformer neural network works. I have read a "
+      },
+      {
+        "prompt": "What are the main causes of climate change?",
+        "ppl": 1.72,
+        "quality": "PASS",
+        "output": "Climate change is caused by a variety of factors, including:\n\n1. Greenhouse gas "
+      },
+      {
+        "prompt": "Describe the process of photosynthesis.",
+        "ppl": 1.32,
+        "quality": "PASS",
+        "output": "Photosynthesis is the process by which plants, algae, and some bacteria convert "
+      },
+      {
+        "prompt": "What is the difference between TCP and UDP?",
+        "ppl": 1.4,
+        "quality": "PASS",
+        "output": "TCP and UDP are two different protocols used for transmitting data over a networ"
+      },
+      {
+        "prompt": "Explain how vaccines work in the human body.",
+        "ppl": 1.49,
+        "quality": "PASS",
+        "output": "Vaccines work by introducing a weakened or inactive form of a pathogen (such as "
+      },
+      {
+        "prompt": "What is the meaning of the term 'machine learning'",
+        "ppl": 1.35,
+        "quality": "PASS",
+        "output": "Machine learning is a type of artificial intelligence that enables a computer to"
+      },
+      {
+        "prompt": "How do search engines rank web pages?",
+        "ppl": 1.49,
+        "quality": "PASS",
+        "output": "Search engines use a variety of algorithms to rank web pages. The most common al"
+      },
+      {
+        "prompt": "Describe the structure of a cell.",
+        "ppl": 1.49,
+        "quality": "PASS",
+        "output": "A cell is the basic unit of life. It is the smallest unit of life that is capabl"
+      },
+      {
+        "prompt": "What is cryptocurrency and how does it work?",
+        "ppl": 1.39,
+        "quality": "PASS",
+        "output": "Cryptocurrency is a digital or virtual currency that uses cryptography for secur"
+      },
+      {
+        "prompt": "Explain the concept of supply and demand.",
+        "ppl": 1.29,
+        "quality": "PASS",
+        "output": "The concept of supply and demand is a fundamental economic principle that descri"
+      },
+      {
+        "prompt": "How does a car engine work?",
+        "ppl": 1.59,
+        "quality": "PASS",
+        "output": "A car engine is a complex machine that converts the chemical energy stored in ga"
+      },
+      {
+        "prompt": "What is the Fibonacci sequence used for?",
+        "ppl": 1.24,
+        "quality": "PASS",
+        "output": "The Fibonacci sequence is a series of numbers in which each number is the sum of"
+      },
+      {
+        "prompt": "Describe the lifecycle of a butterfly.",
+        "ppl": 1.68,
+        "quality": "PASS",
+        "output": "The lifecycle of a butterfly is a fascinating and complex process that involves "
+      },
+      {
+        "prompt": "What is the difference between HTTP and HTTPS?",
+        "ppl": 1.66,
+        "quality": "PASS",
+        "output": "?\nHTTP (Hypertext Transfer Protocol) and HTTPS (Hypertext Transfer Protocol Secu"
+      },
+      {
+        "prompt": "How do solar panels generate electricity?",
+        "ppl": 1.39,
+        "quality": "PASS",
+        "output": "Solar panels generate electricity by converting sunlight into electrical energy."
+      },
+      {
+        "prompt": "What are the major organs of the human body?",
+        "ppl": 1.36,
+        "quality": "PASS",
+        "output": "The major organs of the human body include the heart, lungs, liver, kidneys, spl"
+      },
+      {
+        "prompt": "Explain how encryption keeps data secure.",
+        "ppl": 1.69,
+        "quality": "PASS",
+        "output": "Encryption is a process of converting plain text into a code that can only be re"
+      },
+      {
+        "prompt": "What is the history of the internet?",
+        "ppl": 1.51,
+        "quality": "PASS",
+        "output": "The internet is a global network of computers that allows people to share inform"
+      }
+    ]
+  },
+  {
+    "condition": "K=5b V=8b (packed)",
+    "k_bits": 5,
+    "v_bits": 8,
+    "ppl_mean": 5.17,
+    "ppl_std": 3.13,
+    "ppl_ci": 1.37,
+    "pass_rate": 60.0,
+    "n": 20,
+    "per_prompt": [
+      {
+        "prompt": "Explain quantum computing in simple terms.",
+        "ppl": 6.29,
+        "quality": "PASS",
+        "output": "Quantum computing is a new type of computing that uses the principles of quantum"
+      },
+      {
+        "prompt": "What is the capital of France and what it is known",
+        "ppl": 12.44,
+        "quality": "PASS",
+        "output": "The capital of France is Paris. Paris is known for being the cultural, artistic,"
+      },
+      {
+        "prompt": "How does a transformer neural network work?",
+        "ppl": 1.35,
+        "quality": "PASS",
+        "output": "How does it work? How does it work? How does it work? How does it work? How does"
+      },
+      {
+        "prompt": "What are the main causes of climate change?",
+        "ppl": 3.66,
+        "quality": "PASS",
+        "output": "Climate change is a complex issue that has many causes. The main causes of clima"
+      },
+      {
+        "prompt": "Describe the process of photosynthesis.",
+        "ppl": 6.67,
+        "quality": "REP",
+        "output": "Photosynthesis is the process by which plants convert light energy from the sun "
+      },
+      {
+        "prompt": "What is the difference between TCP and UDP?",
+        "ppl": 2.38,
+        "quality": "PASS",
+        "output": "TCP is connection oriented protocol, while UDP is connectionless protocol. TCP i"
+      },
+      {
+        "prompt": "Explain how vaccines work in the human body.",
+        "ppl": 13.11,
+        "quality": "PASS",
+        "output": "Vaccines work by stimulating the immuneateds immune system to create antibodies."
+      },
+      {
+        "prompt": "What is the meaning of the term 'machine learning'",
+        "ppl": 5.45,
+        "quality": "PASS",
+        "output": "Machine learning is a type of artificial intelligence that. It is a type of of a"
+      },
+      {
+        "prompt": "How do search engines rank web pages?",
+        "ppl": 7.48,
+        "quality": "REP",
+        "output": "Search engines use a complex algorithm to rank web pages. The determine the most"
+      },
+      {
+        "prompt": "Describe the structure of a cell.",
+        "ppl": 1.48,
+        "quality": "PASS",
+        "output": "A cell is the smallest unit of life. It is the smallest unit of life. It is the "
+      },
+      {
+        "prompt": "What is cryptocurrency and how does it work?",
+        "ppl": 5.35,
+        "quality": "REP",
+        "output": "Cryptocurrency is a digital or virtual currency that uses cryptography to secure"
+      },
+      {
+        "prompt": "Explain the concept of supply and demand.",
+        "ppl": 4.97,
+        "quality": "REP",
+        "output": "The supply and demand are two economic concepts that are used to determine the p"
+      },
+      {
+        "prompt": "How does a car engine work?",
+        "ppl": 3.77,
+        "quality": "PASS",
+        "output": "?\nA car engine is a machine that converts the energy of the fuel into mechanical"
+      },
+      {
+        "prompt": "What is the Fibonacci sequence used for?",
+        "ppl": 2.85,
+        "quality": "PASS",
+        "output": "The Fibonacci sequence is used for many things, but one of is used for to model "
+      },
+      {
+        "prompt": "Describe the lifecycle of a butterfly.",
+        "ppl": 5.43,
+        "quality": "REP",
+        "output": "The lifecycle of of of of. The lifecycle of of of. The lifecycle of life. The li"
+      },
+      {
+        "prompt": "What is the difference between HTTP and HTTPS?",
+        "ppl": 4.18,
+        "quality": "PASS",
+        "output": "HTTP and HTTPS are both protocols used to transfer data between a web server and"
+      },
+      {
+        "prompt": "How do solar panels generate electricity?",
+        "ppl": 6.85,
+        "quality": "PASS",
+        "output": "?\nSolar panels generate electricity by converting sunlight into electricity. The"
+      },
+      {
+        "prompt": "What are the major organs of the human body?",
+        "ppl": 3.35,
+        "quality": "REP",
+        "output": "The major organs of the human body are the heart, lungs, liver, brain, kidneys, "
+      },
+      {
+        "prompt": "Explain how encryption keeps data secure.",
+        "ppl": 2.71,
+        "quality": "REP",
+        "output": "Encryption is a process of converting data into a code that is unreadable to oth"
+      },
+      {
+        "prompt": "What is the history of the internet?",
+        "ppl": 3.7,
+        "quality": "REP",
+        "output": "The internet is a network of networks that connects millions of computers and ot"
+      }
+    ]
+  },
+  {
+    "condition": "K=4b V=8b (packed)",
+    "k_bits": 4,
+    "v_bits": 8,
+    "ppl_mean": 46.17,
+    "ppl_std": 118.66,
+    "ppl_ci": 52.01,
+    "pass_rate": 25.0,
+    "n": 20,
+    "per_prompt": [
+      {
+        "prompt": "Explain quantum computing in simple terms.",
+        "ppl": 33.75,
+        "quality": "PASS",
+        "output": "terms quantum computingVILLE\n\n\n\n Quantum computing isQuantum computing is Quantu"
+      },
+      {
+        "prompt": "What is the capital of France and what it is known",
+        "ppl": 29.11,
+        "quality": "REP",
+        "output": "the of of France is\n is is is France France known known for is isThe capital is "
+      },
+      {
+        "prompt": "How does a transformer neural network work?",
+        "ppl": 6.24,
+        "quality": "REP",
+        "output": "neural network is work? neural network neural network work transformer neural ne"
+      },
+      {
+        "prompt": "What are the main causes of climate change?",
+        "ppl": 3.67,
+        "quality": "REP",
+        "output": "main causes of the the main main main the the the main main the the the the main"
+      },
+      {
+        "prompt": "Describe the process of photosynthesis.",
+        "ppl": 13.17,
+        "quality": "REP",
+        "output": "process of photosynthesis.\n\n Photosynthesis is isPhotosynthesis is the the.. Pho"
+      },
+      {
+        "prompt": "What is the difference between TCP and UDP?",
+        "ppl": 12.59,
+        "quality": "REP",
+        "output": "difference between TCP TCP TCP difference between TCP and udp\n difference betwee"
+      },
+      {
+        "prompt": "Explain how vaccines work in the human body.",
+        "ppl": 36.41,
+        "quality": "PASS",
+        "output": "a\n body\n\nV\nV\n\nVVVVVVaccVaccVVVVVVVVVVVVVVVVVVVVVV\n\nVVVVVVVVV\n\n\n\nVVV"
+      },
+      {
+        "prompt": "What is the meaning of the term 'machine learning'",
+        "ppl": 10.4,
+        "quality": "PASS",
+        "output": "Machine learning a the process of which used the process process of learning is "
+      },
+      {
+        "prompt": "How do search engines rank web pages?",
+        "ppl": 19.94,
+        "quality": "REP",
+        "output": "engines use a a to to rank to rank web pages. engines use algorithms to to analy"
+      },
+      {
+        "prompt": "Describe the structure of a cell.",
+        "ppl": 36.96,
+        "quality": "REP",
+        "output": "the of a a cell\n of of of a a a a a a of aThe structure of a cell oftheThe struc"
+      },
+      {
+        "prompt": "What is cryptocurrency and how does it work?",
+        "ppl": 2.42,
+        "quality": "REP",
+        "output": "is is a is a is cryptocurrency cryptocurrency cryptocurrency cryptocurrency cryp"
+      },
+      {
+        "prompt": "Explain the concept of supply and demand.",
+        "ppl": 45.97,
+        "quality": "PASS",
+        "output": "of supply and demand.\n\n of supply and demand supply and demand: and the\n1. Expla"
+      },
+      {
+        "prompt": "How does a car engine work?",
+        "ppl": 11.34,
+        "quality": "REP",
+        "output": "car car engine is engine engine engine engine\n a a car engine engine engine carA"
+      },
+      {
+        "prompt": "What is the Fibonacci sequence used for?",
+        "ppl": 1.6,
+        "quality": "REP",
+        "output": "sequence Fibonacci Fibonacci Fibonacci Fibonacci Fibonacci Fibonacci Fibonacci F"
+      },
+      {
+        "prompt": "Describe the lifecycle of a butterfly.",
+        "ppl": 13.14,
+        "quality": "REP",
+        "output": "of of butterfly\n\n butterfly lifecycle of of butterfly butterfly\n of butterfly of"
+      },
+      {
+        "prompt": "What is the difference between HTTP and HTTPS?",
+        "ppl": 11.44,
+        "quality": "REP",
+        "output": "difference between HTTP and https difference between http and https? difference "
+      },
+      {
+        "prompt": "How do solar panels generate electricity?",
+        "ppl": 546.81,
+        "quality": "PASS",
+        "output": ". panels generate electricity\n\n\n solar solarSolar panels generatesolar panels ss"
+      },
+      {
+        "prompt": "What are the major organs of the human body?",
+        "ppl": 27.66,
+        "quality": "REP",
+        "output": "major organs of the heart, lungs, brain, kidneys,,,,, kidney, liver, kidney,,, k"
+      },
+      {
+        "prompt": "Explain how encryption keeps data secure.",
+        "ppl": 44.87,
+        "quality": "REP",
+        "output": "text\n\n text\n\nEncryption is Encryption textEncryption is encryption\n\n a howEncryp"
+      },
+      {
+        "prompt": "What is the history of the internet?",
+        "ppl": 15.87,
+        "quality": "REP",
+        "output": "history history of the the the the\n historyThe history history internet isThe hi"
+      }
+    ]
+  },
+  {
+    "condition": "K=3b V=8b (packed)",
+    "k_bits": 3,
+    "v_bits": 8,
+    "ppl_mean": 61.88,
+    "ppl_std": 94.36,
+    "ppl_ci": 41.36,
+    "pass_rate": 15.0,
+    "n": 20,
+    "per_prompt": [
+      {
+        "prompt": "Explain quantum computing in simple terms.",
+        "ppl": 27.04,
+        "quality": "REP",
+        "output": "computing is a computing computing computing computing computing computing is qu"
+      },
+      {
+        "prompt": "What is the capital of France and what it is known",
+        "ppl": 23.52,
+        "quality": "REP",
+        "output": "what is the capital of France and what capital?\n what what is known for?\nThe cap"
+      },
+      {
+        "prompt": "How does a transformer neural network work?",
+        "ppl": 5.03,
+        "quality": "REP",
+        "output": "transformer neural network is a type type type of neural network that it neural "
+      },
+      {
+        "prompt": "What are the main causes of climate change?",
+        "ppl": 8.97,
+        "quality": "REP",
+        "output": "What are the causes are the causes of climate change? What causes of climate cha"
+      },
+      {
+        "prompt": "Describe the process of photosynthesis.",
+        "ppl": 40.0,
+        "quality": "REP",
+        "output": "the the process of photos the the process of limp\n\nAssistant: Photos.\n\nPhotos pr"
+      },
+      {
+        "prompt": "What is the difference between TCP and UDP?",
+        "ppl": 8.24,
+        "quality": "REP",
+        "output": "TCP ( UDP UDP UDP are TCP the TCP and and UDP are and and and UDP are UDP and an"
+      },
+      {
+        "prompt": "Explain how vaccines work in the human body.",
+        "ppl": 346.83,
+        "quality": "REP",
+        "output": "work by the mechanism \n \n How do work work?\n To How How does the human body work"
+      },
+      {
+        "prompt": "What is the meaning of the term 'machine learning'",
+        "ppl": 38.24,
+        "quality": "REP",
+        "output": "What is the meaning of the term 'machine learning learning'? the the the term 'm"
+      },
+      {
+        "prompt": "How do search engines rank web pages?",
+        "ppl": 5.29,
+        "quality": "REP",
+        "output": "Search engines use a variety of of a variety of a variety of a a a variety a a a"
+      },
+      {
+        "prompt": "Describe the structure of a cell.",
+        "ppl": 26.2,
+        "quality": "REP",
+        "output": "the the structure of a theCell of a cell. To understand the of cell of A cell. S"
+      },
+      {
+        "prompt": "What is cryptocurrency and how does it work?",
+        "ppl": 3.94,
+        "quality": "REP",
+        "output": "is how how does works works works work? Cryptocurrency\n? cryptocurrency cryptocu"
+      },
+      {
+        "prompt": "Explain the concept of supply and demand.",
+        "ppl": 3.69,
+        "quality": "REP",
+        "output": "The concept supply supply and The and and. The and and and The The The The The T"
+      },
+      {
+        "prompt": "How does a car engine work?",
+        "ppl": 2.23,
+        "quality": "REP",
+        "output": "A car engine is a car car car a a a a a a a a a a a a a a a a a a a a a a a a a "
+      },
+      {
+        "prompt": "What is the Fibonacci sequence used for?",
+        "ppl": 32.39,
+        "quality": "REP",
+        "output": "sequence used for used for used sequence  used sequence used sequence used? used"
+      },
+      {
+        "prompt": "Describe the lifecycle of a butterfly.",
+        "ppl": 239.96,
+        "quality": "PASS",
+        "output": "the\n butterfly's the butterfly\n\nTheArray\nArray\n\n\n butterfly lifeTheThe life cycl"
+      },
+      {
+        "prompt": "What is the difference between HTTP and HTTPS?",
+        "ppl": 208.73,
+        "quality": "REP",
+        "output": "What is why why why?\n and: What is the differenceHTTP?: HTTP and HTTP and?\n\n/rou"
+      },
+      {
+        "prompt": "How do solar panels generate electricity?",
+        "ppl": 21.89,
+        "quality": "PASS",
+        "output": "Solar panels are made up of do solar panels generate electricity?\nHow do panels "
+      },
+      {
+        "prompt": "What are the major organs of the human body?",
+        "ppl": 22.97,
+        "quality": "REP",
+        "output": "The major organs of human body are the heart, lungs lungs lungs lungs body. The "
+      },
+      {
+        "prompt": "Explain how encryption keeps data secure.",
+        "ppl": 118.88,
+        "quality": "REP",
+        "output": "encryption keeps data secure Encryption is Encryption keeps data data. Encryptio"
+      },
+      {
+        "prompt": "What is the history of the internet?",
+        "ppl": 53.55,
+        "quality": "PASS",
+        "output": "How did it start??\n.NET is the internet? What is the internet?The Internet is th"
+      }
+    ]
+  }
+]

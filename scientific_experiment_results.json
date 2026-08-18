@@ -1,0 +1,1050 @@
+{
+  "Qwen2.5-1.5B": {
+    "results": [
+      {
+        "condition": "bf16 baseline",
+        "k_bits": 16,
+        "v_bits": 16,
+        "theoretical_savings_pct": 0.0,
+        "mean_logprob": -0.4433,
+        "std_logprob": 0.2424,
+        "95_ci": 0.1502,
+        "n": 10,
+        "pass_rate_pct": 100.0,
+        "pass_count": 10,
+        "per_prompt": [
+          {
+            "prompt_idx": 0,
+            "prompt": "Explain quantum computing in simple terms.",
+            "mean_logprob": -0.1631,
+            "n_tokens": 60,
+            "total_logprob": -9.7848,
+            "quality": "PASS",
+            "output": "Quantum computing is a type of computing that uses quantum-mechanical phenomena, such as superpositi"
+          },
+          {
+            "prompt_idx": 1,
+            "prompt": "What is the capital of France and what is it known",
+            "mean_logprob": -0.3533,
+            "n_tokens": 60,
+            "total_logprob": -21.1987,
+            "quality": "PASS",
+            "output": "The capital of France is Paris. It is known for its beautiful architecture, art, fashion, and cultur"
+          },
+          {
+            "prompt_idx": 2,
+            "prompt": "Write a short poem about the ocean.",
+            "mean_logprob": -0.7728,
+            "n_tokens": 60,
+            "total_logprob": -46.3674,
+            "quality": "PASS",
+            "output": "The ocean, vast and deep,  \nA mystery to all who see,  \nIts waves crash and dance,  \nA symphony of s"
+          },
+          {
+            "prompt_idx": 3,
+            "prompt": "How does a transformer neural network work?",
+            "mean_logprob": -0.9583,
+            "n_tokens": 60,
+            "total_logprob": -57.4958,
+            "quality": "PASS",
+            "output": "I am trying to understand how a transformer neural network works. I have read a lot of articles and "
+          },
+          {
+            "prompt_idx": 4,
+            "prompt": "What are the main causes of climate change?",
+            "mean_logprob": -0.2636,
+            "n_tokens": 60,
+            "total_logprob": -15.8183,
+            "quality": "PASS",
+            "output": "Climate change is caused by a variety of factors, including:\n\n1. Greenhouse gas emissions: The burni"
+          },
+          {
+            "prompt_idx": 5,
+            "prompt": "Describe the process of photosynthesis.",
+            "mean_logprob": -0.2963,
+            "n_tokens": 60,
+            "total_logprob": -17.7799,
+            "quality": "PASS",
+            "output": "Photosynthesis is the process by which plants, algae, and some bacteria convert light energy into ch"
+          },
+          {
+            "prompt_idx": 6,
+            "prompt": "What is the difference between TCP and UDP?",
+            "mean_logprob": -0.3879,
+            "n_tokens": 60,
+            "total_logprob": -23.2767,
+            "quality": "PASS",
+            "output": "TCP and UDP are two different protocols used for transmitting data over a network. TCP (Transmission"
+          },
+          {
+            "prompt_idx": 7,
+            "prompt": "Who wrote Romeo and Juliet and what is it about?",
+            "mean_logprob": -0.4868,
+            "n_tokens": 60,
+            "total_logprob": -29.2064,
+            "quality": "PASS",
+            "output": "?\nWilliam Shakespeare wrote Romeo and Juliet. The play is about two young lovers who fall in love de"
+          },
+          {
+            "prompt_idx": 8,
+            "prompt": "Explain how vaccines work in the human body.",
+            "mean_logprob": -0.3858,
+            "n_tokens": 60,
+            "total_logprob": -23.1492,
+            "quality": "PASS",
+            "output": "Vaccines work by introducing a weakened or inactive form of a pathogen (such as a virus or bacteria)"
+          },
+          {
+            "prompt_idx": 9,
+            "prompt": "What is the meaning of the term 'machine learning'",
+            "mean_logprob": -0.3651,
+            "n_tokens": 60,
+            "total_logprob": -21.9036,
+            "quality": "PASS",
+            "output": "Machine learning is a type of artificial intelligence that enables a computer to learn from data wit"
+          }
+        ]
+      },
+      {
+        "condition": "sym int8 8b+8b",
+        "k_bits": 8,
+        "v_bits": 8,
+        "theoretical_savings_pct": 50.0,
+        "mean_logprob": -0.4238,
+        "std_logprob": 0.2364,
+        "95_ci": 0.1465,
+        "n": 10,
+        "pass_rate_pct": 100.0,
+        "pass_count": 10,
+        "per_prompt": [
+          {
+            "prompt_idx": 0,
+            "prompt": "Explain quantum computing in simple terms.",
+            "mean_logprob": -0.1399,
+            "n_tokens": 60,
+            "total_logprob": -8.3943,
+            "quality": "PASS",
+            "output": "Quantum computing is a type of computing that uses quantum-mechanical phenomena, such as superpositi"
+          },
+          {
+            "prompt_idx": 1,
+            "prompt": "What is the capital of France and what is it known",
+            "mean_logprob": -0.2852,
+            "n_tokens": 60,
+            "total_logprob": -17.1115,
+            "quality": "PASS",
+            "output": "The capital of France is Paris. It is known for its rich history, art, culture, fashion, and cuisine"
+          },
+          {
+            "prompt_idx": 2,
+            "prompt": "Write a short poem about the ocean.",
+            "mean_logprob": -0.6384,
+            "n_tokens": 60,
+            "total_logprob": -38.3031,
+            "quality": "PASS",
+            "output": "The ocean, vast and deep,  \nA silent, endless sea,  \nA world of mystery and wonder,  \nA place of bea"
+          },
+          {
+            "prompt_idx": 3,
+            "prompt": "How does a transformer neural network work?",
+            "mean_logprob": -0.9775,
+            "n_tokens": 60,
+            "total_logprob": -58.6482,
+            "quality": "PASS",
+            "output": "I am trying to understand how a transformer neural network works. I have read a lot of articles and "
+          },
+          {
+            "prompt_idx": 4,
+            "prompt": "What are the main causes of climate change?",
+            "mean_logprob": -0.2917,
+            "n_tokens": 60,
+            "total_logprob": -17.5027,
+            "quality": "PASS",
+            "output": "Climate change is caused by a variety of factors, including:\n\n1. Greenhouse gas emissions: The burni"
+          },
+          {
+            "prompt_idx": 5,
+            "prompt": "Describe the process of photosynthesis.",
+            "mean_logprob": -0.3064,
+            "n_tokens": 60,
+            "total_logprob": -18.3858,
+            "quality": "PASS",
+            "output": "Photosynthesis is the process by which plants, algae, and some bacteria convert light energy into ch"
+          },
+          {
+            "prompt_idx": 6,
+            "prompt": "What is the difference between TCP and UDP?",
+            "mean_logprob": -0.3677,
+            "n_tokens": 60,
+            "total_logprob": -22.061,
+            "quality": "PASS",
+            "output": "TCP and UDP are two different protocols used for transmitting data over a network. TCP (Transmission"
+          },
+          {
+            "prompt_idx": 7,
+            "prompt": "Who wrote Romeo and Juliet and what is it about?",
+            "mean_logprob": -0.4856,
+            "n_tokens": 60,
+            "total_logprob": -29.136,
+            "quality": "PASS",
+            "output": "William Shakespeare wrote Romeo and Juliet. The play is about two young lovers who fall in love desp"
+          },
+          {
+            "prompt_idx": 8,
+            "prompt": "Explain how vaccines work in the human body.",
+            "mean_logprob": -0.432,
+            "n_tokens": 60,
+            "total_logprob": -25.9213,
+            "quality": "PASS",
+            "output": "Vaccines work by introducing a weakened or inactive form of a pathogen (such as a virus or bacteria)"
+          },
+          {
+            "prompt_idx": 9,
+            "prompt": "What is the meaning of the term 'machine learning'",
+            "mean_logprob": -0.3134,
+            "n_tokens": 60,
+            "total_logprob": -18.8033,
+            "quality": "PASS",
+            "output": "Machine learning is a type of artificial intelligence that enables a computer to learn from data wit"
+          }
+        ]
+      },
+      {
+        "condition": "K=5b V=8b",
+        "k_bits": 5,
+        "v_bits": 8,
+        "theoretical_savings_pct": 59.4,
+        "mean_logprob": -0.804,
+        "std_logprob": 0.2606,
+        "95_ci": 0.1615,
+        "n": 10,
+        "pass_rate_pct": 90.0,
+        "pass_count": 9,
+        "per_prompt": [
+          {
+            "prompt_idx": 0,
+            "prompt": "Explain quantum computing in simple terms.",
+            "mean_logprob": -0.7681,
+            "n_tokens": 60,
+            "total_logprob": -46.0863,
+            "quality": "PASS",
+            "output": "Quantum computing is a new type of computing that uses the principles of quantum mechanics to do thi"
+          },
+          {
+            "prompt_idx": 1,
+            "prompt": "What is the capital of France and what is it known",
+            "mean_logprob": -0.6233,
+            "n_tokens": 60,
+            "total_logprob": -37.3951,
+            "quality": "PASS",
+            "output": "The capital of France is Paris. Paris is known for being the cultural, artistic, and historical cent"
+          },
+          {
+            "prompt_idx": 2,
+            "prompt": "Write a short poem about the ocean.",
+            "mean_logprob": -0.977,
+            "n_tokens": 60,
+            "total_logprob": -58.6201,
+            "quality": "PASS",
+            "output": "The ocean, vast and deep,  \nA place of mystery and beauty,  \nA. The waves that crash,  \nA place of s"
+          },
+          {
+            "prompt_idx": 3,
+            "prompt": "How does a transformer neural network work?",
+            "mean_logprob": -0.2689,
+            "n_tokens": 60,
+            "total_logprob": -16.1363,
+            "quality": "PASS",
+            "output": "How does it work? How does it work? How does it work? How does it work? How does it work? How does i"
+          },
+          {
+            "prompt_idx": 4,
+            "prompt": "What are the main causes of climate change?",
+            "mean_logprob": -1.0411,
+            "n_tokens": 60,
+            "total_logprob": -62.4665,
+            "quality": "PASS",
+            "output": "Climate change is a complex issue that has many causes. The main causes of climate change are the in"
+          },
+          {
+            "prompt_idx": 5,
+            "prompt": "Describe the process of photosynthesis.",
+            "mean_logprob": -1.0319,
+            "n_tokens": 60,
+            "total_logprob": -61.9114,
+            "quality": "REPETITION",
+            "output": "Photosynthesis is the process by which plants convert light energy from the sun into chemical energy"
+          },
+          {
+            "prompt_idx": 6,
+            "prompt": "What is the difference between TCP and UDP?",
+            "mean_logprob": -0.5018,
+            "n_tokens": 60,
+            "total_logprob": -30.1103,
+            "quality": "PASS",
+            "output": "TCP is connection oriented protocol, while UDP is connectionless protocol. TCP is reliable protocol,"
+          },
+          {
+            "prompt_idx": 7,
+            "prompt": "Who wrote Romeo and Juliet and what is it about?",
+            "mean_logprob": -0.9472,
+            "n_tokens": 60,
+            "total_logprob": -56.8298,
+            "quality": "PASS",
+            "output": "?\nRome and Juliet is a play written by William Shakespeare. It is a tragic play about two young peop"
+          },
+          {
+            "prompt_idx": 8,
+            "prompt": "Explain how vaccines work in the human body.",
+            "mean_logprob": -0.9837,
+            "n_tokens": 60,
+            "total_logprob": -59.0235,
+            "quality": "PASS",
+            "output": "Vaccines work by stimulating the immuneateds immune system to create antibodies. These antibodies ar"
+          },
+          {
+            "prompt_idx": 9,
+            "prompt": "What is the meaning of the term 'machine learning'",
+            "mean_logprob": -0.8971,
+            "n_tokens": 60,
+            "total_logprob": -53.8289,
+            "quality": "PASS",
+            "output": "Machine learning is a type of artificial intelligence that. It is a type of of a computer learning t"
+          }
+        ]
+      },
+      {
+        "condition": "K=4b V=8b",
+        "k_bits": 4,
+        "v_bits": 8,
+        "theoretical_savings_pct": 62.5,
+        "mean_logprob": -0.7153,
+        "std_logprob": 0.2158,
+        "95_ci": 0.1337,
+        "n": 10,
+        "pass_rate_pct": 30.0,
+        "pass_count": 3,
+        "per_prompt": [
+          {
+            "prompt_idx": 0,
+            "prompt": "Explain quantum computing in simple terms.",
+            "mean_logprob": -0.8166,
+            "n_tokens": 60,
+            "total_logprob": -48.9954,
+            "quality": "PASS",
+            "output": "terms quantum computingVILLE\n\n\n\n Quantum computing isQuantum computing is Quantum computing\n\nQuantQu"
+          },
+          {
+            "prompt_idx": 1,
+            "prompt": "What is the capital of France and what is it known",
+            "mean_logprob": -1.0007,
+            "n_tokens": 60,
+            "total_logprob": -60.0432,
+            "quality": "REPETITION",
+            "output": "the is is the capital of France is is is of the the the is of France capital is is is of france what"
+          },
+          {
+            "prompt_idx": 2,
+            "prompt": "Write a short poem about the ocean.",
+            "mean_logprob": -0.7188,
+            "n_tokens": 60,
+            "total_logprob": -43.1282,
+            "quality": "REPETITION",
+            "output": "the\n\n\n\nThe Sh\n\n\n\n\n\nThe poem poem poem.The poem poem poem\n\n poem poem poem poem poem poem poem poemPo"
+          },
+          {
+            "prompt_idx": 3,
+            "prompt": "How does a transformer neural network work?",
+            "mean_logprob": -0.4968,
+            "n_tokens": 60,
+            "total_logprob": -29.8056,
+            "quality": "REPETITION",
+            "output": "neural network is work? neural network neural network work transformer neural network neural network"
+          },
+          {
+            "prompt_idx": 4,
+            "prompt": "What are the main causes of climate change?",
+            "mean_logprob": -0.774,
+            "n_tokens": 60,
+            "total_logprob": -46.4421,
+            "quality": "REPETITION",
+            "output": "main causes of the the main main main the the the main main the the the the main main the the the th"
+          },
+          {
+            "prompt_idx": 5,
+            "prompt": "Describe the process of photosynthesis.",
+            "mean_logprob": -0.6075,
+            "n_tokens": 60,
+            "total_logprob": -36.4482,
+            "quality": "REPETITION",
+            "output": "process of photosynthesis.\n\n Photosynthesis is isPhotosynthesis is the the.. Photos of of. Photosynt"
+          },
+          {
+            "prompt_idx": 6,
+            "prompt": "What is the difference between TCP and UDP?",
+            "mean_logprob": -0.611,
+            "n_tokens": 60,
+            "total_logprob": -36.6593,
+            "quality": "REPETITION",
+            "output": "difference between TCP TCP TCP difference between TCP and udp\n difference between and and\nTCP ( TCP "
+          },
+          {
+            "prompt_idx": 7,
+            "prompt": "Who wrote Romeo and Juliet and what is it about?",
+            "mean_logprob": -0.2987,
+            "n_tokens": 60,
+            "total_logprob": -17.9217,
+            "quality": "REPETITION",
+            "output": "a a Juliet?\n?? Juliet Juliet Juliet Juliet Juliet Juliet Juliet Juliet Juliet Juliet Juliet Juliet J"
+          },
+          {
+            "prompt_idx": 8,
+            "prompt": "Explain how vaccines work in the human body.",
+            "mean_logprob": -0.9319,
+            "n_tokens": 60,
+            "total_logprob": -55.9112,
+            "quality": "PASS",
+            "output": "a\n body\n\nV\nV\n\nVVVVVVaccVaccVVVVVVVVVVVVVVVVVVVVVV\n\nVVVVVVVVV\n\n\n\nVVV"
+          },
+          {
+            "prompt_idx": 9,
+            "prompt": "What is the meaning of the term 'machine learning'",
+            "mean_logprob": -0.8975,
+            "n_tokens": 60,
+            "total_logprob": -53.8524,
+            "quality": "PASS",
+            "output": "Machine learning a the process of which used the process process of learning is the process of learn"
+          }
+        ]
+      },
+      {
+        "condition": "K=3b V=8b",
+        "k_bits": 3,
+        "v_bits": 8,
+        "theoretical_savings_pct": 65.6,
+        "mean_logprob": -1.076,
+        "std_logprob": 0.2529,
+        "95_ci": 0.1567,
+        "n": 10,
+        "pass_rate_pct": 10.0,
+        "pass_count": 1,
+        "per_prompt": [
+          {
+            "prompt_idx": 0,
+            "prompt": "Explain quantum computing in simple terms.",
+            "mean_logprob": -0.9151,
+            "n_tokens": 60,
+            "total_logprob": -54.9052,
+            "quality": "REPETITION",
+            "output": "computing is a computing computing computing computing computing computing is quantum computing is q"
+          },
+          {
+            "prompt_idx": 1,
+            "prompt": "What is the capital of France and what is it known",
+            "mean_logprob": -0.8007,
+            "n_tokens": 60,
+            "total_logprob": -48.0403,
+            "quality": "REPETITION",
+            "output": "what is the capital of France and what capital of the capital of the capital of France and the the c"
+          },
+          {
+            "prompt_idx": 2,
+            "prompt": "Write a short poem about the ocean.",
+            "mean_logprob": -1.458,
+            "n_tokens": 60,
+            "total_logprob": -87.4771,
+            "quality": "PASS",
+            "output": "long, the the vast. of a\u6ed4\u6ed4\u4e0d The ocean a.. ocean. a. poem..?. ocean ocean, a. poem a.. poem ocean a.."
+          },
+          {
+            "prompt_idx": 3,
+            "prompt": "How does a transformer neural network work?",
+            "mean_logprob": -0.7921,
+            "n_tokens": 60,
+            "total_logprob": -47.523,
+            "quality": "REPETITION",
+            "output": "transformer neural network is a type type type of neural network that it neural neural neural neural"
+          },
+          {
+            "prompt_idx": 4,
+            "prompt": "What are the main causes of climate change?",
+            "mean_logprob": -1.3958,
+            "n_tokens": 60,
+            "total_logprob": -83.7504,
+            "quality": "REPETITION",
+            "output": "What are the causes are the causes of climate change? What causes of climate change? What are the ma"
+          },
+          {
+            "prompt_idx": 5,
+            "prompt": "Describe the process of photosynthesis.",
+            "mean_logprob": -1.0796,
+            "n_tokens": 60,
+            "total_logprob": -64.7735,
+            "quality": "REPETITION",
+            "output": "the the process of photos the the process of limp\n\nAssistant: Photos.\n\nPhotos process Photos. Photos"
+          },
+          {
+            "prompt_idx": 6,
+            "prompt": "What is the difference between TCP and UDP?",
+            "mean_logprob": -0.8065,
+            "n_tokens": 60,
+            "total_logprob": -48.3919,
+            "quality": "REPETITION",
+            "output": "TCP ( UDP UDP UDP are TCP the TCP and and UDP are and and and UDP are UDP and and and UDP are UDP ar"
+          },
+          {
+            "prompt_idx": 7,
+            "prompt": "Who wrote Romeo and Juliet and what is it about?",
+            "mean_logprob": -0.9974,
+            "n_tokens": 60,
+            "total_logprob": -59.844,
+            "quality": "REPETITION",
+            "output": "what is the the plot Juliet? Romeo and Juliet is Juliet Juliet Juliet are juliet and? jul jul Juliet"
+          },
+          {
+            "prompt_idx": 8,
+            "prompt": "Explain how vaccines work in the human body.",
+            "mean_logprob": -1.2412,
+            "n_tokens": 60,
+            "total_logprob": -74.471,
+            "quality": "REPETITION",
+            "output": "work by the mechanism \n \n How do work work?\n To How How does the human body work in work work. work "
+          },
+          {
+            "prompt_idx": 9,
+            "prompt": "What is the meaning of the term 'machine learning'",
+            "mean_logprob": -1.2734,
+            "n_tokens": 60,
+            "total_logprob": -76.4031,
+            "quality": "REPETITION",
+            "output": "What is the meaning of the term 'machine learning learning'? the the the term 'machine learning'the\n"
+          }
+        ]
+      }
+    ]
+  },
+  "Gemma-3-1B": {
+    "results": [
+      {
+        "condition": "bf16 baseline",
+        "k_bits": 16,
+        "v_bits": 16,
+        "theoretical_savings_pct": 0.0,
+        "mean_logprob": -0.1805,
+        "std_logprob": 0.0539,
+        "95_ci": 0.0334,
+        "n": 10,
+        "pass_rate_pct": 100.0,
+        "pass_count": 10,
+        "per_prompt": [
+          {
+            "prompt_idx": 0,
+            "prompt": "Explain quantum computing in simple terms.",
+            "mean_logprob": -0.1739,
+            "n_tokens": 60,
+            "total_logprob": -10.4321,
+            "quality": "PASS",
+            "output": "Okay, let's break down quantum computing in a way that's easier to understand.\n\n**The Basic Idea: Cl"
+          },
+          {
+            "prompt_idx": 1,
+            "prompt": "What is the capital of France and what is it known",
+            "mean_logprob": -0.1285,
+            "n_tokens": 60,
+            "total_logprob": -7.7097,
+            "quality": "PASS",
+            "output": "The capital of France is Paris.\n\nParis is known for many things, including:\n\n*   **Art and Culture:*"
+          },
+          {
+            "prompt_idx": 2,
+            "prompt": "Write a short poem about the ocean.",
+            "mean_logprob": -0.2423,
+            "n_tokens": 60,
+            "total_logprob": -14.5375,
+            "quality": "PASS",
+            "output": "The ocean breathes, a restless sigh,\nOf turquoise depths and sapphire sky.\nWaves crash and roar, a w"
+          },
+          {
+            "prompt_idx": 3,
+            "prompt": "How does a transformer neural network work?",
+            "mean_logprob": -0.232,
+            "n_tokens": 60,
+            "total_logprob": -13.9193,
+            "quality": "PASS",
+            "output": "A transformer neural network is a type of deep learning model that has revolutionized the field of n"
+          },
+          {
+            "prompt_idx": 4,
+            "prompt": "What are the main causes of climate change?",
+            "mean_logprob": -0.1371,
+            "n_tokens": 60,
+            "total_logprob": -8.2249,
+            "quality": "PASS",
+            "output": "The main causes of climate change are:\n\n1.  **Greenhouse Gas Emissions:** This is the primary driver"
+          },
+          {
+            "prompt_idx": 5,
+            "prompt": "Describe the process of photosynthesis.",
+            "mean_logprob": -0.1549,
+            "n_tokens": 60,
+            "total_logprob": -9.2946,
+            "quality": "PASS",
+            "output": "**Photosynthesis** is the process by which plants, algae, and some bacteria convert light energy int"
+          },
+          {
+            "prompt_idx": 6,
+            "prompt": "What is the difference between TCP and UDP?",
+            "mean_logprob": -0.1132,
+            "n_tokens": 60,
+            "total_logprob": -6.7947,
+            "quality": "PASS",
+            "output": "**TCP (Transmission Control Protocol)**\n\n*   **Connection-oriented:** Before data is sent, a connect"
+          },
+          {
+            "prompt_idx": 7,
+            "prompt": "Who wrote Romeo and Juliet and what is it about?",
+            "mean_logprob": -0.1434,
+            "n_tokens": 60,
+            "total_logprob": -8.6022,
+            "quality": "PASS",
+            "output": "**Who wrote Romeo and Juliet?**\n\nWilliam Shakespeare wrote Romeo and Juliet.\n\n**What is it about?**\n"
+          },
+          {
+            "prompt_idx": 8,
+            "prompt": "Explain how vaccines work in the human body.",
+            "mean_logprob": -0.2131,
+            "n_tokens": 60,
+            "total_logprob": -12.7847,
+            "quality": "PASS",
+            "output": "**Vaccines: A Powerful Defense Against Disease**\n\nVaccines are a cornerstone of modern medicine, pro"
+          },
+          {
+            "prompt_idx": 9,
+            "prompt": "What is the meaning of the term 'machine learning'",
+            "mean_logprob": -0.2668,
+            "n_tokens": 60,
+            "total_logprob": -16.0063,
+            "quality": "PASS",
+            "output": "**Machine learning** is a field of artificial intelligence that enables computers to learn from data"
+          }
+        ]
+      },
+      {
+        "condition": "sym int8 8b+8b",
+        "k_bits": 8,
+        "v_bits": 8,
+        "theoretical_savings_pct": 50.0,
+        "mean_logprob": -0.1782,
+        "std_logprob": 0.0444,
+        "95_ci": 0.0275,
+        "n": 10,
+        "pass_rate_pct": 100.0,
+        "pass_count": 10,
+        "per_prompt": [
+          {
+            "prompt_idx": 0,
+            "prompt": "Explain quantum computing in simple terms.",
+            "mean_logprob": -0.1788,
+            "n_tokens": 60,
+            "total_logprob": -10.727,
+            "quality": "PASS",
+            "output": "Okay, let's break down quantum computing in a way that's easy to understand.\n\n**The Basic Idea: Clas"
+          },
+          {
+            "prompt_idx": 1,
+            "prompt": "What is the capital of France and what is it known",
+            "mean_logprob": -0.1379,
+            "n_tokens": 60,
+            "total_logprob": -8.2713,
+            "quality": "PASS",
+            "output": "The capital of France is Paris.\n\nParis is known for many things, including:\n\n*   **Art and Culture:*"
+          },
+          {
+            "prompt_idx": 2,
+            "prompt": "Write a short poem about the ocean.",
+            "mean_logprob": -0.2275,
+            "n_tokens": 60,
+            "total_logprob": -13.6502,
+            "quality": "PASS",
+            "output": "The ocean breathes, a restless sigh,\nOf turquoise depths and sapphire sky.\nWaves crash and roar, a w"
+          },
+          {
+            "prompt_idx": 3,
+            "prompt": "How does a transformer neural network work?",
+            "mean_logprob": -0.245,
+            "n_tokens": 60,
+            "total_logprob": -14.6972,
+            "quality": "PASS",
+            "output": "A transformer neural network is a type of deep learning model that has revolutionized the field of n"
+          },
+          {
+            "prompt_idx": 4,
+            "prompt": "What are the main causes of climate change?",
+            "mean_logprob": -0.1397,
+            "n_tokens": 60,
+            "total_logprob": -8.379,
+            "quality": "PASS",
+            "output": "The main causes of climate change are:\n\n1.  **Greenhouse Gas Emissions:** This is the primary driver"
+          },
+          {
+            "prompt_idx": 5,
+            "prompt": "Describe the process of photosynthesis.",
+            "mean_logprob": -0.1716,
+            "n_tokens": 60,
+            "total_logprob": -10.2981,
+            "quality": "PASS",
+            "output": "**Photosynthesis** is the process by which plants, algae, and some bacteria convert light energy int"
+          },
+          {
+            "prompt_idx": 6,
+            "prompt": "What is the difference between TCP and UDP?",
+            "mean_logprob": -0.1129,
+            "n_tokens": 60,
+            "total_logprob": -6.7724,
+            "quality": "PASS",
+            "output": "**TCP (Transmission Control Protocol)**\n\n*   **Connection-oriented:** Before data is sent, a connect"
+          },
+          {
+            "prompt_idx": 7,
+            "prompt": "Who wrote Romeo and Juliet and what is it about?",
+            "mean_logprob": -0.145,
+            "n_tokens": 60,
+            "total_logprob": -8.6996,
+            "quality": "PASS",
+            "output": "**Who wrote Romeo and Juliet?**\n\nWilliam Shakespeare wrote Romeo and Juliet.\n\n**What is it about?**\n"
+          },
+          {
+            "prompt_idx": 8,
+            "prompt": "Explain how vaccines work in the human body.",
+            "mean_logprob": -0.2179,
+            "n_tokens": 60,
+            "total_logprob": -13.0767,
+            "quality": "PASS",
+            "output": "**Vaccines: A Powerful Defense Against Disease**\n\nVaccines are a cornerstone of modern medicine, pro"
+          },
+          {
+            "prompt_idx": 9,
+            "prompt": "What is the meaning of the term 'machine learning'",
+            "mean_logprob": -0.2053,
+            "n_tokens": 60,
+            "total_logprob": -12.3196,
+            "quality": "PASS",
+            "output": "**Machine learning** is a field of artificial intelligence that enables computers to learn from data"
+          }
+        ]
+      },
+      {
+        "condition": "K=5b V=8b",
+        "k_bits": 5,
+        "v_bits": 8,
+        "theoretical_savings_pct": 59.4,
+        "mean_logprob": -0.2125,
+        "std_logprob": 0.0665,
+        "95_ci": 0.0412,
+        "n": 10,
+        "pass_rate_pct": 100.0,
+        "pass_count": 10,
+        "per_prompt": [
+          {
+            "prompt_idx": 0,
+            "prompt": "Explain quantum computing in simple terms.",
+            "mean_logprob": -0.1322,
+            "n_tokens": 60,
+            "total_logprob": -7.9325,
+            "quality": "PASS",
+            "output": "Okay, let's break down quantum computing in a way that's easy to understand.\n\n**Traditional Computer"
+          },
+          {
+            "prompt_idx": 1,
+            "prompt": "What is the capital of France and what is it known",
+            "mean_logprob": -0.2652,
+            "n_tokens": 60,
+            "total_logprob": -15.9096,
+            "quality": "PASS",
+            "output": "The capital of France is Paris.\n\nParis is known for a multitude of things, including:\n\n*   **Art and"
+          },
+          {
+            "prompt_idx": 2,
+            "prompt": "Write a short poem about the ocean.",
+            "mean_logprob": -0.25,
+            "n_tokens": 60,
+            "total_logprob": -15.0016,
+            "quality": "PASS",
+            "output": "The ocean breathes, a restless, salty sigh,\nWaves crash and tumble, reaching for the sky.\nDeep secre"
+          },
+          {
+            "prompt_idx": 3,
+            "prompt": "How does a transformer neural network work?",
+            "mean_logprob": -0.2467,
+            "n_tokens": 60,
+            "total_logprob": -14.7997,
+            "quality": "PASS",
+            "output": "A transformer neural network is a type of deep learning model that has revolutionized the field of n"
+          },
+          {
+            "prompt_idx": 4,
+            "prompt": "What are the main causes of climate change?",
+            "mean_logprob": -0.1597,
+            "n_tokens": 60,
+            "total_logprob": -9.5844,
+            "quality": "PASS",
+            "output": "The main causes of climate change are:\n\n*   **Burning of Fossil Fuels:** The burning of coal, oil, a"
+          },
+          {
+            "prompt_idx": 5,
+            "prompt": "Describe the process of photosynthesis.",
+            "mean_logprob": -0.1488,
+            "n_tokens": 60,
+            "total_logprob": -8.9283,
+            "quality": "PASS",
+            "output": "**Photosynthesis: Capturing Sunlight to Create Life**\n\nPhotosynthesis is the remarkable process by w"
+          },
+          {
+            "prompt_idx": 6,
+            "prompt": "What is the difference between TCP and UDP?",
+            "mean_logprob": -0.1596,
+            "n_tokens": 60,
+            "total_logprob": -9.5746,
+            "quality": "PASS",
+            "output": "**TCP (Transmission Control Protocol)**\n\n*   **Connection-oriented:** TCP establishes a connection b"
+          },
+          {
+            "prompt_idx": 7,
+            "prompt": "Who wrote Romeo and Juliet and what is it about?",
+            "mean_logprob": -0.1609,
+            "n_tokens": 60,
+            "total_logprob": -9.6544,
+            "quality": "PASS",
+            "output": "**Who wrote Romeo and Juliet?**\n\nRomeo and Juliet is a tragedy written by William Shakespeare.\n\n**Wh"
+          },
+          {
+            "prompt_idx": 8,
+            "prompt": "Explain how vaccines work in the human body.",
+            "mean_logprob": -0.3029,
+            "n_tokens": 60,
+            "total_logprob": -18.1754,
+            "quality": "PASS",
+            "output": "**Vaccines: Protecting Yourself and Others**\n\nVaccines are a cornerstone of public health, working t"
+          },
+          {
+            "prompt_idx": 9,
+            "prompt": "What is the meaning of the term 'machine learning'",
+            "mean_logprob": -0.2992,
+            "n_tokens": 60,
+            "total_logprob": -17.9541,
+            "quality": "PASS",
+            "output": "**Machine learning** is a type of artificial intelligence that allows computers to learn from data w"
+          }
+        ]
+      },
+      {
+        "condition": "K=4b V=8b",
+        "k_bits": 4,
+        "v_bits": 8,
+        "theoretical_savings_pct": 62.5,
+        "mean_logprob": -0.3891,
+        "std_logprob": 0.1502,
+        "95_ci": 0.0931,
+        "n": 10,
+        "pass_rate_pct": 90.0,
+        "pass_count": 9,
+        "per_prompt": [
+          {
+            "prompt_idx": 0,
+            "prompt": "Explain quantum computing in simple terms.",
+            "mean_logprob": -0.1721,
+            "n_tokens": 60,
+            "total_logprob": -10.3277,
+            "quality": "PASS",
+            "output": "Okay, let's break down quantum computing in a way that's easy to understand.\n\nTraditional computers,"
+          },
+          {
+            "prompt_idx": 1,
+            "prompt": "What is the capital of France and what is it known",
+            "mean_logprob": -0.2828,
+            "n_tokens": 60,
+            "total_logprob": -16.9668,
+            "quality": "PASS",
+            "output": "The capital of France is Paris.\n\nParis is known for many things, including:\n\n*   Art and culture: Th"
+          },
+          {
+            "prompt_idx": 2,
+            "prompt": "Write a short poem about the ocean.",
+            "mean_logprob": -0.5824,
+            "n_tokens": 60,
+            "total_logprob": -34.9443,
+            "quality": "PASS",
+            "output": "**The ocean**\n\nA vast, blue expanse, a mystery untold,\nThe ocean breathes with currents, a story old"
+          },
+          {
+            "prompt_idx": 3,
+            "prompt": "How does a transformer neural network work?",
+            "mean_logprob": -0.3999,
+            "n_tokens": 60,
+            "total_logprob": -23.9932,
+            "quality": "PASS",
+            "output": "A transformer neural network is a type of deep learning model that is used for natural language proc"
+          },
+          {
+            "prompt_idx": 4,
+            "prompt": "What are the main causes of climate change?",
+            "mean_logprob": -0.2549,
+            "n_tokens": 60,
+            "total_logprob": -15.2941,
+            "quality": "PASS",
+            "output": "The main cause of climate change is the increase in Earth's average temperature.\n\nHere's a more deta"
+          },
+          {
+            "prompt_idx": 5,
+            "prompt": "Describe the process of photosynthesis.",
+            "mean_logprob": -0.301,
+            "n_tokens": 60,
+            "total_logprob": -18.0587,
+            "quality": "PASS",
+            "output": "**Photosynthesis** is the process by which plants and some other organisms convert light energy into"
+          },
+          {
+            "prompt_idx": 6,
+            "prompt": "What is the difference between TCP and UDP?",
+            "mean_logprob": -0.4201,
+            "n_tokens": 60,
+            "total_logprob": -25.2061,
+            "quality": "REPETITION",
+            "output": "| Feature | TCP | UDP |\n|---| | | | |\n| Data | Reliable | |\n| Connection | Required | |\n| Speed | | "
+          },
+          {
+            "prompt_idx": 7,
+            "prompt": "Who wrote Romeo and Juliet and what is it about?",
+            "mean_logprob": -0.3223,
+            "n_tokens": 60,
+            "total_logprob": -19.3404,
+            "quality": "PASS",
+            "output": "**Romeo and Juliet**\n\n**Romeo and Juliet** is a tragic love story set in Verona, Italy.**\n\n**Romeo i"
+          },
+          {
+            "prompt_idx": 8,
+            "prompt": "Explain how vaccines work in the human body.",
+            "mean_logprob": -0.6267,
+            "n_tokens": 60,
+            "total_logprob": -37.6041,
+            "quality": "PASS",
+            "output": "**Vaccines**\n\nVaccines are a powerful tool for preventing disease. They work by stimulating the immu"
+          },
+          {
+            "prompt_idx": 9,
+            "prompt": "What is the meaning of the term 'machine learning'",
+            "mean_logprob": -0.529,
+            "n_tokens": 60,
+            "total_logprob": -31.7377,
+            "quality": "PASS",
+            "output": "**Machine learning** is a process of teaching computers to learn from data without being explicitly "
+          }
+        ]
+      },
+      {
+        "condition": "K=3b V=8b",
+        "k_bits": 3,
+        "v_bits": 8,
+        "theoretical_savings_pct": 65.6,
+        "mean_logprob": -0.6927,
+        "std_logprob": 0.14,
+        "95_ci": 0.0868,
+        "n": 10,
+        "pass_rate_pct": 100.0,
+        "pass_count": 10,
+        "per_prompt": [
+          {
+            "prompt_idx": 0,
+            "prompt": "Explain quantum computing in simple terms.",
+            "mean_logprob": -0.6562,
+            "n_tokens": 60,
+            "total_logprob": -39.3746,
+            "quality": "PASS",
+            "output": "**Quantum computing is a new type of computing that leverages the principles of quantum mechanics an"
+          },
+          {
+            "prompt_idx": 1,
+            "prompt": "What is the capital of France and what is it known",
+            "mean_logprob": -0.694,
+            "n_tokens": 60,
+            "total_logprob": -41.6396,
+            "quality": "PASS",
+            "output": "The capital of France is Paris is known for its.\n\n*   **Paris is** the capital of France**\n\nWhat is "
+          },
+          {
+            "prompt_idx": 2,
+            "prompt": "Write a short poem about the ocean.",
+            "mean_logprob": -0.8747,
+            "n_tokens": 60,
+            "total_logprob": -52.4841,
+            "quality": "PASS",
+            "output": "The ocean breathes, a slow, a deep,\nA silver, and blue, a blue,\nand deep,\na slow,\na slow,\nthe ocean "
+          },
+          {
+            "prompt_idx": 3,
+            "prompt": "How does a transformer neural network work?",
+            "mean_logprob": -0.6979,
+            "n_tokens": 60,
+            "total_logprob": -41.8712,
+            "quality": "PASS",
+            "output": "Okay, let's a transformer neural network is a type of neural network architecture that is very popul"
+          },
+          {
+            "prompt_idx": 4,
+            "prompt": "What are the main causes of climate change?",
+            "mean_logprob": -0.5712,
+            "n_tokens": 60,
+            "total_logprob": -34.272,
+            "quality": "PASS",
+            "output": "The main causes of climate change are:\n\n1. Burning fossil fuels:\n    *   Burning fossil fuels (coal,"
+          },
+          {
+            "prompt_idx": 5,
+            "prompt": "Describe the process of photosynthesis.",
+            "mean_logprob": -0.8188,
+            "n_tokens": 60,
+            "total_logprob": -49.129,
+            "quality": "PASS",
+            "output": "**Photosynthesis is the process by plants use sunlight to create energy from sunlight to create food"
+          },
+          {
+            "prompt_idx": 6,
+            "prompt": "What is the difference between TCP and UDP?",
+            "mean_logprob": -0.7388,
+            "n_tokens": 60,
+            "total_logprob": -44.3274,
+            "quality": "PASS",
+            "output": "**TCP vs UDP?**\n\nTCP (This is the most common confusion point)\n\n-  TCP is connection oriented, UDP i"
+          },
+          {
+            "prompt_idx": 7,
+            "prompt": "Who wrote Romeo and Juliet and what is it about?",
+            "mean_logprob": -0.4091,
+            "n_tokens": 60,
+            "total_logprob": -24.5461,
+            "quality": "PASS",
+            "output": "---\n\nRomeo and Juliet is about a tragic love story set in Verona, and it's about the story of Romeo "
+          },
+          {
+            "prompt_idx": 8,
+            "prompt": "Explain how vaccines work in the human body.",
+            "mean_logprob": -0.8457,
+            "n_tokens": 60,
+            "total_logprob": -50.7427,
+            "quality": "PASS",
+            "output": "The vaccines work by introducing a weakened form of a virus or a virus.\n\nand how the body's immune s"
+          },
+          {
+            "prompt_idx": 9,
+            "prompt": "What is the meaning of the term 'machine learning'",
+            "mean_logprob": -0.6204,
+            "n_tokens": 60,
+            "total_logprob": -37.2244,
+            "quality": "PASS",
+            "output": "The term 'machine learning' is a very important part of the machine learning.\n\nThe term 'machine lea"
+          }
+        ]
+      }
+    ]
+  }
+}

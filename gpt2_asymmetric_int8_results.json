@@ -1,0 +1,65 @@
+[
+  {
+    "name": "bf16 baseline",
+    "method": "direct",
+    "kv_gb": 0.080344,
+    "savings": 0.0,
+    "bf16_equiv_gb": 0.0803,
+    "total_gb": 0.3357,
+    "quality": "REPETITION"
+  },
+  {
+    "name": "sym 8b+8b (direct)",
+    "method": "direct",
+    "kv_gb": 0.072454,
+    "savings": 0.0,
+    "bf16_equiv_gb": 0.0725,
+    "total_gb": 0.3278,
+    "quality": "REPETITION"
+  },
+  {
+    "name": "K=3b V=8b (direct)",
+    "method": "direct",
+    "kv_gb": 0.072176,
+    "savings": 0.0,
+    "bf16_equiv_gb": 0.0722,
+    "total_gb": 0.3275,
+    "quality": "REPETITION"
+  },
+  {
+    "name": "sym int8 8b+8b",
+    "method": "int8",
+    "kv_gb": 0.017547,
+    "savings": 46.9,
+    "bf16_equiv_gb": 0.033,
+    "total_gb": 0.2729,
+    "quality": "PASS"
+  },
+  {
+    "name": "K=4b V=8b (int8)",
+    "method": "int8",
+    "kv_gb": 0.017547,
+    "savings": 46.9,
+    "bf16_equiv_gb": 0.033,
+    "total_gb": 0.2729,
+    "quality": "PASS"
+  },
+  {
+    "name": "K=3b V=8b (int8)",
+    "method": "int8",
+    "kv_gb": 0.017547,
+    "savings": 46.9,
+    "bf16_equiv_gb": 0.033,
+    "total_gb": 0.2729,
+    "quality": "PASS"
+  },
+  {
+    "name": "K=5b V=7b (int8)",
+    "method": "int8",
+    "kv_gb": 0.017547,
+    "savings": 46.9,
+    "bf16_equiv_gb": 0.033,
+    "total_gb": 0.2729,
+    "quality": "PASS"
+  }
+]

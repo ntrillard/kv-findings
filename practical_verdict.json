@@ -1,0 +1,9 @@
+{
+  "finding": "quant_per_channel does not save memory",
+  "implementation_gap": "values quantized but stored in original dtype",
+  "real_savings_with_packed_storage": {
+    "k3v8_vs_bf16": "66%",
+    "k3v8_vs_sym8": "31%"
+  },
+  "recommendation": "Use packed int8 storage (bitsandbytes/torchao) to realize actual memory savings"
+}

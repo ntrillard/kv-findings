@@ -1,0 +1,877 @@
+[
+  {
+    "condition": "bf16 baseline",
+    "k_bits": 16,
+    "v_bits": 16,
+    "token_match_mean": 1.0,
+    "token_match_std": 0.0,
+    "token_match_ci": 0.0,
+    "bleu_mean": 1.0,
+    "bleu_std": 0.0,
+    "bleu_ci": 0.0,
+    "pass_rate": 0.0,
+    "n": 20,
+    "per_prompt": [
+      {
+        "prompt": "Explain quantum computing in simple terms.",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "What is the capital of France and what is it known",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "How does a transformer neural network work?",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "What are the main causes of climate change?",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "Describe the process of photosynthesis.",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "What is the difference between TCP and UDP?",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "Explain how vaccines work in the human body.",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "What is the meaning of the term 'machine learning'",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "# 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1."
+      },
+      {
+        "prompt": "How do search engines rank web pages?",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "Describe the structure of a cell.",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "What is cryptocurrency and how does it work?",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "Explain the concept of supply and demand.",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "How does a car engine work?",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "What is the Fibonacci sequence used for?",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "Describe the lifecycle of a butterfly.",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "What is the difference between HTTP and HTTPS?",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "How do solar panels generate electricity?",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "What are the major organs of the human body?",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "Explain how encryption keeps data secure.",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      },
+      {
+        "prompt": "What is the history of the internet?",
+        "token_match": 1.0,
+        "bleu": 1.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1"
+      }
+    ]
+  },
+  {
+    "condition": "sym int8 8b+8b",
+    "k_bits": 8,
+    "v_bits": 8,
+    "token_match_mean": 0.0194,
+    "token_match_std": 0.0137,
+    "token_match_ci": 0.006,
+    "bleu_mean": 0.0,
+    "bleu_std": 0.0,
+    "bleu_ci": 0.0,
+    "pass_rate": 100.0,
+    "n": 20,
+    "per_prompt": [
+      {
+        "prompt": "Explain quantum computing in simple terms.",
+        "token_match": 0.025,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "Quantum computing is a type of computing that uses quantum-mechanical phenomena,"
+      },
+      {
+        "prompt": "What is the capital of France and what is it known",
+        "token_match": 0.025,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "The capital of France is Paris. It is known for its rich history, art, culture, "
+      },
+      {
+        "prompt": "How does a transformer neural network work?",
+        "token_match": 0.05,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "I am trying to understand how a transformer neural network works. I have read a "
+      },
+      {
+        "prompt": "What are the main causes of climate change?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "Climate change is caused by a variety of factors, including:\n\n1. Greenhouse gas "
+      },
+      {
+        "prompt": "Describe the process of photosynthesis.",
+        "token_match": 0.025,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "Photosynthesis is the process by which plants, algae, and some bacteria convert "
+      },
+      {
+        "prompt": "What is the difference between TCP and UDP?",
+        "token_match": 0.0125,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "TCP and UDP are two different protocols used for transmitting data over a networ"
+      },
+      {
+        "prompt": "Explain how vaccines work in the human body.",
+        "token_match": 0.025,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "Vaccines work by introducing a weakened or inactive form of a pathogen (such as "
+      },
+      {
+        "prompt": "What is the meaning of the term 'machine learning'",
+        "token_match": 0.0125,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "Machine learning is a type of artificial intelligence that enables a computer to"
+      },
+      {
+        "prompt": "How do search engines rank web pages?",
+        "token_match": 0.0125,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "Search engines use a variety of algorithms to rank web pages. The most common al"
+      },
+      {
+        "prompt": "Describe the structure of a cell.",
+        "token_match": 0.025,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "A cell is the basic unit of life. It is the smallest unit of life that is capabl"
+      },
+      {
+        "prompt": "What is cryptocurrency and how does it work?",
+        "token_match": 0.025,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "Cryptocurrency is a digital or virtual currency that uses cryptography for secur"
+      },
+      {
+        "prompt": "Explain the concept of supply and demand.",
+        "token_match": 0.0125,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "The concept of supply and demand is a fundamental economic principle that descri"
+      },
+      {
+        "prompt": "How does a car engine work?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "A car engine is a complex machine that converts the chemical energy stored in ga"
+      },
+      {
+        "prompt": "What is the Fibonacci sequence used for?",
+        "token_match": 0.05,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "The Fibonacci sequence is a series of numbers in which each number is the sum of"
+      },
+      {
+        "prompt": "Describe the lifecycle of a butterfly.",
+        "token_match": 0.025,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "The lifecycle of a butterfly is a fascinating and complex process that involves "
+      },
+      {
+        "prompt": "What is the difference between HTTP and HTTPS?",
+        "token_match": 0.0125,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "?\nHTTP (Hypertext Transfer Protocol) and HTTPS (Hypertext Transfer Protocol Secu"
+      },
+      {
+        "prompt": "How do solar panels generate electricity?",
+        "token_match": 0.0125,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "Solar panels generate electricity by converting sunlight into electrical energy."
+      },
+      {
+        "prompt": "What are the major organs of the human body?",
+        "token_match": 0.0125,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "The major organs of the human body include the heart, lungs, liver, kidneys, spl"
+      },
+      {
+        "prompt": "Explain how encryption keeps data secure.",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "Encryption is a process of converting plain text into a code that can only be re"
+      },
+      {
+        "prompt": "What is the history of the internet?",
+        "token_match": 0.025,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "The internet is a global network of computers that allows people to share inform"
+      }
+    ]
+  },
+  {
+    "condition": "K=5b V=8b (packed)",
+    "k_bits": 5,
+    "v_bits": 8,
+    "token_match_mean": 0.0175,
+    "token_match_std": 0.0251,
+    "token_match_ci": 0.011,
+    "bleu_mean": 0.0,
+    "bleu_std": 0.0,
+    "bleu_ci": 0.0,
+    "pass_rate": 55.0,
+    "n": 20,
+    "per_prompt": [
+      {
+        "prompt": "Explain quantum computing in simple terms.",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "Quantum computing is a new type of computing that uses the principles of quantum"
+      },
+      {
+        "prompt": "What is the capital of France and what is it known",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "The capital of France is Paris. Paris is known for being the cultural, artistic,"
+      },
+      {
+        "prompt": "How does a transformer neural network work?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "How does it work? How does it work? How does it work? How does it work? How does"
+      },
+      {
+        "prompt": "What are the main causes of climate change?",
+        "token_match": 0.0125,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "Climate change is a complex issue that has many causes. The main causes of clima"
+      },
+      {
+        "prompt": "Describe the process of photosynthesis.",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "Photosynthesis is the process by which plants convert light energy from the sun "
+      },
+      {
+        "prompt": "What is the difference between TCP and UDP?",
+        "token_match": 0.025,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "TCP is connection oriented protocol, while UDP is connectionless protocol. TCP i"
+      },
+      {
+        "prompt": "Explain how vaccines work in the human body.",
+        "token_match": 0.025,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "Vaccines work by stimulating the immuneateds immune system to create antibodies."
+      },
+      {
+        "prompt": "What is the meaning of the term 'machine learning'",
+        "token_match": 0.025,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "Machine learning is a type of artificial intelligence that. It is a type of of a"
+      },
+      {
+        "prompt": "How do search engines rank web pages?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "Search engines use a complex algorithm to rank web pages. The determine the most"
+      },
+      {
+        "prompt": "Describe the structure of a cell.",
+        "token_match": 0.0875,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "A cell is the smallest unit of life. It is the smallest unit of life. It is the "
+      },
+      {
+        "prompt": "What is cryptocurrency and how does it work?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "Cryptocurrency is a digital or virtual currency that uses cryptography to secure"
+      },
+      {
+        "prompt": "Explain the concept of supply and demand.",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "The supply and demand are two economic concepts that are used to determine the p"
+      },
+      {
+        "prompt": "How does a car engine work?",
+        "token_match": 0.025,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "?\nA car engine is a machine that converts the energy of the fuel into mechanical"
+      },
+      {
+        "prompt": "What is the Fibonacci sequence used for?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "The Fibonacci sequence is used for many things, but one of is used for to model "
+      },
+      {
+        "prompt": "Describe the lifecycle of a butterfly.",
+        "token_match": 0.075,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "The lifecycle of of of of. The lifecycle of of of. The lifecycle of life. The li"
+      },
+      {
+        "prompt": "What is the difference between HTTP and HTTPS?",
+        "token_match": 0.0125,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "HTTP and HTTPS are both protocols used to transfer data between a web server and"
+      },
+      {
+        "prompt": "How do solar panels generate electricity?",
+        "token_match": 0.0375,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "?\nSolar panels generate electricity by converting sunlight into electricity. The"
+      },
+      {
+        "prompt": "What are the major organs of the human body?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "The major organs of the human body are the heart, lungs, liver, brain, kidneys, "
+      },
+      {
+        "prompt": "Explain how encryption keeps data secure.",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "Encryption is a process of converting data into a code that is unreadable to oth"
+      },
+      {
+        "prompt": "What is the history of the internet?",
+        "token_match": 0.025,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "The internet is a network of networks that connects millions of computers and ot"
+      }
+    ]
+  },
+  {
+    "condition": "K=4b V=8b (packed)",
+    "k_bits": 4,
+    "v_bits": 8,
+    "token_match_mean": 0.0038,
+    "token_match_std": 0.0071,
+    "token_match_ci": 0.0031,
+    "bleu_mean": 0.0,
+    "bleu_std": 0.0,
+    "bleu_ci": 0.0,
+    "pass_rate": 25.0,
+    "n": 20,
+    "per_prompt": [
+      {
+        "prompt": "Explain quantum computing in simple terms.",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "terms quantum computingVILLE\n\n\n\n Quantum computing isQuantum computing is Quantu"
+      },
+      {
+        "prompt": "What is the capital of France and what is it known",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "the is is the capital of France is is is of the the the is of France capital is "
+      },
+      {
+        "prompt": "How does a transformer neural network work?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "neural network is work? neural network neural network work transformer neural ne"
+      },
+      {
+        "prompt": "What are the main causes of climate change?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "main causes of the the main main main the the the main main the the the the main"
+      },
+      {
+        "prompt": "Describe the process of photosynthesis.",
+        "token_match": 0.0125,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "process of photosynthesis.\n\n Photosynthesis is isPhotosynthesis is the the.. Pho"
+      },
+      {
+        "prompt": "What is the difference between TCP and UDP?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "difference between TCP TCP TCP difference between TCP and udp\n difference betwee"
+      },
+      {
+        "prompt": "Explain how vaccines work in the human body.",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "a\n body\n\nV\nV\n\nVVVVVVaccVaccVVVVVVVVVVVVVVVVVVVVVV\n\nVVVVVVVVV\n\n\n\nVVV\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      },
+      {
+        "prompt": "What is the meaning of the term 'machine learning'",
+        "token_match": 0.0125,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "Machine learning a the process of which used the process process of learning is "
+      },
+      {
+        "prompt": "How do search engines rank web pages?",
+        "token_match": 0.0125,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "engines use a a to to rank to rank web pages. engines use algorithms to to analy"
+      },
+      {
+        "prompt": "Describe the structure of a cell.",
+        "token_match": 0.025,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "the of a a cell\n of of of a a a a a a of aThe structure of a cell oftheThe struc"
+      },
+      {
+        "prompt": "What is cryptocurrency and how does it work?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "is is a is a is cryptocurrency cryptocurrency cryptocurrency cryptocurrency cryp"
+      },
+      {
+        "prompt": "Explain the concept of supply and demand.",
+        "token_match": 0.0125,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "of supply and demand.\n\n of supply and demand supply and demand: and the\n1. Expla"
+      },
+      {
+        "prompt": "How does a car engine work?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "car car engine is engine engine engine engine\n a a car engine engine engine carA"
+      },
+      {
+        "prompt": "What is the Fibonacci sequence used for?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "sequence Fibonacci Fibonacci Fibonacci Fibonacci Fibonacci Fibonacci Fibonacci F"
+      },
+      {
+        "prompt": "Describe the lifecycle of a butterfly.",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "of of butterfly\n\n butterfly lifecycle of of butterfly butterfly\n of butterfly of"
+      },
+      {
+        "prompt": "What is the difference between HTTP and HTTPS?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "difference between HTTP and https difference between http and https? difference "
+      },
+      {
+        "prompt": "How do solar panels generate electricity?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": ". panels generate electricity\n\n\n solar solarSolar panels generatesolar panels ss"
+      },
+      {
+        "prompt": "What are the major organs of the human body?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "major organs of the heart, lungs, brain, kidneys,,,,, kidney, liver, kidney,,, k"
+      },
+      {
+        "prompt": "Explain how encryption keeps data secure.",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "text\n\n text\n\nEncryption is Encryption textEncryption is encryption\n\n a howEncryp"
+      },
+      {
+        "prompt": "What is the history of the internet?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "history history of the the the the\n historyThe history history internet isThe hi"
+      }
+    ]
+  },
+  {
+    "condition": "K=3b V=8b (packed)",
+    "k_bits": 3,
+    "v_bits": 8,
+    "token_match_mean": 0.0431,
+    "token_match_std": 0.0644,
+    "token_match_ci": 0.0282,
+    "bleu_mean": 0.0,
+    "bleu_std": 0.0,
+    "bleu_ci": 0.0,
+    "pass_rate": 15.0,
+    "n": 20,
+    "per_prompt": [
+      {
+        "prompt": "Explain quantum computing in simple terms.",
+        "token_match": 0.125,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "computing is a computing computing computing computing computing computing is qu"
+      },
+      {
+        "prompt": "What is the capital of France and what is it known",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "what is the capital of France and what capital of the capital of the capital of "
+      },
+      {
+        "prompt": "How does a transformer neural network work?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "transformer neural network is a type type type of neural network that it neural "
+      },
+      {
+        "prompt": "What are the main causes of climate change?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "What are the causes are the causes of climate change? What causes of climate cha"
+      },
+      {
+        "prompt": "Describe the process of photosynthesis.",
+        "token_match": 0.1,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "the the process of photos the the process of limp\n\nAssistant: Photos.\n\nPhotos pr"
+      },
+      {
+        "prompt": "What is the difference between TCP and UDP?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "TCP ( UDP UDP UDP are TCP the TCP and and UDP are and and and UDP are UDP and an"
+      },
+      {
+        "prompt": "Explain how vaccines work in the human body.",
+        "token_match": 0.15,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "work by the mechanism \n \n How do work work?\n To How How does the human body work"
+      },
+      {
+        "prompt": "What is the meaning of the term 'machine learning'",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "What is the meaning of the term 'machine learning learning'? the the the term 'm"
+      },
+      {
+        "prompt": "How do search engines rank web pages?",
+        "token_match": 0.0125,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "Search engines use a variety of of a variety of a variety of a a a variety a a a"
+      },
+      {
+        "prompt": "Describe the structure of a cell.",
+        "token_match": 0.075,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "the the structure of a theCell of a cell. To understand the of cell of A cell. S"
+      },
+      {
+        "prompt": "What is cryptocurrency and how does it work?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "is how how does works works works work? Cryptocurrency\n? cryptocurrency cryptocu"
+      },
+      {
+        "prompt": "Explain the concept of supply and demand.",
+        "token_match": 0.0125,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "The concept supply supply and The and and. The and and and The The The The The T"
+      },
+      {
+        "prompt": "How does a car engine work?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "A car engine is a car car car a a a a a a a a a a a a a a a a a a a a a a a a a "
+      },
+      {
+        "prompt": "What is the Fibonacci sequence used for?",
+        "token_match": 0.0125,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "sequence used for used for used sequence  used sequence used sequence used? used"
+      },
+      {
+        "prompt": "Describe the lifecycle of a butterfly.",
+        "token_match": 0.025,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "the\n butterfly's the butterfly\n\nTheArray\nArray\n\n\n butterfly lifeTheThe life cycl"
+      },
+      {
+        "prompt": "What is the difference between HTTP and HTTPS?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "What is why why why?\n and: What is the differenceHTTP?: HTTP and HTTP and?\n\n/rou"
+      },
+      {
+        "prompt": "How do solar panels generate electricity?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "Solar panels are made up of do solar panels generate electricity?\nHow do panels "
+      },
+      {
+        "prompt": "What are the major organs of the human body?",
+        "token_match": 0.175,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "The major organs of human body are the heart, lungs lungs lungs lungs body. The "
+      },
+      {
+        "prompt": "Explain how encryption keeps data secure.",
+        "token_match": 0.175,
+        "bleu": 0.0,
+        "quality": "REP",
+        "gen_tokens": 80,
+        "output": "encryption keeps data secure Encryption is Encryption keeps data data. Encryptio"
+      },
+      {
+        "prompt": "What is the history of the internet?",
+        "token_match": 0.0,
+        "bleu": 0.0,
+        "quality": "PASS",
+        "gen_tokens": 80,
+        "output": "How did it start??\n.NET is the internet? What is the internet?The Internet is th"
+      }
+    ]
+  }
+]

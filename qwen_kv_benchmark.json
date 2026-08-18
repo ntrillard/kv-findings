@@ -1,0 +1,112 @@
+[
+  {
+    "name": "fp16",
+    "k_bits": 16,
+    "v_bits": 16,
+    "budget": 0,
+    "vram_16k_gb": 6.524919808,
+    "savings_vs_fp16_pct": 0.0,
+    "fits_10GB": false,
+    "quality": "PASS",
+    "gen_tokens": 150
+  },
+  {
+    "name": "sym 8b+8b",
+    "k_bits": 8,
+    "v_bits": 8,
+    "budget": 16,
+    "vram_16k_gb": 6.526230528,
+    "savings_vs_fp16_pct": -0.020087909714883168,
+    "fits_10GB": false,
+    "quality": "PASS",
+    "gen_tokens": 150
+  },
+  {
+    "name": "K=6b V=8b",
+    "k_bits": 6,
+    "v_bits": 8,
+    "budget": 14,
+    "vram_16k_gb": 6.526230528,
+    "savings_vs_fp16_pct": -0.020087909714883168,
+    "fits_10GB": false,
+    "quality": "PASS",
+    "gen_tokens": 150
+  },
+  {
+    "name": "K=5b V=8b",
+    "k_bits": 5,
+    "v_bits": 8,
+    "budget": 13,
+    "vram_16k_gb": 6.526230528,
+    "savings_vs_fp16_pct": -0.020087909714883168,
+    "fits_10GB": false,
+    "quality": "PASS",
+    "gen_tokens": 150
+  },
+  {
+    "name": "K=4b V=8b",
+    "k_bits": 4,
+    "v_bits": 8,
+    "budget": 12,
+    "vram_16k_gb": 6.526230528,
+    "savings_vs_fp16_pct": -0.020087909714883168,
+    "fits_10GB": false,
+    "quality": "PASS",
+    "gen_tokens": 150
+  },
+  {
+    "name": "K=3b V=8b",
+    "k_bits": 3,
+    "v_bits": 8,
+    "budget": 11,
+    "vram_16k_gb": 6.526230528,
+    "savings_vs_fp16_pct": -0.020087909714883168,
+    "fits_10GB": false,
+    "quality": "PASS",
+    "gen_tokens": 150
+  },
+  {
+    "name": "K=4b V=6b",
+    "k_bits": 4,
+    "v_bits": 6,
+    "budget": 10,
+    "vram_16k_gb": 6.526230528,
+    "savings_vs_fp16_pct": -0.020087909714883168,
+    "fits_10GB": false,
+    "quality": "PASS",
+    "gen_tokens": 150
+  },
+  {
+    "name": "sym 6b+6b",
+    "k_bits": 6,
+    "v_bits": 6,
+    "budget": 12,
+    "vram_16k_gb": 6.526230528,
+    "savings_vs_fp16_pct": -0.020087909714883168,
+    "fits_10GB": false,
+    "quality": "PASS",
+    "gen_tokens": 150
+  },
+  {
+    "name": "K=5b V=7b",
+    "k_bits": 5,
+    "v_bits": 7,
+    "budget": 12,
+    "vram_16k_gb": 6.526230528,
+    "savings_vs_fp16_pct": -0.020087909714883168,
+    "fits_10GB": false,
+    "quality": "PASS",
+    "gen_tokens": 150
+  },
+  {
+    "name": "K=2b V=8b",
+    "k_bits": 2,
+    "v_bits": 8,
+    "budget": 10,
+    "vram_16k_gb": 6.526230528,
+    "savings_vs_fp16_pct": -0.020087909714883168,
+    "fits_10GB": false,
+    "quality": "PASS",
+    "gen_tokens": 150
+  }
+]

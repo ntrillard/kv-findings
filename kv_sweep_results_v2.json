@@ -1,0 +1,465 @@
+{
+  "experiment_id": "selective_kv_quantization_sweep_v2",
+  "date": "2026-08-17 21:19:52",
+  "model": "gpt2",
+  "dtype": "torch.bfloat16",
+  "gen_len": 50,
+  "quant_method": "per-channel min/max",
+  "prompts": [
+    "The process of photosynthesis converts light energy into chemical energy stored in glucose molecules.",
+    "The Roman Empire spanned three continents and lasted for over a thousand years of recorded history.",
+    "Machine learning algorithms learn patterns from data without being explicitly programmed for each task.",
+    "Consciousness remains one of the deepest mysteries in philosophy and cognitive science.",
+    "A well-balanced diet provides the nutrients necessary for proper bodily function and disease prevention."
+  ],
+  "results": [
+    {
+      "k_bits": 2,
+      "v_bits": 2,
+      "total_budget": 4,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.5003406041848724
+    },
+    {
+      "k_bits": 2,
+      "v_bits": 3,
+      "total_budget": 5,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 3.2205432541359125
+    },
+    {
+      "k_bits": 2,
+      "v_bits": 4,
+      "total_budget": 6,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.9104974224688958
+    },
+    {
+      "k_bits": 2,
+      "v_bits": 5,
+      "total_budget": 7,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 3.352842422135892
+    },
+    {
+      "k_bits": 2,
+      "v_bits": 6,
+      "total_budget": 8,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.8230547961062724
+    },
+    {
+      "k_bits": 2,
+      "v_bits": 7,
+      "total_budget": 9,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 3.1002287640580217
+    },
+    {
+      "k_bits": 2,
+      "v_bits": 8,
+      "total_budget": 10,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 3.1669156862251517
+    },
+    {
+      "k_bits": 2,
+      "v_bits": 16,
+      "total_budget": 2,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 3.307837652109278
+    },
+    {
+      "k_bits": 3,
+      "v_bits": 2,
+      "total_budget": 5,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.6869986438568945
+    },
+    {
+      "k_bits": 3,
+      "v_bits": 3,
+      "total_budget": 6,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.589162652988116
+    },
+    {
+      "k_bits": 3,
+      "v_bits": 4,
+      "total_budget": 7,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 3.276846949666043
+    },
+    {
+      "k_bits": 3,
+      "v_bits": 5,
+      "total_budget": 8,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.430242556828879
+    },
+    {
+      "k_bits": 3,
+      "v_bits": 6,
+      "total_budget": 9,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.9360099226942458
+    },
+    {
+      "k_bits": 3,
+      "v_bits": 7,
+      "total_budget": 10,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 3.117543840520685
+    },
+    {
+      "k_bits": 3,
+      "v_bits": 8,
+      "total_budget": 11,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.613396929038169
+    },
+    {
+      "k_bits": 3,
+      "v_bits": 16,
+      "total_budget": 3,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.784734297170457
+    },
+    {
+      "k_bits": 4,
+      "v_bits": 2,
+      "total_budget": 6,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.9104288014377455
+    },
+    {
+      "k_bits": 4,
+      "v_bits": 3,
+      "total_budget": 7,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.615212857338851
+    },
+    {
+      "k_bits": 4,
+      "v_bits": 4,
+      "total_budget": 8,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.948075762677239
+    },
+    {
+      "k_bits": 4,
+      "v_bits": 5,
+      "total_budget": 9,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 3.1642901332969826
+    },
+    {
+      "k_bits": 4,
+      "v_bits": 6,
+      "total_budget": 10,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.932810748879082
+    },
+    {
+      "k_bits": 4,
+      "v_bits": 7,
+      "total_budget": 11,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.81433753155767
+    },
+    {
+      "k_bits": 4,
+      "v_bits": 8,
+      "total_budget": 12,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.8327372741318264
+    },
+    {
+      "k_bits": 4,
+      "v_bits": 16,
+      "total_budget": 4,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.84738596531965
+    },
+    {
+      "k_bits": 5,
+      "v_bits": 2,
+      "total_budget": 7,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 1.920063143193233
+    },
+    {
+      "k_bits": 5,
+      "v_bits": 3,
+      "total_budget": 8,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.8351464868228753
+    },
+    {
+      "k_bits": 5,
+      "v_bits": 4,
+      "total_budget": 9,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.4957863846623622
+    },
+    {
+      "k_bits": 5,
+      "v_bits": 5,
+      "total_budget": 10,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.929876128903925
+    },
+    {
+      "k_bits": 5,
+      "v_bits": 6,
+      "total_budget": 11,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.7024571065167984
+    },
+    {
+      "k_bits": 5,
+      "v_bits": 7,
+      "total_budget": 12,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.600661002768245
+    },
+    {
+      "k_bits": 5,
+      "v_bits": 8,
+      "total_budget": 13,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 3.0388569802721888
+    },
+    {
+      "k_bits": 5,
+      "v_bits": 16,
+      "total_budget": 5,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 3.3358108312248107
+    },
+    {
+      "k_bits": 6,
+      "v_bits": 2,
+      "total_budget": 8,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.217776054900647
+    },
+    {
+      "k_bits": 6,
+      "v_bits": 3,
+      "total_budget": 9,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.8799845704568567
+    },
+    {
+      "k_bits": 6,
+      "v_bits": 4,
+      "total_budget": 10,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.7404971124951554
+    },
+    {
+      "k_bits": 6,
+      "v_bits": 5,
+      "total_budget": 11,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.4204527728549023
+    },
+    {
+      "k_bits": 6,
+      "v_bits": 6,
+      "total_budget": 12,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.7379568271312307
+    },
+    {
+      "k_bits": 6,
+      "v_bits": 7,
+      "total_budget": 13,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.962481513343792
+    },
+    {
+      "k_bits": 6,
+      "v_bits": 8,
+      "total_budget": 14,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.446038054933401
+    },
+    {
+      "k_bits": 6,
+      "v_bits": 16,
+      "total_budget": 6,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 3.400839914495003
+    },
+    {
+      "k_bits": 7,
+      "v_bits": 2,
+      "total_budget": 9,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.12040896803802
+    },
+    {
+      "k_bits": 7,
+      "v_bits": 3,
+      "total_budget": 10,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.8420666703833883
+    },
+    {
+      "k_bits": 7,
+      "v_bits": 4,
+      "total_budget": 11,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.9366690735543997
+    },
+    {
+      "k_bits": 7,
+      "v_bits": 5,
+      "total_budget": 12,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.6022160849836196
+    },
+    {
+      "k_bits": 7,
+      "v_bits": 6,
+      "total_budget": 13,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 3.4333915280306826
+    },
+    {
+      "k_bits": 7,
+      "v_bits": 7,
+      "total_budget": 14,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.270636572207219
+    },
+    {
+      "k_bits": 7,
+      "v_bits": 8,
+      "total_budget": 15,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.4950597700173547
+    },
+    {
+      "k_bits": 7,
+      "v_bits": 16,
+      "total_budget": 7,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.8829528282217654
+    },
+    {
+      "k_bits": 8,
+      "v_bits": 2,
+      "total_budget": 10,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.5147479500840157
+    },
+    {
+      "k_bits": 8,
+      "v_bits": 3,
+      "total_budget": 11,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.904403743066292
+    },
+    {
+      "k_bits": 8,
+      "v_bits": 4,
+      "total_budget": 12,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.8054991771398123
+    },
+    {
+      "k_bits": 8,
+      "v_bits": 5,
+      "total_budget": 13,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.8954060749135424
+    },
+    {
+      "k_bits": 8,
+      "v_bits": 6,
+      "total_budget": 14,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.5802796526320124
+    },
+    {
+      "k_bits": 8,
+      "v_bits": 7,
+      "total_budget": 15,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 3.031471580511706
+    },
+    {
+      "k_bits": 8,
+      "v_bits": 8,
+      "total_budget": 16,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.617749141472079
+    },
+    {
+      "k_bits": 8,
+      "v_bits": 16,
+      "total_budget": 8,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.8654070774636304
+    },
+    {
+      "k_bits": 16,
+      "v_bits": 2,
+      "total_budget": 2,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.166443647739022
+    },
+    {
+      "k_bits": 16,
+      "v_bits": 3,
+      "total_budget": 3,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.6744094801286185
+    },
+    {
+      "k_bits": 16,
+      "v_bits": 4,
+      "total_budget": 4,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.8620339402524615
+    },
+    {
+      "k_bits": 16,
+      "v_bits": 5,
+      "total_budget": 5,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.6290429639722737
+    },
+    {
+      "k_bits": 16,
+      "v_bits": 6,
+      "total_budget": 6,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.2165206558127895
+    },
+    {
+      "k_bits": 16,
+      "v_bits": 7,
+      "total_budget": 7,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 3.4327876354071685
+    },
+    {
+      "k_bits": 16,
+      "v_bits": 8,
+      "total_budget": 8,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.549229196527455
+    },
+    {
+      "k_bits": 16,
+      "v_bits": 16,
+      "total_budget": 0,
+      "ppl_prefill": 36.98366935438845,
+      "ppl_generation": 2.9720292140220574
+    }
+  ]
+}

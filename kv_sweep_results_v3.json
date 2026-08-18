@@ -1,0 +1,458 @@
+{
+  "experiment_id": "selective_kv_quantization_v3_heldout",
+  "date": "2026-08-17 21:23:53",
+  "model": "gpt2",
+  "dtype": "torch.bfloat16",
+  "gen_len": 30,
+  "quant_method": "per-channel min/max",
+  "results": [
+    {
+      "k_bits": 2,
+      "v_bits": 2,
+      "total_budget": 4,
+      "ppl_heldout": 14.014494257886739,
+      "ppl_selfgen": 4.293739546465977
+    },
+    {
+      "k_bits": 2,
+      "v_bits": 3,
+      "total_budget": 5,
+      "ppl_heldout": 6.5711056297955945,
+      "ppl_selfgen": 3.6664826718495767
+    },
+    {
+      "k_bits": 2,
+      "v_bits": 4,
+      "total_budget": 6,
+      "ppl_heldout": 6.020885901492472,
+      "ppl_selfgen": 4.647070055449717
+    },
+    {
+      "k_bits": 2,
+      "v_bits": 5,
+      "total_budget": 7,
+      "ppl_heldout": 5.5753428242126,
+      "ppl_selfgen": 4.5215944201183245
+    },
+    {
+      "k_bits": 2,
+      "v_bits": 6,
+      "total_budget": 8,
+      "ppl_heldout": 5.626401774231685,
+      "ppl_selfgen": 4.710164171336882
+    },
+    {
+      "k_bits": 2,
+      "v_bits": 7,
+      "total_budget": 9,
+      "ppl_heldout": 6.122269961395898,
+      "ppl_selfgen": 3.6513097955404845
+    },
+    {
+      "k_bits": 2,
+      "v_bits": 8,
+      "total_budget": 10,
+      "ppl_heldout": 5.927943590095685,
+      "ppl_selfgen": 4.187016727684204
+    },
+    {
+      "k_bits": 2,
+      "v_bits": 16,
+      "total_budget": 2,
+      "ppl_heldout": 5.740919695754051,
+      "ppl_selfgen": 4.601322669159356
+    },
+    {
+      "k_bits": 3,
+      "v_bits": 2,
+      "total_budget": 5,
+      "ppl_heldout": 11.441925800432099,
+      "ppl_selfgen": 3.988234925651768
+    },
+    {
+      "k_bits": 3,
+      "v_bits": 3,
+      "total_budget": 6,
+      "ppl_heldout": 5.94877302722585,
+      "ppl_selfgen": 4.482410837125477
+    },
+    {
+      "k_bits": 3,
+      "v_bits": 4,
+      "total_budget": 7,
+      "ppl_heldout": 5.638915685292591,
+      "ppl_selfgen": 4.151608955757787
+    },
+    {
+      "k_bits": 3,
+      "v_bits": 5,
+      "total_budget": 8,
+      "ppl_heldout": 5.4012951087680365,
+      "ppl_selfgen": 4.24252855658676
+    },
+    {
+      "k_bits": 3,
+      "v_bits": 6,
+      "total_budget": 9,
+      "ppl_heldout": 5.47163743909679,
+      "ppl_selfgen": 4.4471933928467795
+    },
+    {
+      "k_bits": 3,
+      "v_bits": 7,
+      "total_budget": 10,
+      "ppl_heldout": 5.474005029081315,
+      "ppl_selfgen": 3.8933279591858385
+    },
+    {
+      "k_bits": 3,
+      "v_bits": 8,
+      "total_budget": 11,
+      "ppl_heldout": 5.3162096542773165,
+      "ppl_selfgen": 5.268053368426086
+    },
+    {
+      "k_bits": 3,
+      "v_bits": 16,
+      "total_budget": 3,
+      "ppl_heldout": 5.576261486659133,
+      "ppl_selfgen": 4.573364674959574
+    },
+    {
+      "k_bits": 4,
+      "v_bits": 2,
+      "total_budget": 6,
+      "ppl_heldout": 10.003808314816116,
+      "ppl_selfgen": 4.2827183700663465
+    },
+    {
+      "k_bits": 4,
+      "v_bits": 3,
+      "total_budget": 7,
+      "ppl_heldout": 6.060083903288372,
+      "ppl_selfgen": 5.138888247151562
+    },
+    {
+      "k_bits": 4,
+      "v_bits": 4,
+      "total_budget": 8,
+      "ppl_heldout": 5.598471923658524,
+      "ppl_selfgen": 5.157836565736099
+    },
+    {
+      "k_bits": 4,
+      "v_bits": 5,
+      "total_budget": 9,
+      "ppl_heldout": 5.428041195732874,
+      "ppl_selfgen": 5.716333153388907
+    },
+    {
+      "k_bits": 4,
+      "v_bits": 6,
+      "total_budget": 10,
+      "ppl_heldout": 5.464505135920767,
+      "ppl_selfgen": 5.06309531418467
+    },
+    {
+      "k_bits": 4,
+      "v_bits": 7,
+      "total_budget": 11,
+      "ppl_heldout": 5.558435816249302,
+      "ppl_selfgen": 4.712294940127122
+    },
+    {
+      "k_bits": 4,
+      "v_bits": 8,
+      "total_budget": 12,
+      "ppl_heldout": 5.490334690096217,
+      "ppl_selfgen": 4.5294462290771556
+    },
+    {
+      "k_bits": 4,
+      "v_bits": 16,
+      "total_budget": 4,
+      "ppl_heldout": 5.6474080955667985,
+      "ppl_selfgen": 5.375456370462205
+    },
+    {
+      "k_bits": 5,
+      "v_bits": 2,
+      "total_budget": 7,
+      "ppl_heldout": 10.944710099514694,
+      "ppl_selfgen": 3.4960094767202596
+    },
+    {
+      "k_bits": 5,
+      "v_bits": 3,
+      "total_budget": 8,
+      "ppl_heldout": 5.926644477228862,
+      "ppl_selfgen": 4.398557870065813
+    },
+    {
+      "k_bits": 5,
+      "v_bits": 4,
+      "total_budget": 9,
+      "ppl_heldout": 5.632945570379004,
+      "ppl_selfgen": 4.784083577732367
+    },
+    {
+      "k_bits": 5,
+      "v_bits": 5,
+      "total_budget": 10,
+      "ppl_heldout": 5.591591519195227,
+      "ppl_selfgen": 5.030182859391454
+    },
+    {
+      "k_bits": 5,
+      "v_bits": 6,
+      "total_budget": 11,
+      "ppl_heldout": 5.656963253115565,
+      "ppl_selfgen": 3.876773685668411
+    },
+    {
+      "k_bits": 5,
+      "v_bits": 7,
+      "total_budget": 12,
+      "ppl_heldout": 5.582168026406833,
+      "ppl_selfgen": 4.371290931013317
+    },
+    {
+      "k_bits": 5,
+      "v_bits": 8,
+      "total_budget": 13,
+      "ppl_heldout": 5.573739970247755,
+      "ppl_selfgen": 5.083064888723825
+    },
+    {
+      "k_bits": 5,
+      "v_bits": 16,
+      "total_budget": 5,
+      "ppl_heldout": 5.528871645698335,
+      "ppl_selfgen": 4.125147274929953
+    },
+    {
+      "k_bits": 6,
+      "v_bits": 2,
+      "total_budget": 8,
+      "ppl_heldout": 10.579645258418129,
+      "ppl_selfgen": 3.5888515062139374
+    },
+    {
+      "k_bits": 6,
+      "v_bits": 3,
+      "total_budget": 9,
+      "ppl_heldout": 5.775398488369059,
+      "ppl_selfgen": 5.293769631452303
+    },
+    {
+      "k_bits": 6,
+      "v_bits": 4,
+      "total_budget": 10,
+      "ppl_heldout": 5.529643767119917,
+      "ppl_selfgen": 4.811806554282857
+    },
+    {
+      "k_bits": 6,
+      "v_bits": 5,
+      "total_budget": 11,
+      "ppl_heldout": 5.574413275770996,
+      "ppl_selfgen": 4.692976362032821
+    },
+    {
+      "k_bits": 6,
+      "v_bits": 6,
+      "total_budget": 12,
+      "ppl_heldout": 5.621704646643972,
+      "ppl_selfgen": 4.828980675448573
+    },
+    {
+      "k_bits": 6,
+      "v_bits": 7,
+      "total_budget": 13,
+      "ppl_heldout": 5.484146048941857,
+      "ppl_selfgen": 4.6613219798062815
+    },
+    {
+      "k_bits": 6,
+      "v_bits": 8,
+      "total_budget": 14,
+      "ppl_heldout": 5.648989139791032,
+      "ppl_selfgen": 4.956490392620586
+    },
+    {
+      "k_bits": 6,
+      "v_bits": 16,
+      "total_budget": 6,
+      "ppl_heldout": 5.556232584067827,
+      "ppl_selfgen": 3.907552318755447
+    },
+    {
+      "k_bits": 7,
+      "v_bits": 2,
+      "total_budget": 9,
+      "ppl_heldout": 10.692146875771487,
+      "ppl_selfgen": 3.8857187466738545
+    },
+    {
+      "k_bits": 7,
+      "v_bits": 3,
+      "total_budget": 10,
+      "ppl_heldout": 5.931508982304232,
+      "ppl_selfgen": 4.387758359673475
+    },
+    {
+      "k_bits": 7,
+      "v_bits": 4,
+      "total_budget": 11,
+      "ppl_heldout": 5.5701560195955615,
+      "ppl_selfgen": 4.8105701479465655
+    },
+    {
+      "k_bits": 7,
+      "v_bits": 5,
+      "total_budget": 12,
+      "ppl_heldout": 5.510925021201039,
+      "ppl_selfgen": 4.573687848934568
+    },
+    {
+      "k_bits": 7,
+      "v_bits": 6,
+      "total_budget": 13,
+      "ppl_heldout": 5.755109873299365,
+      "ppl_selfgen": 4.846678615909456
+    },
+    {
+      "k_bits": 7,
+      "v_bits": 7,
+      "total_budget": 14,
+      "ppl_heldout": 5.639809234037553,
+      "ppl_selfgen": 4.964433024951011
+    },
+    {
+      "k_bits": 7,
+      "v_bits": 8,
+      "total_budget": 15,
+      "ppl_heldout": 5.523925646091504,
+      "ppl_selfgen": 4.693573687034305
+    },
+    {
+      "k_bits": 7,
+      "v_bits": 16,
+      "total_budget": 7,
+      "ppl_heldout": 5.520743191141487,
+      "ppl_selfgen": 4.273372934410906
+    },
+    {
+      "k_bits": 8,
+      "v_bits": 2,
+      "total_budget": 10,
+      "ppl_heldout": 11.215535149706367,
+      "ppl_selfgen": 3.215625746730319
+    },
+    {
+      "k_bits": 8,
+      "v_bits": 3,
+      "total_budget": 11,
+      "ppl_heldout": 5.844750044860052,
+      "ppl_selfgen": 4.904414140269318
+    },
+    {
+      "k_bits": 8,
+      "v_bits": 4,
+      "total_budget": 12,
+      "ppl_heldout": 5.512375925886537,
+      "ppl_selfgen": 4.984746428706593
+    },
+    {
+      "k_bits": 8,
+      "v_bits": 5,
+      "total_budget": 13,
+      "ppl_heldout": 5.635705964825538,
+      "ppl_selfgen": 4.202477278460863
+    },
+    {
+      "k_bits": 8,
+      "v_bits": 6,
+      "total_budget": 14,
+      "ppl_heldout": 5.607625019237437,
+      "ppl_selfgen": 4.513114347249003
+    },
+    {
+      "k_bits": 8,
+      "v_bits": 7,
+      "total_budget": 15,
+      "ppl_heldout": 5.521319477594759,
+      "ppl_selfgen": 4.072326502609417
+    },
+    {
+      "k_bits": 8,
+      "v_bits": 8,
+      "total_budget": 16,
+      "ppl_heldout": 5.577728210665462,
+      "ppl_selfgen": 4.743325139874796
+    },
+    {
+      "k_bits": 8,
+      "v_bits": 16,
+      "total_budget": 8,
+      "ppl_heldout": 5.517597982356124,
+      "ppl_selfgen": 4.4799811185754415
+    },
+    {
+      "k_bits": 16,
+      "v_bits": 2,
+      "total_budget": 2,
+      "ppl_heldout": 11.003665427031905,
+      "ppl_selfgen": 4.22211513098056
+    },
+    {
+      "k_bits": 16,
+      "v_bits": 3,
+      "total_budget": 3,
+      "ppl_heldout": 6.058595730041234,
+      "ppl_selfgen": 4.656054715030403
+    },
+    {
+      "k_bits": 16,
+      "v_bits": 4,
+      "total_budget": 4,
+      "ppl_heldout": 5.464712942961219,
+      "ppl_selfgen": 5.715855752479726
+    },
+    {
+      "k_bits": 16,
+      "v_bits": 5,
+      "total_budget": 5,
+      "ppl_heldout": 5.361734225398069,
+      "ppl_selfgen": 4.453516137005312
+    },
+    {
+      "k_bits": 16,
+      "v_bits": 6,
+      "total_budget": 6,
+      "ppl_heldout": 5.596539757511798,
+      "ppl_selfgen": 4.74455475541658
+    },
+    {
+      "k_bits": 16,
+      "v_bits": 7,
+      "total_budget": 7,
+      "ppl_heldout": 5.580661358223084,
+      "ppl_selfgen": 4.1290176280051725
+    },
+    {
+      "k_bits": 16,
+      "v_bits": 8,
+      "total_budget": 8,
+      "ppl_heldout": 5.4533036625076905,
+      "ppl_selfgen": 4.7217011778273275
+    },
+    {
+      "k_bits": 16,
+      "v_bits": 16,
+      "total_budget": 0,
+      "ppl_heldout": 5.525173902527869,
+      "ppl_selfgen": 4.230250399332631
+    }
+  ]
+}
