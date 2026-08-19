@@ -249,6 +249,168 @@ def quant_learned(k: torch.Tensor, W: torch.Tensor, bits: int,
 
 
 # -------------------------------------------------------------------------------
+# Novel concept 1: attention-aware learned transform
+# -------------------------------------------------------------------------------
+def learn_attention_aware_transform(k_calib: List[torch.Tensor],
+                                    v_calib: List[torch.Tensor],
+                                    model,
+                                    input_ids: torch.Tensor,
+                                    bits: int = 6,
+                                    n_iter: int = 30,
+                                    lr: float = 0.05) -> List[torch.Tensor]:
+    """
+    Learn a per-layer orthogonal transform that minimizes final-logit error
+    on a calibration step, rather than K reconstruction error.
+
+    Uses gradient-free coordinate descent via Givens rotations in the
+    PCA-initialized basis. Keeps W orthogonal by updating angles.
+    """
+    from transformers import DynamicCache
+    nl = len(k_calib)
+    W_list = learn_layer_transforms(k_calib, per_head=False)
+
+    # Reference logits for the calibration step
+    ref_cache = DynamicCache()
+    for li in range(nl):
+        ref_cache.update(k_calib[li].contiguous(), v_calib[li].contiguous(), li)
+    nid = input_ids[:, -1:]
+    with torch.no_grad():
+        ref_out = model(nid, use_cache=True, past_key_values=ref_cache)
+    ref_logits = ref_out.logits[:, -1, :].detach().float()
+
+    def loss_for_W(W_list):
+        quant_cache = DynamicCache()
+        for li in range(nl):
+            kq = quant_learned(k_calib[li], W_list[li], bits, per_head=False)
+            quant_cache.update(kq.contiguous(), v_calib[li].contiguous(), li)
+        with torch.no_grad():
+            q_out = model(nid, use_cache=True, past_key_values=quant_cache)
+        q_logits = q_out.logits[:, -1, :].float()
+        return ((ref_logits - q_logits) ** 2).mean().item()
+
+    # Coordinate descent over random Givens rotations in random layers.
+    best_loss = loss_for_W(W_list)
+    best_W = [W.clone() for W in W_list]
+    rng = torch.Generator(device="cpu").manual_seed(0)
+    for it in range(n_iter):
+        li = torch.randint(0, nl, (1,), generator=rng).item()
+        D = W_list[li].shape[0]
+        i, j = torch.randperm(D, generator=rng)[:2].tolist()
+        theta = torch.empty(1, dtype=torch.float32).uniform_(-lr, lr, generator=rng).item()
+        c, s = math.cos(theta), math.sin(theta)
+        G = torch.eye(D, device=DEVICE, dtype=torch.float32)
+        G[i, i], G[i, j], G[j, i], G[j, j] = c, -s, s, c
+        W_list[li] = G @ W_list[li]
+        loss = loss_for_W(W_list)
+        if loss < best_loss:
+            best_loss = loss
+            best_W = [W.clone() for W in W_list]
+        else:
+            # revert
+            W_list[li] = best_W[li].clone()
+    return best_W
+
+
+# -------------------------------------------------------------------------------
+# Novel concept 2: RoPE-native 2-D block polar transform
+# -------------------------------------------------------------------------------
+def quant_rope_2d_polar(k: torch.Tensor, mag_bits: int, angle_bits: int) -> torch.Tensor:
+    """
+    Group adjacent head_dim dimensions into 2-D RoPE-coupled pairs and
+    quantize radius/angle per pair. For head_dim not divisible by 2, the
+    last dimension is left unchanged.
+    """
+    kf = k.float()
+    D = kf.shape[-1]
+    if D % 2 != 0:
+        # Even D expected for RoPE pairs; fall back to raw quant for last dim.
+        even_part = quant_rope_2d_polar(kf[..., :-1], mag_bits, angle_bits)
+        last = fake_quantize(kf[..., -1:], mag_bits, dim=-1)
+        return torch.cat([even_part, last], dim=-1).to(k.dtype)
+
+    # Reshape to (..., D/2, 2)
+    shape = kf.shape
+    x = kf.reshape(*shape[:-1], D // 2, 2)
+    real = x[..., 0]
+    imag = x[..., 1]
+    mag = torch.sqrt(real ** 2 + imag ** 2 + 1e-12)
+    ang = torch.atan2(imag, real)
+    mag_q = fake_quantize(mag, mag_bits, dim=-1)
+    ang_q = fake_quantize(ang, angle_bits, dim=-1)
+    rec = torch.stack([mag_q * torch.cos(ang_q), mag_q * torch.sin(ang_q)], dim=-1)
+    return rec.reshape(shape).to(k.dtype)
+
+
+# -------------------------------------------------------------------------------
+# Novel concept 3: adaptive bit allocation across layers
+# -------------------------------------------------------------------------------
+def measure_layer_sensitivity(model, ref_k, ref_v, ids, base_bits: int = 6):
+    """
+    For each layer, measure logit-rel-RMSE when only that layer is quantized.
+    Returns a list of sensitivities (higher = more damage from quantization).
+    """
+    from transformers import DynamicCache
+    nl = len(ref_k)
+    # reference logits
+    ref_cache = DynamicCache()
+    for li in range(nl):
+        ref_cache.update(ref_k[li].contiguous(), ref_v[li].contiguous(), li)
+    nid = ids[:, -1:]
+    with torch.no_grad():
+        ref_out = model(nid, use_cache=True, past_key_values=ref_cache)
+    ref_logits = ref_out.logits[:, -1, :].float()
+
+    sensitivities = []
+    for li in range(nl):
+        quant_cache = DynamicCache()
+        for lj in range(nl):
+            if lj == li:
+                kq = fake_quantize(ref_k[lj], base_bits, dim=-1)
+            else:
+                kq = ref_k[lj]
+            quant_cache.update(kq.contiguous(), ref_v[lj].contiguous(), lj)
+        with torch.no_grad():
+            q_out = model(nid, use_cache=True, past_key_values=quant_cache)
+        q_logits = q_out.logits[:, -1, :].float()
+        err = ((ref_logits - q_logits) ** 2).mean().sqrt().item()
+        sensitivities.append(err)
+    return sensitivities
+
+
+def allocate_bits(sensitivities: List[float], total_bits: int,
+                  min_bits: int = 4, max_bits: int = 10) -> List[int]:
+    """
+    Allocate integer bits per layer proportional to sensitivity, clipped to
+    [min_bits, max_bits], with the total budget enforced.
+    """
+    s = np.array(sensitivities)
+    s = s / (s.sum() + 1e-12)
+    alloc = (s * total_bits).round().astype(int)
+    alloc = np.clip(alloc, min_bits, max_bits)
+    # Greedy fix to hit exact total
+    diff = total_bits - alloc.sum()
+    order = np.argsort(sensitivities)
+    idx = 0
+    while diff != 0 and idx < len(order):
+        i = order[idx] if diff > 0 else order[-1 - idx]
+        if diff > 0 and alloc[i] < max_bits:
+            alloc[i] += 1
+            diff -= 1
+        elif diff < 0 and alloc[i] > min_bits:
+            alloc[i] -= 1
+            diff += 1
+        else:
+            idx += 1
+    return alloc.tolist()
+
+
+def quant_adaptive_per_layer(k_list: List[torch.Tensor],
+                             bits_per_layer: List[int]) -> List[torch.Tensor]:
+    """Apply per-layer raw quantization with the given bit budget."""
+    return [fake_quantize(k, bits_per_layer[li], dim=-1) for li, k in enumerate(k_list)]
+
+
+# -------------------------------------------------------------------------------
 # Attention-visible distortion metrics
 # -------------------------------------------------------------------------------
 @torch.no_grad()
@@ -420,10 +582,13 @@ class Method:
 
 
 def make_methods(total_rate: int = TOTAL_RATE,
-                 learned_transforms: Dict[str, List[torch.Tensor]] = None) -> List[Method]:
+                 learned_transforms: Dict[str, List[torch.Tensor]] = None,
+                 attention_aware_transforms: Dict[str, List[torch.Tensor]] = None,
+                 adaptive_bits_per_layer: List[int] = None) -> List[Method]:
     """Build the set of conditions for the mechanism-control experiment."""
     methods: List[Method] = []
     learned_transforms = learned_transforms or {}
+    attention_aware_transforms = attention_aware_transforms or {}
 
     # Baselines
     methods.append(Method("fp16 baseline", lambda k: k, 16.0))
@@ -513,6 +678,43 @@ def make_methods(total_rate: int = TOTAL_RATE,
             layer_fns=layer_fns
         ))
 
+    # 5. Attention-aware learned transform controls
+    for name, W_list in attention_aware_transforms.items():
+        bits = total_rate // 2
+        layer_fns = [
+            (lambda k, W=W_list[li], b=bits:
+             quant_learned(k, W, b, per_head=False))
+            for li in range(len(W_list))
+        ]
+        methods.append(Method(
+            f"attention-aware {name} {bits}-bit",
+            fn=layer_fns[0],
+            nominal_rate=total_rate,
+            layer_fns=layer_fns
+        ))
+
+    # 6. RoPE-native 2-D block polar control
+    methods.append(Method(
+        "RoPE 2D polar mag4+angle8",
+        lambda k: quant_rope_2d_polar(k, 4, 8),
+        nominal_rate=12.0
+    ))
+
+    # 7. Adaptive bit allocation control
+    if adaptive_bits_per_layer is not None:
+        total = sum(adaptive_bits_per_layer)
+        layer_fns = [
+            (lambda k, b=adaptive_bits_per_layer[li]:
+             fake_quantize(k, b, dim=-1))
+            for li in range(len(adaptive_bits_per_layer))
+        ]
+        methods.append(Method(
+            f"adaptive raw bits (avg {total/len(adaptive_bits_per_layer):.1f})",
+            fn=layer_fns[0],
+            nominal_rate=total / len(adaptive_bits_per_layer),
+            layer_fns=layer_fns
+        ))
+
     return methods
 
 
@@ -546,13 +748,21 @@ def run(model_id: str = None, prompts: List[str] = None):
     test_prompts = prompts[n_calib:]
     print(f"Calibration prompts: {n_calib}, test prompts: {len(test_prompts)}")
 
-    print("Learning per-layer orthogonal transforms from calibration prompts...")
+    print("Collecting calibration K/V...")
     calib_k: List[List[torch.Tensor]] = [[] for _ in range(model.config.num_hidden_layers)]
+    calib_v: List[List[torch.Tensor]] = [[] for _ in range(model.config.num_hidden_layers)]
+    calib_ids_list = []
     for prompt in calib_prompts:
-        ref_k, _, _, _ = build_reference(model, tok, prompt)
+        ref_k, ref_v, ids, _ = build_reference(model, tok, prompt)
+        calib_ids_list.append(ids)
         for li, k in enumerate(ref_k):
             calib_k[li].append(k)
+            calib_v[li].append(ref_v[li])
     calib_k_stacked = [torch.cat(calib_k[li], dim=2) for li in range(len(calib_k))]
+    calib_v_stacked = [torch.cat(calib_v[li], dim=2) for li in range(len(calib_v))]
+    print("Done.")
+
+    print("Learning per-layer orthogonal transforms...")
     W_per_layer = learn_layer_transforms(calib_k_stacked, per_head=False)
     W_per_head = learn_layer_transforms(calib_k_stacked, per_head=True)
     learned_transforms = {
@@ -561,7 +771,34 @@ def run(model_id: str = None, prompts: List[str] = None):
     }
     print("Done.")
 
-    methods = make_methods(learned_transforms=learned_transforms)
+    print("Learning attention-aware per-layer transforms...")
+    # Use the first calibration prompt's ids as the calibration step
+    W_attn_aware = learn_attention_aware_transform(
+        calib_k_stacked, calib_v_stacked, model, calib_ids_list[0],
+        bits=TOTAL_RATE // 2, n_iter=30, lr=0.05
+    )
+    attention_aware_transforms = {
+        "per-layer": W_attn_aware,
+    }
+    print("Done.")
+
+    print("Computing adaptive bit allocation...")
+    sensitivities = measure_layer_sensitivity(
+        model, calib_k_stacked, calib_v_stacked, calib_ids_list[0],
+        base_bits=TOTAL_RATE // 2
+    )
+    # Target: same total bits as uniform 6-bit across all layers
+    total_bit_budget = (TOTAL_RATE // 2) * len(calib_k_stacked)
+    adaptive_bits = allocate_bits(sensitivities, total_bit_budget,
+                                  min_bits=4, max_bits=10)
+    print(f"Adaptive bits per layer (first 5): {adaptive_bits[:5]}")
+    print("Done.")
+
+    methods = make_methods(
+        learned_transforms=learned_transforms,
+        attention_aware_transforms=attention_aware_transforms,
+        adaptive_bits_per_layer=adaptive_bits,
+    )
 
     all_results: List[Dict] = []
     for pi, prompt in enumerate(test_prompts):

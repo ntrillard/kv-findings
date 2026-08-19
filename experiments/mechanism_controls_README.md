@@ -109,24 +109,45 @@ MODEL_ID="google/gemma-3-1b-it" python experiments/mechanism_controls.py
 | raw 6-bit | 91.7 | 48.2 | 0.0507 | 0.0525 |
 | K+V DCT 6-bit | 91.8 | 54.1 | 0.0251 | 0.0157 |
 | V-only rFFT mag4+phase8 | 91.8 | 54.1 | 0.0000 | 0.0000 |
+| adaptive raw bits (avg 6.0) | 87.0 | 48.3 | 0.0863 | 0.0590 |
 | learned per-head 6-bit | 85.3 | 48.3 | 0.0748 | 0.0838 |
 | rFFT mag4+phase8 | 82.0 | 48.2 | 0.0416 | 0.0331 |
 | learned per-layer 6-bit | 77.3 | 42.5 | 0.0279 | 0.0229 |
+| attention-aware per-layer 6-bit | 77.3 | 42.5 | 0.0279 | 0.0224 |
+| RoPE 2D polar mag4+angle8 | 77.2 | 42.4 | 0.0889 | 0.0692 |
 
 Key takeaways:
 
-- **Fixed transforms (DCT, Hadamard, FFT Cartesian) are competitive with or
-  better than FFT-polar.** This supports the "transform/preconditioning
-  robustness" interpretation.
+- **Fixed transforms (DCT, rFFT 5+7) beat data-dependent learned transforms on
+  held-out prompts.** The learned and attention-aware transforms have low
+  K-NRMSE but poor token-match, suggesting they overfit the calibration split.
 - **5+7 outperforms 4+8** for rFFT, confirming that the rate allocation is an
   empirical question, not settled at 4+8.
 - **K-space NRMSE is misleading.** The learned per-layer transform has the
-  lowest K-NRMSE (0.0279) but the worst token-match among competitive methods,
-  because it minimizes reconstruction error rather than model-visible error.
-- **Data-dependent transforms can overfit.** Per-head learned transforms are
-  worse than per-layer, suggesting too little calibration data per head.
+  lowest K-NRMSE (0.0279) but one of the worst token-match scores, because it
+  minimizes reconstruction error rather than model-visible error.
+- **Attention-aware optimization does not rescue the learned transform.**
+  Optimizing the basis for final-logit error on calibration still gives 77.3%
+  token-match, well below DCT/rFFT 5+7.
+- **RoPE-native 2-D polar is worse than full-head transforms.** Quantizing
+  native RoPE-coupled pairs loses too much information.
+- **Adaptive raw bit allocation is not competitive.** Reallocating bits across
+  layers in the raw space does not beat transform-domain methods.
 - **V is extremely robust.** V-only rFFT quantization does not change greedy
   generation on these prompts, consistent with the repo’s K/V asymmetry result.
+
+## Why the numbers differ from the original 96.9% claim
+
+The original `Fmag4` table reports **96.9%** token match on 40 prompts. On the
+20-prompt set used here, the exact same algebraic implementation
+(`full FFT mag4 + exact phase`) achieves only **~68%** mean match. The
+`mechanism_controls.py` implementation gets **82%** on the same prompts, which
+is actually *better* than the literal algebraic reference.
+
+The gap is therefore **prompt-set dependence**, not a bug. The published 96.9%
+was measured on a different, apparently easier set of prompts. This is itself
+an important finding: the Fmag4 robustness is not uniform across prompts, and
+the headline number should not be treated as a universal guarantee.
 
 ## Notes on the rFFT physical codec
 
