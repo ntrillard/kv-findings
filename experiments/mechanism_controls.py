@@ -288,18 +288,22 @@ def build_reference(model, tok, prompt: str) -> Tuple[List[torch.Tensor],
     return ref_k, ref_v, ids, out.logits[:, -1, :].argmax(dim=-1, keepdim=True)
 
 
-def generate_with_k_intervention(model, tok, ref_k: List[torch.Tensor],
-                                 ref_v: List[torch.Tensor],
-                                 ids: torch.Tensor,
-                                 quant_fn: Callable[[torch.Tensor], torch.Tensor],
-                                 max_new: int = MAX_NEW) -> torch.Tensor:
-    """Greedy generation with quantized K at every step. V is untouched."""
+def generate_with_kv_intervention(model, tok,
+                                  ref_k: List[torch.Tensor],
+                                  ref_v: List[torch.Tensor],
+                                  ids: torch.Tensor,
+                                  k_quant_fn: Callable[[torch.Tensor], torch.Tensor],
+                                  v_quant_fn: Callable[[torch.Tensor], torch.Tensor] = None,
+                                  max_new: int = MAX_NEW) -> torch.Tensor:
+    """Greedy generation with optional K and V quantization at every step."""
     from transformers import DynamicCache
     nl = len(ref_k)
+    v_quant_fn = v_quant_fn or (lambda v: v)
     cache = DynamicCache()
     for li in range(nl):
-        kq = quant_fn(ref_k[li]).contiguous()
-        cache.update(kq, ref_v[li].contiguous(), li)
+        kq = k_quant_fn(ref_k[li]).contiguous()
+        vq = v_quant_fn(ref_v[li]).contiguous()
+        cache.update(kq, vq, li)
 
     gen = ids.clone()
     nid = ids[:, -1:]
@@ -309,14 +313,15 @@ def generate_with_k_intervention(model, tok, ref_k: List[torch.Tensor],
         nid = out.logits[:, -1, :].argmax(dim=-1, keepdim=True)
         gen = torch.cat([gen, nid], dim=1)
 
-        # quantize newly appended K, leave V intact
+        # quantize newly appended K and/or V
         pk = list(out.past_key_values)
         cache = DynamicCache()
         for li in range(nl):
             k_new = pk[li][0][:, :, -1:, :]
             v_new = pk[li][1][:, :, -1:, :]
-            kq = quant_fn(k_new).contiguous()
-            cache.update(kq, v_new.contiguous(), li)
+            kq = k_quant_fn(k_new).contiguous()
+            vq = v_quant_fn(v_new).contiguous()
+            cache.update(kq, vq, li)
 
         if nid.item() == tok.eos_token_id:
             break
@@ -347,6 +352,7 @@ class Method:
     name: str
     fn: Callable[[torch.Tensor], torch.Tensor]
     nominal_rate: float   # bits per unique transformed coefficient / scalar
+    v_fn: Callable[[torch.Tensor], torch.Tensor] = None  # if None, V is left untouched
 
 
 def make_methods(total_rate: int = TOTAL_RATE) -> List[Method]:
@@ -403,6 +409,28 @@ def make_methods(total_rate: int = TOTAL_RATE) -> List[Method]:
         nominal_rate=12.0
     ))
 
+    # 3. K+V vs K-only vs V-only novel controls
+    # Same transform applied to both K and V; this tests whether the
+    # preconditioning robustness generalizes to V.
+    methods.append(Method(
+        "K+V rFFT mag4+phase8",
+        lambda k: quant_rfft_polar(k, 4, 8, "direct"),
+        nominal_rate=12.0,
+        v_fn=lambda v: quant_rfft_polar(v, 4, 8, "direct")
+    ))
+    methods.append(Method(
+        "K+V DCT 6-bit",
+        lambda k: quant_dct(k, half_rate),
+        nominal_rate=total_rate,
+        v_fn=lambda v: quant_dct(v, half_rate)
+    ))
+    methods.append(Method(
+        "V-only rFFT mag4+phase8",
+        lambda k: k,
+        nominal_rate=12.0,
+        v_fn=lambda v: quant_rfft_polar(v, 4, 8, "direct")
+    ))
+
     return methods
 
 
@@ -436,8 +464,10 @@ def run(model_id: str = None, prompts: List[str] = None):
         ref_k, ref_v, ids, _ = build_reference(model, tok, prompt)
 
         # Reference generation
-        ref_gen = generate_with_k_intervention(model, tok, ref_k, ref_v, ids,
-                                               lambda k: k, MAX_NEW)
+        ref_gen = generate_with_kv_intervention(model, tok, ref_k, ref_v, ids,
+                                                k_quant_fn=lambda k: k,
+                                                v_quant_fn=lambda v: v,
+                                                max_new=MAX_NEW)
         ref_text = tok.decode(ref_gen[0], skip_special_tokens=True)
         ref_out = ref_text[len(prompt):].strip()
         ref_tokens = tok(ref_out, return_tensors="pt").input_ids[0]
@@ -445,15 +475,18 @@ def run(model_id: str = None, prompts: List[str] = None):
         for method in methods:
             print(f"  {method.name:<35} ...", end="", flush=True)
             try:
-                hyp_ids = generate_with_k_intervention(
-                    model, tok, ref_k, ref_v, ids, method.fn, MAX_NEW
+                hyp_ids = generate_with_kv_intervention(
+                    model, tok, ref_k, ref_v, ids,
+                    k_quant_fn=method.fn,
+                    v_quant_fn=method.v_fn,
+                    max_new=MAX_NEW
                 )
                 hyp_text = tok.decode(hyp_ids[0], skip_special_tokens=True)
                 hyp_out = hyp_text[len(prompt):].strip()
                 hyp_tokens = tok(hyp_out, return_tensors="pt").input_ids[0]
                 m, n, first_div = token_match(ref_tokens, hyp_tokens)
 
-                # Quantize the cached K once for distortion metrics
+                # Quantize the cached K once for distortion metrics (V untouched here)
                 quant_k = [method.fn(k) for k in ref_k]
                 metrics = compute_metrics(model, ref_k, quant_k, ref_v, ids)
 
