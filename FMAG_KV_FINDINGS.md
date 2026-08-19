@@ -73,31 +73,43 @@ Fmag4 doubles the maximum context length at the same total memory budget.
 
 Follow-up experiments in this repo (`experiments/fmag_ablation.py` and
 `experiments/mechanism_controls.py`) did not reproduce the exact 96.9% number on
-a different 20-prompt set with the literal 4-bit per-token recipe:
+a different 20-prompt set with the literal 4-bit per-token recipe. A token-
+comparison bug (stripping the prompt string from decoded text) initially
+inflated some numbers; corrected results compare generated token IDs directly.
 
 | Method (Gemma-3-1B, 20 prompts) | Match% |
 |---|---:|---:|
 | Fmag4 per-token (literal algebraic implementation) | ~68% |
-| Fmag4 per-token (`mechanism_controls.py`) | 82.0% |
-| Fmag4 per-token (`fmag_ablation.py`, all 20 prompts) | 86.1% |
-| **Fmag6 global** | **95.2%** (held-out) / **97.6%** (all prompts) |
+| Fmag4 per-token (`mechanism_controls.py`) | 85.3% |
+| Fmag4 per-token (`fmag_ablation.py`, all 20 prompts) | 85.3% |
+| rFFT mag5+phase7 (`mechanism_controls.py`, held-out) | **95.3%** |
+| raw 6-bit (`mechanism_controls.py`, held-out) | 94.7% |
+| Fmag6 per-token (`fmag_ablation.py`, all 20 prompts) | 95.2% |
+| Fmag6 global (`fmag_ablation.py`, all 20 prompts) | 92.8% |
+| Fmag6 global (`fmag_ablation.py`, 150 tokens) | 92.6% |
 
 Key additional findings:
 
-1. **Magnitude scaling mode matters significantly.** Global or per-frequency
-   scaling is much better than per-token scaling. `Fmag6 global` reaches 95.2%
-   on held-out prompts, close to the original 96.9% headline.
-2. **The sweet spot is 5-6 magnitude bits, not 4.** `Fmag4` is fragile on the
-   new prompt set; `Fmag5` and `Fmag6` are substantially more robust.
-3. **rFFT and full FFT are equivalent** for this task.
-4. **Fixed transforms (DCT, rFFT 5+7) are competitive with Fmag**, so the
+1. **The best fixed method is rFFT mag5+phase7**, not 4-bit exact-phase Fmag.
+   It reaches **95.3%** match on held-out prompts, close to the original 96.9%
+   headline but with quantized phase and a different bit split.
+2. **Raw 6-bit quantization is surprisingly strong** (94.7% on held-out prompts),
+   suggesting the Fourier transform's advantage over simple quantization is
+   smaller than the original story implied.
+3. **Global magnitude scaling is not a clear win.** It helps at 8-bit (95.2%)
+   but hurts at 4-bit and 6-bit relative to per-token scaling. The interaction
+   between bit width and scaling mode is important.
+4. **The sweet spot is 5-6 bits, not 4.** `Fmag4` is fragile on the new prompt
+   set (85.3%); `Fmag5` and `Fmag6` are substantially more robust.
+5. **rFFT and full FFT are equivalent** for this task.
+6. **Fixed transforms (DCT, rFFT 5+7) are competitive with Fmag**, so the
    Fourier-specific effect is not uniquely superior to other orthogonal
    preconditioners.
-5. **V is extremely robust** to quantization; most of the action is in K.
+7. **V is extremely robust** to quantization; most of the action is in K.
 
 The original 96.9% is therefore best interpreted as either prompt-set dependent,
-or as reflecting an effective global/per-frequency scaling strategy, rather than
-a universal guarantee of 4-bit per-token Fmag4.
+or as reflecting a 5+7 polar allocation rather than the literal 4-bit exact-
+phase Fmag4 recipe.
 
 ## Limitations
 

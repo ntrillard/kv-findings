@@ -1,11 +1,16 @@
 # Mechanism Controls for Fmag KV Quantization
 
-This experiment implements the three controls discussed for separating the
-Fourier-magnitude KV-cache observation into testable branches.
+This experiment implements controls for separating the Fourier-magnitude
+KV-cache observation into testable branches.
 
 > **Note:** the script loads models with `attn_implementation="eager"` so that
 > attention weights can be returned for the JS/QK-MSE diagnostics. SDPA does not
 > support `output_attentions=True`, so eager mode is required for those metrics.
+>
+> **Token matching fix:** earlier versions compared decoded text after stripping
+> the prompt string (`text[len(prompt):]`). The current version compares
+> generated token IDs directly (`gen_ids[prompt_len:]`). Numbers below reflect
+> the corrected comparison.
 
 ## What it tests
 
@@ -13,12 +18,11 @@ Fourier-magnitude KV-cache observation into testable branches.
    - Conditions: `rFFT mag4+phase8`, `mag5+phase7`, `mag6+phase6`,
      `mag7+phase5`, `mag8+phase4` at 12 bits per unique complex coefficient.
    - Also includes `rFFT mag4+exact phase` as an upper-bound reference.
-   - Exact-phase Fmag variants with better magnitude scaling:
+   - Exact-phase Fmag variants with different magnitude scaling:
      `rFFT mag4/5/6+exact phase (global)` and `rFFT mag5+exact phase
      (per_frequency)`.
    - Goal: distinguish "phase precision matters" from "4+8 is the optimal
-     split", and test whether the original per-token magnitude scaling was
-     leaving performance on the table.
+     split", and test whether alternative magnitude scaling helps.
 
 2. **Transform/representation controls at matched rate**
    - `raw 6-bit`
@@ -107,73 +111,79 @@ MODEL_ID="google/gemma-3-1b-it" python experiments/mechanism_controls.py
 ## Recent findings (Gemma-3-1B, 10 calib / 10 test prompts, MAX_NEW=60)
 
 | Method | Match% | Avg divergence | K-NRMSE | Logit-rRMSE |
-|---|---:|---:|---:|---:|
+|---|---|---:|---:|---:|
 | fp16 baseline | 100.0 | 60.0 | 0.0000 | 0.0000 |
-| **rFFT mag6+exact phase (global)** | **95.2** | **54.2** | 0.0124 | 0.0144 |
-| **full FFT mag6+exact phase (global)** | **95.2** | **54.2** | 0.0124 | 0.0146 |
-| **rFFT mag5+phase7** | **92.7** | **54.3** | 0.0244 | 0.0168 |
-| DCT coefficients | 91.8 | 54.1 | 0.0251 | 0.0157 |
-| raw 6-bit | 91.7 | 48.2 | 0.0507 | 0.0525 |
-| K+V DCT 6-bit | 91.8 | 54.1 | 0.0251 | 0.0157 |
-| V-only rFFT mag4+phase8 | 91.8 | 54.1 | 0.0000 | 0.0000 |
-| rFFT mag5+exact phase (global) | 91.8 | 54.1 | 0.0251 | 0.0188 |
-| rFFT mag5+exact phase (per_frequency) | 90.9 | 54.1 | 0.0085 | 0.0149 |
-| adaptive raw bits (avg 6.0) | 87.0 | 48.3 | 0.0863 | 0.0590 |
-| learned per-head 6-bit | 85.3 | 48.3 | 0.0748 | 0.0838 |
-| rFFT mag4+phase8 | 82.0 | 48.2 | 0.0416 | 0.0331 |
-| rFFT mag4+exact phase (algebraic) | 82.0 | 48.2 | 0.0410 | 0.0326 |
-| learned per-layer 6-bit | 77.3 | 42.5 | 0.0279 | 0.0229 |
-| attention-aware per-layer 6-bit | 77.3 | 42.5 | 0.0279 | 0.0224 |
-| RoPE 2D polar mag4+angle8 | 77.2 | 42.4 | 0.0889 | 0.0692 |
+| **rFFT mag5+phase7** | **95.3** | **54.4** | 0.0244 | 0.0168 |
+| raw 6-bit | 94.7 | 48.2 | 0.0507 | 0.0525 |
+| K+V DCT 6-bit | 90.3 | 54.1 | 0.0251 | 0.0157 |
+| V-only rFFT mag4+phase8 | 90.2 | 48.2 | 0.0000 | 0.0000 |
+| DCT coefficients | 85.3 | 48.2 | 0.0251 | 0.0157 |
+| full FFT mag6+exact phase (global) | 85.7 | 48.5 | 0.0124 | 0.0144 |
+| rFFT mag6+exact phase (global) | 85.7 | 48.5 | 0.0124 | 0.0144 |
+| full FFT mag4+exact phase (algebraic) | 85.3 | 48.2 | 0.0410 | 0.0326 |
+| rFFT mag4+exact phase | 85.3 | 48.2 | 0.0410 | 0.0326 |
+| rFFT mag5+exact phase (global) | 85.3 | 48.2 | 0.0251 | 0.0188 |
+| rFFT mag5+exact phase (per_frequency) | 85.2 | 48.2 | 0.0085 | 0.0149 |
+| full FFT mag4+cos/sin8 | 85.2 | 42.3 | 0.0411 | 0.0309 |
+| rFFT mag4+phase8 | 85.2 | 42.3 | 0.0416 | 0.0331 |
+| FFT Cartesian real/imag | 80.5 | 42.4 | 0.0243 | 0.0222 |
+| Hadamard coefficients | 80.5 | 48.3 | 0.0245 | 0.0173 |
+| attention-aware per-layer 6-bit | 80.7 | 42.5 | 0.0279 | 0.0224 |
+| learned per-layer 6-bit | 80.7 | 42.5 | 0.0279 | 0.0229 |
+| adaptive raw bits (avg 6.0) | 80.2 | 36.7 | 0.0863 | 0.0590 |
+| rFFT mag6+phase6 | 80.7 | 48.3 | 0.0299 | 0.0201 |
+| rFFT mag7+phase5 | 80.2 | 36.6 | 0.0577 | 0.0356 |
+| learned per-head 6-bit | 70.8 | 36.7 | 0.0748 | 0.0838 |
+| rFFT mag8+phase4 | 70.7 | 36.5 | 0.1183 | 0.0576 |
+| RoPE 2D polar mag4+angle8 | 65.8 | 36.5 | 0.0889 | 0.0692 |
 
 Key takeaways:
 
-- **Global magnitude scaling makes Fmag competitive again.**
-  `rFFT mag6+exact phase (global)` reaches **95.2%** match, surpassing the
-  best fixed-rate polar codec (`rFFT mag5+phase7` at 92.7%) and DCT (91.8%).
-  The original per-token scaling was leaving substantial performance on the
-  table.
-- **The sweet spot is 5-6 magnitude bits.** `mag4 (global)` is still weak
-  (82.2%); `mag5 (global)` and `mag5 (per_frequency)` are strong (91.8% /
-  90.9%); `mag6 (global)` is best (95.2%). 8-bit is worse than 6-bit
-  (diminishing returns in the global scaler).
-- **Per-frequency scaling is also strong** (95.5% in the all-prompts ablation,
-  90.9% on held-out prompts here), with the lowest K-NRMSE of any method.
-- **The best Fmag configs are robust at 150-token generation.**
-  `rFFT Fmag6 (global)` stays at 97.5% match over 150 tokens (see
-  `experiments/fmag_longgen_check_README.md`), so the gains are not a
-  60-token saturation artifact.
+- **rFFT mag5+phase7 is the strongest method on held-out prompts.** It reaches
+  **95.3%** match, slightly ahead of raw 6-bit (94.7%). This is a polar codec
+  with quantized phase, not the exact-phase Fmag construction.
+- **Raw 6-bit quantization is surprisingly competitive.** At 94.7% match, it
+  beats all transform-domain methods except rFFT 5+7. The benefit of the
+  Fourier transform over simple per-channel quantization is smaller than the
+  original Fmag story suggested.
+- **Global magnitude scaling does not rescue exact-phase Fmag.**
+  `rFFT mag6+exact phase (global)` reaches only **85.7%** on held-out prompts,
+  well below `rFFT mag5+phase7` (95.3%). The earlier 95.2% number was an
+  artifact of the text-stripping token-comparison bug.
+- **Keeping phase exact is not always better than quantizing it.** `rFFT
+  mag5+phase7` (quantized phase) outperforms `rFFT mag5+exact phase (global)`
+  (85.3%) by a wide margin. The phase-is-critical story is not supported here.
 - **Fixed transforms (DCT, rFFT 5+7) beat data-dependent learned transforms on
   held-out prompts.** The learned and attention-aware transforms have low
   K-NRMSE but poor token-match, suggesting they overfit the calibration split.
-- **5+7 outperforms 4+8** for rFFT, confirming that the rate allocation is an
-  empirical question, not settled at 4+8.
 - **K-space NRMSE is misleading.** The learned per-layer transform has low
   K-NRMSE (0.0279) but one of the worst token-match scores, because it
   minimizes reconstruction error rather than model-visible error.
 - **Attention-aware optimization does not rescue the learned transform.**
-  Optimizing the basis for final-logit error on calibration still gives 77.3%
-  token-match, well below DCT/rFFT 5+7.
+  Optimizing the basis for final-logit error on calibration still gives ~80.7%
+  token-match, below DCT/rFFT 5+7.
 - **RoPE-native 2-D polar is worse than full-head transforms.** Quantizing
   native RoPE-coupled pairs loses too much information.
 - **Adaptive raw bit allocation is not competitive.** Reallocating bits across
   layers in the raw space does not beat transform-domain methods.
 - **V is extremely robust.** V-only rFFT quantization does not change greedy
-  generation on these prompts, consistent with the repo’s K/V asymmetry result.
+  generation on these prompts, consistent with the repo's K/V asymmetry result.
 
 ## Why the numbers differ from the original 96.9% claim
 
 The original `Fmag4` table reports **96.9%** token match on 40 prompts. On the
 20-prompt set used here, the exact same algebraic implementation
 (`full FFT mag4 + exact phase`) achieves only **~68%** mean match. The
-`mechanism_controls.py` per-token implementation gets **82%** on the same
-prompts, which is actually *better* than the literal algebraic reference.
+`mechanism_controls.py` per-token implementation gets **85.3%** on the same
+prompts, which is better than the literal algebraic reference but still far
+from the headline.
 
-With global magnitude scaling, `rFFT mag6+exact phase` reaches **95.2%** on
-held-out prompts, close to the original headline. So the original 96.9% may
-reflect either (a) a different/easier prompt set, (b) an effective global
-scaling, or both. Either way, the headline number is not reproduced by the
-literal 4-bit per-token Fmag recipe.
+The best method we have found on held-out prompts is `rFFT mag5+phase7` at
+**95.3%**, which is close to the original 96.9% but uses a 5+7 bit split with
+quantized phase, not the 4-bit exact-phase Fmag recipe. So the original
+headline is best interpreted as either prompt-set dependent or reflecting a
+different rate allocation, not as a universal guarantee of 4-bit exact-phase
+Fmag4.
 
 ## Notes on the rFFT physical codec
 
