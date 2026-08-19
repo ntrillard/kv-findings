@@ -69,9 +69,39 @@ Fmag4 doubles the maximum context length at the same total memory budget.
 
 **Fmag4 is novel** in using the Fourier transform specifically for KV cache quantization. The closest prior work (Codec-Gauge) uses DCT with learned transforms, while Fmag4 uses the standard FFT with no learning required. The insight that the **phase is more important than the magnitude** for K cache quantization is a new contribution.
 
+## Replication / ablation notes
+
+Follow-up experiments in this repo (`experiments/fmag_ablation.py` and
+`experiments/mechanism_controls.py`) did not reproduce the exact 96.9% number on
+a different 20-prompt set with the literal 4-bit per-token recipe:
+
+| Method (Gemma-3-1B, 20 prompts) | Match% |
+|---|---:|---:|
+| Fmag4 per-token (literal algebraic implementation) | ~68% |
+| Fmag4 per-token (`mechanism_controls.py`) | 82.0% |
+| Fmag4 per-token (`fmag_ablation.py`, all 20 prompts) | 86.1% |
+| **Fmag6 global** | **95.2%** (held-out) / **97.6%** (all prompts) |
+
+Key additional findings:
+
+1. **Magnitude scaling mode matters significantly.** Global or per-frequency
+   scaling is much better than per-token scaling. `Fmag6 global` reaches 95.2%
+   on held-out prompts, close to the original 96.9% headline.
+2. **The sweet spot is 5-6 magnitude bits, not 4.** `Fmag4` is fragile on the
+   new prompt set; `Fmag5` and `Fmag6` are substantially more robust.
+3. **rFFT and full FFT are equivalent** for this task.
+4. **Fixed transforms (DCT, rFFT 5+7) are competitive with Fmag**, so the
+   Fourier-specific effect is not uniquely superior to other orthogonal
+   preconditioners.
+5. **V is extremely robust** to quantization; most of the action is in K.
+
+The original 96.9% is therefore best interpreted as either prompt-set dependent,
+or as reflecting an effective global/per-frequency scaling strategy, rather than
+a universal guarantee of 4-bit per-token Fmag4.
+
 ## Limitations
 
 - Tested on Gemma-3-1B and Qwen2.5-7B only. Generalization to other architectures (LLaMA, Mistral) unverified.
-- 4-bit magnitude quantization is the sweet spot. 3-bit shows degradation (78.4%), 2-bit loses coherence (70.3%).
+- 4-bit magnitude quantization is the reported sweet spot in the original table. Our replication finds 5-6 bits more robust on a different prompt set.
 - Requires FFT computation per token, adding ~0.1% compute overhead vs standard quantization.
 - The phase must be stored at full precision (16-bit), which limits the maximum compression ratio.
