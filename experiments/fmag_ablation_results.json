@@ -1,0 +1,5968 @@
+{
+  "model_id": "google/gemma-3-1b-it",
+  "max_new": 60,
+  "prompts": [
+    "Explain quantum computing in simple terms.",
+    "What is the capital of France and what it is known for?",
+    "How does a transformer neural network work?",
+    "What are the main causes of climate change?",
+    "Describe the process of photosynthesis.",
+    "What is the difference between TCP and UDP?",
+    "Explain how vaccines work in the human body.",
+    "What is the meaning of the term 'machine learning'?",
+    "How do search engines rank web pages?",
+    "Describe the structure of a cell.",
+    "What is cryptocurrency and how does it work?",
+    "Explain the concept of supply and demand.",
+    "How does a car engine work?",
+    "What is the Fibonacci sequence used for?",
+    "Describe the lifecycle of a butterfly.",
+    "What is the difference between HTTP and HTTPS?",
+    "How do solar panels generate electricity?",
+    "What are the major organs of the human body?",
+    "Explain how encryption keeps data secure.",
+    "What is the history of the internet?"
+  ],
+  "per_prompt": [
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "full FFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "rFFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "full FFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "rFFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "full FFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "rFFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "full FFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "rFFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 0,
+      "prompt": "Explain quantum computing in simple terms.",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "full FFT Fmag3 (global)",
+      "match": 3,
+      "total": 12,
+      "match_pct": 25.0,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "rFFT Fmag3 (global)",
+      "match": 3,
+      "total": 12,
+      "match_pct": 25.0,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "full FFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "rFFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "full FFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of France and what it is known for?",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "full FFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "rFFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 1,
+      "total": 2,
+      "match_pct": 50.0,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 1,
+      "total": 2,
+      "match_pct": 50.0,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "full FFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "rFFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "full FFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "How does a transformer neural network work?",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "full FFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "rFFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "full FFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "rFFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "full FFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What are the main causes of climate change?",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "full FFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "rFFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "full FFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "rFFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "full FFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "rFFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "full FFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "rFFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "Describe the process of photosynthesis.",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "full FFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "rFFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "full FFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "rFFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "full FFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the difference between TCP and UDP?",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "full FFT Fmag3 (global)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "rFFT Fmag3 (global)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "full FFT Fmag4 (global)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "rFFT Fmag4 (global)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "full FFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "rFFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "full FFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "rFFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Explain how vaccines work in the human body.",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 1,
+      "total": 9,
+      "match_pct": 11.1,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 1,
+      "total": 9,
+      "match_pct": 11.1,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "full FFT Fmag3 (global)",
+      "match": 1,
+      "total": 12,
+      "match_pct": 8.3,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "rFFT Fmag3 (global)",
+      "match": 1,
+      "total": 12,
+      "match_pct": 8.3,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 2,
+      "total": 60,
+      "match_pct": 3.3,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 2,
+      "total": 60,
+      "match_pct": 3.3,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 1,
+      "total": 2,
+      "match_pct": 50.0,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 1,
+      "total": 2,
+      "match_pct": 50.0,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "full FFT Fmag4 (global)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "rFFT Fmag4 (global)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "full FFT Fmag5 (global)",
+      "match": 4,
+      "total": 60,
+      "match_pct": 6.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 4,
+      "total": 60,
+      "match_pct": 6.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 2,
+      "total": 60,
+      "match_pct": 3.3,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 2,
+      "total": 60,
+      "match_pct": 3.3,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 2,
+      "total": 60,
+      "match_pct": 3.3,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 2,
+      "total": 60,
+      "match_pct": 3.3,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 2,
+      "total": 60,
+      "match_pct": 3.3,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 2,
+      "total": 60,
+      "match_pct": 3.3,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 2,
+      "total": 60,
+      "match_pct": 3.3,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 1,
+      "total": 2,
+      "match_pct": 50.0,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the meaning of the term 'machine learning'?",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 1,
+      "total": 3,
+      "match_pct": 33.3,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "full FFT Fmag3 (global)",
+      "match": 2,
+      "total": 60,
+      "match_pct": 3.3,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag3 (global)",
+      "match": 2,
+      "total": 60,
+      "match_pct": 3.3,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "full FFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "full FFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "full FFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "full FFT Fmag4 (global)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag4 (global)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "full FFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "full FFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "fp16 baseline",
+      "match": 11,
+      "total": 11,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 2,
+      "total": 11,
+      "match_pct": 18.2,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 2,
+      "total": 11,
+      "match_pct": 18.2,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "full FFT Fmag3 (global)",
+      "match": 1,
+      "total": 11,
+      "match_pct": 9.1,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag3 (global)",
+      "match": 1,
+      "total": 11,
+      "match_pct": 9.1,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 2,
+      "total": 2,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 2,
+      "total": 2,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 2,
+      "total": 11,
+      "match_pct": 18.2,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 2,
+      "total": 11,
+      "match_pct": 18.2,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "full FFT Fmag4 (global)",
+      "match": 2,
+      "total": 11,
+      "match_pct": 18.2,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag4 (global)",
+      "match": 2,
+      "total": 11,
+      "match_pct": 18.2,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 2,
+      "total": 11,
+      "match_pct": 18.2,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 2,
+      "total": 11,
+      "match_pct": 18.2,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 2,
+      "total": 11,
+      "match_pct": 18.2,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 2,
+      "total": 11,
+      "match_pct": 18.2,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "full FFT Fmag5 (global)",
+      "match": 2,
+      "total": 11,
+      "match_pct": 18.2,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 2,
+      "total": 11,
+      "match_pct": 18.2,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 1,
+      "total": 11,
+      "match_pct": 9.1,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 1,
+      "total": 11,
+      "match_pct": 9.1,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 3,
+      "total": 11,
+      "match_pct": 27.3,
+      "first_divergence": 3
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 3,
+      "total": 11,
+      "match_pct": 27.3,
+      "first_divergence": 3
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 2,
+      "total": 2,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 2,
+      "total": 2,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 2,
+      "total": 2,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 2,
+      "total": 2,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 11,
+      "total": 11,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 11,
+      "total": 11,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "full FFT Fmag8 (global)",
+      "match": 2,
+      "total": 11,
+      "match_pct": 18.2,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag8 (global)",
+      "match": 2,
+      "total": 11,
+      "match_pct": 18.2,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 2,
+      "total": 11,
+      "match_pct": 18.2,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 2,
+      "total": 11,
+      "match_pct": 18.2,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 6,
+      "total": 9,
+      "match_pct": 66.7,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 6,
+      "total": 9,
+      "match_pct": 66.7,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "full FFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "full FFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "full FFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "full FFT Fmag6 (global)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag6 (global)",
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "full FFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "full FFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "full FFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "full FFT Fmag3 (global)",
+      "match": 30,
+      "total": 60,
+      "match_pct": 50.0,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag3 (global)",
+      "match": 30,
+      "total": 60,
+      "match_pct": 50.0,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "full FFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "full FFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "full FFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "full FFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "full FFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "full FFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "full FFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "full FFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "full FFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "full FFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "full FFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "full FFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "fp16 baseline",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "full FFT Fmag3 (global)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "rFFT Fmag3 (global)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "full FFT Fmag4 (global)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "rFFT Fmag4 (global)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "full FFT Fmag5 (global)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "full FFT Fmag8 (global)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "rFFT Fmag8 (global)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 1,
+      "total": 1,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "full FFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "rFFT Fmag3 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "full FFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "rFFT Fmag4 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "full FFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "rFFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "full FFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "rFFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "Explain how encryption keeps data secure.",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "fp16 baseline",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "full FFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "rFFT Fmag3 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "full FFT Fmag3 (global)",
+      "match": 1,
+      "total": 12,
+      "match_pct": 8.3,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "rFFT Fmag3 (global)",
+      "match": 1,
+      "total": 12,
+      "match_pct": 8.3,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "full FFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "rFFT Fmag3 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "full FFT Fmag4 (per_token)",
+      "match": 1,
+      "total": 60,
+      "match_pct": 1.7,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "rFFT Fmag4 (per_token)",
+      "match": 1,
+      "total": 60,
+      "match_pct": 1.7,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "full FFT Fmag4 (global)",
+      "match": 2,
+      "total": 60,
+      "match_pct": 3.3,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "rFFT Fmag4 (global)",
+      "match": 2,
+      "total": 60,
+      "match_pct": 3.3,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "full FFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "rFFT Fmag4 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "full FFT Fmag5 (per_token)",
+      "match": 2,
+      "total": 60,
+      "match_pct": 3.3,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "rFFT Fmag5 (per_token)",
+      "match": 2,
+      "total": 60,
+      "match_pct": 3.3,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "full FFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "full FFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "full FFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "rFFT Fmag6 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "full FFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "rFFT Fmag6 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "full FFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "rFFT Fmag8 (per_token)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "full FFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "rFFT Fmag8 (global)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "full FFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "rFFT Fmag8 (per_frequency)",
+      "match": 60,
+      "total": 60,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "K+V rFFT Fmag4 (per_token)",
+      "match": 1,
+      "total": 14,
+      "match_pct": 7.1,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What is the history of the internet?",
+      "method": "K+V full FFT Fmag4 (per_token)",
+      "match": 1,
+      "total": 14,
+      "match_pct": 7.1,
+      "first_divergence": 1
+    }
+  ]
+}
