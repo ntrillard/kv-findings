@@ -353,8 +353,8 @@
       "prompt": "What is the capital of France and what it is known for?",
       "method": "full FFT Fmag3 (global)",
       "match": 3,
-      "total": 12,
-      "match_pct": 25.0,
+      "total": 60,
+      "match_pct": 5.0,
       "first_divergence": 1
     },
     {
@@ -362,8 +362,8 @@
       "prompt": "What is the capital of France and what it is known for?",
       "method": "rFFT Fmag3 (global)",
       "match": 3,
-      "total": 12,
-      "match_pct": 25.0,
+      "total": 60,
+      "match_pct": 5.0,
       "first_divergence": 1
     },
     {
@@ -667,8 +667,8 @@
       "prompt_idx": 2,
       "prompt": "How does a transformer neural network work?",
       "method": "full FFT Fmag3 (per_frequency)",
-      "match": 1,
-      "total": 2,
+      "match": 30,
+      "total": 60,
       "match_pct": 50.0,
       "first_divergence": 1
     },
@@ -676,8 +676,8 @@
       "prompt_idx": 2,
       "prompt": "How does a transformer neural network work?",
       "method": "rFFT Fmag3 (per_frequency)",
-      "match": 1,
-      "total": 2,
+      "match": 30,
+      "total": 60,
       "match_pct": 50.0,
       "first_divergence": 1
     },
@@ -1838,18 +1838,18 @@
       "prompt": "Explain how vaccines work in the human body.",
       "method": "full FFT Fmag3 (global)",
       "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "total": 60,
+      "match_pct": 1.7,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 6,
       "prompt": "Explain how vaccines work in the human body.",
       "method": "rFFT Fmag3 (global)",
       "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "total": 60,
+      "match_pct": 1.7,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 6,
@@ -2117,8 +2117,8 @@
       "prompt": "What is the meaning of the term 'machine learning'?",
       "method": "full FFT Fmag3 (per_token)",
       "match": 1,
-      "total": 9,
-      "match_pct": 11.1,
+      "total": 60,
+      "match_pct": 1.7,
       "first_divergence": 1
     },
     {
@@ -2126,8 +2126,8 @@
       "prompt": "What is the meaning of the term 'machine learning'?",
       "method": "rFFT Fmag3 (per_token)",
       "match": 1,
-      "total": 9,
-      "match_pct": 11.1,
+      "total": 60,
+      "match_pct": 1.7,
       "first_divergence": 1
     },
     {
@@ -2135,8 +2135,8 @@
       "prompt": "What is the meaning of the term 'machine learning'?",
       "method": "full FFT Fmag3 (global)",
       "match": 1,
-      "total": 12,
-      "match_pct": 8.3,
+      "total": 60,
+      "match_pct": 1.7,
       "first_divergence": 1
     },
     {
@@ -2144,8 +2144,8 @@
       "prompt": "What is the meaning of the term 'machine learning'?",
       "method": "rFFT Fmag3 (global)",
       "match": 1,
-      "total": 12,
-      "match_pct": 8.3,
+      "total": 60,
+      "match_pct": 1.7,
       "first_divergence": 1
     },
     {
@@ -2171,8 +2171,8 @@
       "prompt": "What is the meaning of the term 'machine learning'?",
       "method": "full FFT Fmag4 (per_token)",
       "match": 1,
-      "total": 2,
-      "match_pct": 50.0,
+      "total": 60,
+      "match_pct": 1.7,
       "first_divergence": 1
     },
     {
@@ -2180,8 +2180,8 @@
       "prompt": "What is the meaning of the term 'machine learning'?",
       "method": "rFFT Fmag4 (per_token)",
       "match": 1,
-      "total": 2,
-      "match_pct": 50.0,
+      "total": 60,
+      "match_pct": 1.7,
       "first_divergence": 1
     },
     {
@@ -2189,18 +2189,18 @@
       "prompt": "What is the meaning of the term 'machine learning'?",
       "method": "full FFT Fmag4 (global)",
       "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "total": 60,
+      "match_pct": 1.7,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 7,
       "prompt": "What is the meaning of the term 'machine learning'?",
       "method": "rFFT Fmag4 (global)",
       "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "total": 60,
+      "match_pct": 1.7,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 7,
@@ -2387,8 +2387,8 @@
       "prompt": "What is the meaning of the term 'machine learning'?",
       "method": "K+V rFFT Fmag4 (per_token)",
       "match": 1,
-      "total": 2,
-      "match_pct": 50.0,
+      "total": 60,
+      "match_pct": 1.7,
       "first_divergence": 1
     },
     {
@@ -2396,8 +2396,8 @@
       "prompt": "What is the meaning of the term 'machine learning'?",
       "method": "K+V full FFT Fmag4 (per_token)",
       "match": 1,
-      "total": 3,
-      "match_pct": 33.3,
+      "total": 60,
+      "match_pct": 1.7,
       "first_divergence": 1
     },
     {
@@ -2998,8 +2998,8 @@
       "prompt_idx": 10,
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "fp16 baseline",
-      "match": 11,
-      "total": 11,
+      "match": 60,
+      "total": 60,
       "match_pct": 100.0,
       "first_divergence": -1
     },
@@ -3008,8 +3008,8 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "full FFT Fmag3 (per_token)",
       "match": 2,
-      "total": 11,
-      "match_pct": 18.2,
+      "total": 60,
+      "match_pct": 3.3,
       "first_divergence": 1
     },
     {
@@ -3017,8 +3017,8 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "rFFT Fmag3 (per_token)",
       "match": 2,
-      "total": 11,
-      "match_pct": 18.2,
+      "total": 60,
+      "match_pct": 3.3,
       "first_divergence": 1
     },
     {
@@ -3026,8 +3026,8 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "full FFT Fmag3 (global)",
       "match": 1,
-      "total": 11,
-      "match_pct": 9.1,
+      "total": 60,
+      "match_pct": 1.7,
       "first_divergence": 1
     },
     {
@@ -3035,44 +3035,44 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "rFFT Fmag3 (global)",
       "match": 1,
-      "total": 11,
-      "match_pct": 9.1,
+      "total": 60,
+      "match_pct": 1.7,
       "first_divergence": 1
     },
     {
       "prompt_idx": 10,
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "full FFT Fmag3 (per_frequency)",
-      "match": 2,
-      "total": 2,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 3,
+      "total": 60,
+      "match_pct": 5.0,
+      "first_divergence": 3
     },
     {
       "prompt_idx": 10,
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "rFFT Fmag3 (per_frequency)",
-      "match": 2,
-      "total": 2,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 3,
+      "total": 60,
+      "match_pct": 5.0,
+      "first_divergence": 3
     },
     {
       "prompt_idx": 10,
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "full FFT Fmag4 (per_token)",
-      "match": 2,
-      "total": 11,
-      "match_pct": 18.2,
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
       "first_divergence": 1
     },
     {
       "prompt_idx": 10,
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "rFFT Fmag4 (per_token)",
-      "match": 2,
-      "total": 11,
-      "match_pct": 18.2,
+      "match": 31,
+      "total": 60,
+      "match_pct": 51.7,
       "first_divergence": 1
     },
     {
@@ -3080,8 +3080,8 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "full FFT Fmag4 (global)",
       "match": 2,
-      "total": 11,
-      "match_pct": 18.2,
+      "total": 60,
+      "match_pct": 3.3,
       "first_divergence": 1
     },
     {
@@ -3089,8 +3089,8 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "rFFT Fmag4 (global)",
       "match": 2,
-      "total": 11,
-      "match_pct": 18.2,
+      "total": 60,
+      "match_pct": 3.3,
       "first_divergence": 1
     },
     {
@@ -3098,8 +3098,8 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "full FFT Fmag4 (per_frequency)",
       "match": 2,
-      "total": 11,
-      "match_pct": 18.2,
+      "total": 60,
+      "match_pct": 3.3,
       "first_divergence": 1
     },
     {
@@ -3107,8 +3107,8 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "rFFT Fmag4 (per_frequency)",
       "match": 2,
-      "total": 11,
-      "match_pct": 18.2,
+      "total": 60,
+      "match_pct": 3.3,
       "first_divergence": 1
     },
     {
@@ -3116,8 +3116,8 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "full FFT Fmag5 (per_token)",
       "match": 2,
-      "total": 11,
-      "match_pct": 18.2,
+      "total": 60,
+      "match_pct": 3.3,
       "first_divergence": 1
     },
     {
@@ -3125,8 +3125,8 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "rFFT Fmag5 (per_token)",
       "match": 2,
-      "total": 11,
-      "match_pct": 18.2,
+      "total": 60,
+      "match_pct": 3.3,
       "first_divergence": 1
     },
     {
@@ -3134,8 +3134,8 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "full FFT Fmag5 (global)",
       "match": 2,
-      "total": 11,
-      "match_pct": 18.2,
+      "total": 60,
+      "match_pct": 3.3,
       "first_divergence": 1
     },
     {
@@ -3143,8 +3143,8 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "rFFT Fmag5 (global)",
       "match": 2,
-      "total": 11,
-      "match_pct": 18.2,
+      "total": 60,
+      "match_pct": 3.3,
       "first_divergence": 1
     },
     {
@@ -3152,8 +3152,8 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "full FFT Fmag5 (per_frequency)",
       "match": 1,
-      "total": 11,
-      "match_pct": 9.1,
+      "total": 60,
+      "match_pct": 1.7,
       "first_divergence": 1
     },
     {
@@ -3161,70 +3161,70 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "rFFT Fmag5 (per_frequency)",
       "match": 1,
-      "total": 11,
-      "match_pct": 9.1,
+      "total": 60,
+      "match_pct": 1.7,
       "first_divergence": 1
     },
     {
       "prompt_idx": 10,
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "full FFT Fmag6 (per_token)",
-      "match": 3,
-      "total": 11,
-      "match_pct": 27.3,
-      "first_divergence": 3
+      "match": 32,
+      "total": 60,
+      "match_pct": 53.3,
+      "first_divergence": 4
     },
     {
       "prompt_idx": 10,
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "rFFT Fmag6 (per_token)",
-      "match": 3,
-      "total": 11,
-      "match_pct": 27.3,
-      "first_divergence": 3
+      "match": 32,
+      "total": 60,
+      "match_pct": 53.3,
+      "first_divergence": 4
     },
     {
       "prompt_idx": 10,
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "full FFT Fmag6 (global)",
-      "match": 2,
-      "total": 2,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 3,
+      "total": 60,
+      "match_pct": 5.0,
+      "first_divergence": 3
     },
     {
       "prompt_idx": 10,
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "rFFT Fmag6 (global)",
-      "match": 2,
-      "total": 2,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 3,
+      "total": 60,
+      "match_pct": 5.0,
+      "first_divergence": 3
     },
     {
       "prompt_idx": 10,
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "full FFT Fmag6 (per_frequency)",
-      "match": 2,
-      "total": 2,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 3,
+      "total": 60,
+      "match_pct": 5.0,
+      "first_divergence": 3
     },
     {
       "prompt_idx": 10,
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "rFFT Fmag6 (per_frequency)",
-      "match": 2,
-      "total": 2,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 3,
+      "total": 60,
+      "match_pct": 5.0,
+      "first_divergence": 3
     },
     {
       "prompt_idx": 10,
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "full FFT Fmag8 (per_token)",
-      "match": 11,
-      "total": 11,
+      "match": 60,
+      "total": 60,
       "match_pct": 100.0,
       "first_divergence": -1
     },
@@ -3232,8 +3232,8 @@
       "prompt_idx": 10,
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "rFFT Fmag8 (per_token)",
-      "match": 11,
-      "total": 11,
+      "match": 60,
+      "total": 60,
       "match_pct": 100.0,
       "first_divergence": -1
     },
@@ -3242,8 +3242,8 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "full FFT Fmag8 (global)",
       "match": 2,
-      "total": 11,
-      "match_pct": 18.2,
+      "total": 60,
+      "match_pct": 3.3,
       "first_divergence": 1
     },
     {
@@ -3251,8 +3251,8 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "rFFT Fmag8 (global)",
       "match": 2,
-      "total": 11,
-      "match_pct": 18.2,
+      "total": 60,
+      "match_pct": 3.3,
       "first_divergence": 1
     },
     {
@@ -3260,8 +3260,8 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "full FFT Fmag8 (per_frequency)",
       "match": 2,
-      "total": 11,
-      "match_pct": 18.2,
+      "total": 60,
+      "match_pct": 3.3,
       "first_divergence": 1
     },
     {
@@ -3269,26 +3269,26 @@
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "rFFT Fmag8 (per_frequency)",
       "match": 2,
-      "total": 11,
-      "match_pct": 18.2,
+      "total": 60,
+      "match_pct": 3.3,
       "first_divergence": 1
     },
     {
       "prompt_idx": 10,
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "K+V rFFT Fmag4 (per_token)",
-      "match": 6,
-      "total": 9,
-      "match_pct": 66.7,
+      "match": 58,
+      "total": 60,
+      "match_pct": 96.7,
       "first_divergence": 1
     },
     {
       "prompt_idx": 10,
       "prompt": "What is cryptocurrency and how does it work?",
       "method": "K+V full FFT Fmag4 (per_token)",
-      "match": 6,
-      "total": 9,
-      "match_pct": 66.7,
+      "match": 58,
+      "total": 60,
+      "match_pct": 96.7,
       "first_divergence": 1
     },
     {
@@ -5077,8 +5077,8 @@
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "fp16 baseline",
-      "match": 1,
-      "total": 1,
+      "match": 60,
+      "total": 60,
       "match_pct": 100.0,
       "first_divergence": -1
     },
@@ -5086,62 +5086,62 @@
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "full FFT Fmag3 (per_token)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 59,
+      "total": 60,
+      "match_pct": 98.3,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "rFFT Fmag3 (per_token)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 59,
+      "total": 60,
+      "match_pct": 98.3,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "full FFT Fmag3 (global)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 30,
+      "total": 60,
+      "match_pct": 50.0,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "rFFT Fmag3 (global)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 30,
+      "total": 60,
+      "match_pct": 50.0,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "full FFT Fmag3 (per_frequency)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 30,
+      "total": 60,
+      "match_pct": 50.0,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "rFFT Fmag3 (per_frequency)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 30,
+      "total": 60,
+      "match_pct": 50.0,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "full FFT Fmag4 (per_token)",
-      "match": 1,
-      "total": 1,
+      "match": 60,
+      "total": 60,
       "match_pct": 100.0,
       "first_divergence": -1
     },
@@ -5149,8 +5149,8 @@
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "rFFT Fmag4 (per_token)",
-      "match": 1,
-      "total": 1,
+      "match": 60,
+      "total": 60,
       "match_pct": 100.0,
       "first_divergence": -1
     },
@@ -5158,98 +5158,98 @@
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "full FFT Fmag4 (global)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 30,
+      "total": 60,
+      "match_pct": 50.0,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "rFFT Fmag4 (global)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 30,
+      "total": 60,
+      "match_pct": 50.0,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "full FFT Fmag4 (per_frequency)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 59,
+      "total": 60,
+      "match_pct": 98.3,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "rFFT Fmag4 (per_frequency)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 59,
+      "total": 60,
+      "match_pct": 98.3,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "full FFT Fmag5 (per_token)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 30,
+      "total": 60,
+      "match_pct": 50.0,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "rFFT Fmag5 (per_token)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 30,
+      "total": 60,
+      "match_pct": 50.0,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "full FFT Fmag5 (global)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 30,
+      "total": 60,
+      "match_pct": 50.0,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "rFFT Fmag5 (global)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 30,
+      "total": 60,
+      "match_pct": 50.0,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "full FFT Fmag5 (per_frequency)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 30,
+      "total": 60,
+      "match_pct": 50.0,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "rFFT Fmag5 (per_frequency)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 30,
+      "total": 60,
+      "match_pct": 50.0,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "full FFT Fmag6 (per_token)",
-      "match": 1,
-      "total": 1,
+      "match": 60,
+      "total": 60,
       "match_pct": 100.0,
       "first_divergence": -1
     },
@@ -5257,8 +5257,8 @@
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "rFFT Fmag6 (per_token)",
-      "match": 1,
-      "total": 1,
+      "match": 60,
+      "total": 60,
       "match_pct": 100.0,
       "first_divergence": -1
     },
@@ -5266,8 +5266,8 @@
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "full FFT Fmag6 (global)",
-      "match": 1,
-      "total": 1,
+      "match": 60,
+      "total": 60,
       "match_pct": 100.0,
       "first_divergence": -1
     },
@@ -5275,8 +5275,8 @@
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "rFFT Fmag6 (global)",
-      "match": 1,
-      "total": 1,
+      "match": 60,
+      "total": 60,
       "match_pct": 100.0,
       "first_divergence": -1
     },
@@ -5284,8 +5284,8 @@
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "full FFT Fmag6 (per_frequency)",
-      "match": 1,
-      "total": 1,
+      "match": 60,
+      "total": 60,
       "match_pct": 100.0,
       "first_divergence": -1
     },
@@ -5293,8 +5293,8 @@
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "rFFT Fmag6 (per_frequency)",
-      "match": 1,
-      "total": 1,
+      "match": 60,
+      "total": 60,
       "match_pct": 100.0,
       "first_divergence": -1
     },
@@ -5302,8 +5302,8 @@
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "full FFT Fmag8 (per_token)",
-      "match": 1,
-      "total": 1,
+      "match": 60,
+      "total": 60,
       "match_pct": 100.0,
       "first_divergence": -1
     },
@@ -5311,17 +5311,17 @@
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "rFFT Fmag8 (per_token)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 30,
+      "total": 60,
+      "match_pct": 50.0,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "full FFT Fmag8 (global)",
-      "match": 1,
-      "total": 1,
+      "match": 60,
+      "total": 60,
       "match_pct": 100.0,
       "first_divergence": -1
     },
@@ -5329,8 +5329,8 @@
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "rFFT Fmag8 (global)",
-      "match": 1,
-      "total": 1,
+      "match": 60,
+      "total": 60,
       "match_pct": 100.0,
       "first_divergence": -1
     },
@@ -5338,8 +5338,8 @@
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "full FFT Fmag8 (per_frequency)",
-      "match": 1,
-      "total": 1,
+      "match": 60,
+      "total": 60,
       "match_pct": 100.0,
       "first_divergence": -1
     },
@@ -5347,8 +5347,8 @@
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "rFFT Fmag8 (per_frequency)",
-      "match": 1,
-      "total": 1,
+      "match": 60,
+      "total": 60,
       "match_pct": 100.0,
       "first_divergence": -1
     },
@@ -5356,19 +5356,19 @@
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "K+V rFFT Fmag4 (per_token)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 30,
+      "total": 60,
+      "match_pct": 50.0,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 17,
       "prompt": "What are the major organs of the human body?",
       "method": "K+V full FFT Fmag4 (per_token)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
+      "match": 30,
+      "total": 60,
+      "match_pct": 50.0,
+      "first_divergence": 1
     },
     {
       "prompt_idx": 18,
@@ -5699,8 +5699,8 @@
       "prompt": "What is the history of the internet?",
       "method": "full FFT Fmag3 (global)",
       "match": 1,
-      "total": 12,
-      "match_pct": 8.3,
+      "total": 60,
+      "match_pct": 1.7,
       "first_divergence": 1
     },
     {
@@ -5708,8 +5708,8 @@
       "prompt": "What is the history of the internet?",
       "method": "rFFT Fmag3 (global)",
       "match": 1,
-      "total": 12,
-      "match_pct": 8.3,
+      "total": 60,
+      "match_pct": 1.7,
       "first_divergence": 1
     },
     {
@@ -5951,8 +5951,8 @@
       "prompt": "What is the history of the internet?",
       "method": "K+V rFFT Fmag4 (per_token)",
       "match": 1,
-      "total": 14,
-      "match_pct": 7.1,
+      "total": 60,
+      "match_pct": 1.7,
       "first_divergence": 1
     },
     {
@@ -5960,8 +5960,8 @@
       "prompt": "What is the history of the internet?",
       "method": "K+V full FFT Fmag4 (per_token)",
       "match": 1,
-      "total": 14,
-      "match_pct": 7.1,
+      "total": 60,
+      "match_pct": 1.7,
       "first_divergence": 1
     }
   ]

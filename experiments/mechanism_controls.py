@@ -862,9 +862,10 @@ def run(model_id: str = None, prompts: List[str] = None):
                                                 k_quant_fn=lambda k: k,
                                                 v_quant_fn=lambda v: v,
                                                 max_new=MAX_NEW)
-        ref_text = tok.decode(ref_gen[0], skip_special_tokens=True)
-        ref_out = ref_text[len(prompt):].strip()
-        ref_tokens = tok(ref_out, return_tensors="pt").input_ids[0]
+        # Compare generated tokens directly; slicing off the prompt tokens
+        # avoids fragile string-prefix stripping.
+        prompt_len = ids.shape[1]
+        ref_tokens = ref_gen[0, prompt_len:]
 
         for method in methods:
             print(f"  {method.name:<35} ...", end="", flush=True)
@@ -877,9 +878,7 @@ def run(model_id: str = None, prompts: List[str] = None):
                     layer_v_fns=method.layer_v_fns,
                     max_new=MAX_NEW
                 )
-                hyp_text = tok.decode(hyp_ids[0], skip_special_tokens=True)
-                hyp_out = hyp_text[len(prompt):].strip()
-                hyp_tokens = tok(hyp_out, return_tensors="pt").input_ids[0]
+                hyp_tokens = hyp_ids[0, prompt_len:]
                 m, n, first_div = token_match(ref_tokens, hyp_tokens)
 
                 # Quantize the cached K once for distortion metrics (V untouched here)

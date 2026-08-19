@@ -452,549 +452,549 @@
       "prompt": "What is the meaning of the term 'machine learning'?",
       "method": "DCT 6-bit",
       "match": 1,
-      "total": 2,
+      "total": 150,
+      "match_pct": 0.7,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "fp16 baseline",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "How do search engines rank web pages?",
+      "method": "DCT 6-bit",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "fp16 baseline",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag6 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag5 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "full FFT Fmag6 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Describe the structure of a cell.",
+      "method": "DCT 6-bit",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "fp16 baseline",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 3,
+      "total": 150,
+      "match_pct": 2.0,
+      "first_divergence": 3
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 2,
+      "total": 150,
+      "match_pct": 1.3,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 1,
+      "total": 150,
+      "match_pct": 0.7,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 3,
+      "total": 150,
+      "match_pct": 2.0,
+      "first_divergence": 3
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "What is cryptocurrency and how does it work?",
+      "method": "DCT 6-bit",
+      "match": 2,
+      "total": 150,
+      "match_pct": 1.3,
+      "first_divergence": 1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "fp16 baseline",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag6 (global)",
+      "match": 76,
+      "total": 150,
+      "match_pct": 50.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag5 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "full FFT Fmag6 (global)",
+      "match": 76,
+      "total": 150,
+      "match_pct": 50.7,
+      "first_divergence": 2
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "Explain the concept of supply and demand.",
+      "method": "DCT 6-bit",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "fp16 baseline",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "How does a car engine work?",
+      "method": "DCT 6-bit",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "fp16 baseline",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "What is the Fibonacci sequence used for?",
+      "method": "DCT 6-bit",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "fp16 baseline",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag6 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag5 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "full FFT Fmag6 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Describe the lifecycle of a butterfly.",
+      "method": "DCT 6-bit",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "fp16 baseline",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the difference between HTTP and HTTPS?",
+      "method": "DCT 6-bit",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "fp16 baseline",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "rFFT Fmag5 (per_frequency)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "How do solar panels generate electricity?",
+      "method": "DCT 6-bit",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "fp16 baseline",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "rFFT Fmag6 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "rFFT Fmag5 (global)",
+      "match": 75,
+      "total": 150,
       "match_pct": 50.0,
       "first_divergence": 1
     },
     {
-      "prompt_idx": 8,
-      "prompt": "How do search engines rank web pages?",
-      "method": "fp16 baseline",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 8,
-      "prompt": "How do search engines rank web pages?",
-      "method": "rFFT Fmag6 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 8,
-      "prompt": "How do search engines rank web pages?",
-      "method": "rFFT Fmag5 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 8,
-      "prompt": "How do search engines rank web pages?",
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
       "method": "rFFT Fmag5 (per_frequency)",
-      "match": 150,
+      "match": 75,
       "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 8,
-      "prompt": "How do search engines rank web pages?",
-      "method": "full FFT Fmag6 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 8,
-      "prompt": "How do search engines rank web pages?",
-      "method": "DCT 6-bit",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 9,
-      "prompt": "Describe the structure of a cell.",
-      "method": "fp16 baseline",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 9,
-      "prompt": "Describe the structure of a cell.",
-      "method": "rFFT Fmag6 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 9,
-      "prompt": "Describe the structure of a cell.",
-      "method": "rFFT Fmag5 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 9,
-      "prompt": "Describe the structure of a cell.",
-      "method": "rFFT Fmag5 (per_frequency)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 9,
-      "prompt": "Describe the structure of a cell.",
-      "method": "full FFT Fmag6 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 9,
-      "prompt": "Describe the structure of a cell.",
-      "method": "DCT 6-bit",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 10,
-      "prompt": "What is cryptocurrency and how does it work?",
-      "method": "fp16 baseline",
-      "match": 22,
-      "total": 22,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 10,
-      "prompt": "What is cryptocurrency and how does it work?",
-      "method": "rFFT Fmag6 (global)",
-      "match": 2,
-      "total": 2,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 10,
-      "prompt": "What is cryptocurrency and how does it work?",
-      "method": "rFFT Fmag5 (global)",
-      "match": 2,
-      "total": 22,
-      "match_pct": 9.1,
+      "match_pct": 50.0,
       "first_divergence": 1
     },
     {
-      "prompt_idx": 10,
-      "prompt": "What is cryptocurrency and how does it work?",
-      "method": "rFFT Fmag5 (per_frequency)",
-      "match": 1,
-      "total": 22,
-      "match_pct": 4.5,
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "full FFT Fmag6 (global)",
+      "match": 150,
+      "total": 150,
+      "match_pct": 100.0,
+      "first_divergence": -1
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "What are the major organs of the human body?",
+      "method": "DCT 6-bit",
+      "match": 75,
+      "total": 150,
+      "match_pct": 50.0,
       "first_divergence": 1
-    },
-    {
-      "prompt_idx": 10,
-      "prompt": "What is cryptocurrency and how does it work?",
-      "method": "full FFT Fmag6 (global)",
-      "match": 2,
-      "total": 2,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 10,
-      "prompt": "What is cryptocurrency and how does it work?",
-      "method": "DCT 6-bit",
-      "match": 2,
-      "total": 22,
-      "match_pct": 9.1,
-      "first_divergence": 1
-    },
-    {
-      "prompt_idx": 11,
-      "prompt": "Explain the concept of supply and demand.",
-      "method": "fp16 baseline",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 11,
-      "prompt": "Explain the concept of supply and demand.",
-      "method": "rFFT Fmag6 (global)",
-      "match": 76,
-      "total": 150,
-      "match_pct": 50.7,
-      "first_divergence": 2
-    },
-    {
-      "prompt_idx": 11,
-      "prompt": "Explain the concept of supply and demand.",
-      "method": "rFFT Fmag5 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 11,
-      "prompt": "Explain the concept of supply and demand.",
-      "method": "rFFT Fmag5 (per_frequency)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 11,
-      "prompt": "Explain the concept of supply and demand.",
-      "method": "full FFT Fmag6 (global)",
-      "match": 76,
-      "total": 150,
-      "match_pct": 50.7,
-      "first_divergence": 2
-    },
-    {
-      "prompt_idx": 11,
-      "prompt": "Explain the concept of supply and demand.",
-      "method": "DCT 6-bit",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 12,
-      "prompt": "How does a car engine work?",
-      "method": "fp16 baseline",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 12,
-      "prompt": "How does a car engine work?",
-      "method": "rFFT Fmag6 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 12,
-      "prompt": "How does a car engine work?",
-      "method": "rFFT Fmag5 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 12,
-      "prompt": "How does a car engine work?",
-      "method": "rFFT Fmag5 (per_frequency)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 12,
-      "prompt": "How does a car engine work?",
-      "method": "full FFT Fmag6 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 12,
-      "prompt": "How does a car engine work?",
-      "method": "DCT 6-bit",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 13,
-      "prompt": "What is the Fibonacci sequence used for?",
-      "method": "fp16 baseline",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 13,
-      "prompt": "What is the Fibonacci sequence used for?",
-      "method": "rFFT Fmag6 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 13,
-      "prompt": "What is the Fibonacci sequence used for?",
-      "method": "rFFT Fmag5 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 13,
-      "prompt": "What is the Fibonacci sequence used for?",
-      "method": "rFFT Fmag5 (per_frequency)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 13,
-      "prompt": "What is the Fibonacci sequence used for?",
-      "method": "full FFT Fmag6 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 13,
-      "prompt": "What is the Fibonacci sequence used for?",
-      "method": "DCT 6-bit",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 14,
-      "prompt": "Describe the lifecycle of a butterfly.",
-      "method": "fp16 baseline",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 14,
-      "prompt": "Describe the lifecycle of a butterfly.",
-      "method": "rFFT Fmag6 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 14,
-      "prompt": "Describe the lifecycle of a butterfly.",
-      "method": "rFFT Fmag5 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 14,
-      "prompt": "Describe the lifecycle of a butterfly.",
-      "method": "rFFT Fmag5 (per_frequency)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 14,
-      "prompt": "Describe the lifecycle of a butterfly.",
-      "method": "full FFT Fmag6 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 14,
-      "prompt": "Describe the lifecycle of a butterfly.",
-      "method": "DCT 6-bit",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 15,
-      "prompt": "What is the difference between HTTP and HTTPS?",
-      "method": "fp16 baseline",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 15,
-      "prompt": "What is the difference between HTTP and HTTPS?",
-      "method": "rFFT Fmag6 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 15,
-      "prompt": "What is the difference between HTTP and HTTPS?",
-      "method": "rFFT Fmag5 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 15,
-      "prompt": "What is the difference between HTTP and HTTPS?",
-      "method": "rFFT Fmag5 (per_frequency)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 15,
-      "prompt": "What is the difference between HTTP and HTTPS?",
-      "method": "full FFT Fmag6 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 15,
-      "prompt": "What is the difference between HTTP and HTTPS?",
-      "method": "DCT 6-bit",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 16,
-      "prompt": "How do solar panels generate electricity?",
-      "method": "fp16 baseline",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 16,
-      "prompt": "How do solar panels generate electricity?",
-      "method": "rFFT Fmag6 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 16,
-      "prompt": "How do solar panels generate electricity?",
-      "method": "rFFT Fmag5 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 16,
-      "prompt": "How do solar panels generate electricity?",
-      "method": "rFFT Fmag5 (per_frequency)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 16,
-      "prompt": "How do solar panels generate electricity?",
-      "method": "full FFT Fmag6 (global)",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 16,
-      "prompt": "How do solar panels generate electricity?",
-      "method": "DCT 6-bit",
-      "match": 150,
-      "total": 150,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 17,
-      "prompt": "What are the major organs of the human body?",
-      "method": "fp16 baseline",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 17,
-      "prompt": "What are the major organs of the human body?",
-      "method": "rFFT Fmag6 (global)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 17,
-      "prompt": "What are the major organs of the human body?",
-      "method": "rFFT Fmag5 (global)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 17,
-      "prompt": "What are the major organs of the human body?",
-      "method": "rFFT Fmag5 (per_frequency)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 17,
-      "prompt": "What are the major organs of the human body?",
-      "method": "full FFT Fmag6 (global)",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
-    },
-    {
-      "prompt_idx": 17,
-      "prompt": "What are the major organs of the human body?",
-      "method": "DCT 6-bit",
-      "match": 1,
-      "total": 1,
-      "match_pct": 100.0,
-      "first_divergence": -1
     },
     {
       "prompt_idx": 18,
