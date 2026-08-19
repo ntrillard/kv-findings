@@ -30,14 +30,29 @@ Fourier-magnitude KV-cache observation into testable branches.
    - Attention JS divergence
    - Final-logit relative RMSE
    - Greedy token-match percentage
+   - First-divergence token index
    - Goal: check whether K-space reconstruction error ranks methods the same
      way the model's attention and final logits do.
 
+4. **K+V joint intervention**
+   - `K+V rFFT mag4+phase8`
+   - `K+V DCT 6-bit`
+   - `V-only rFFT mag4+phase8`
+   - Goal: test whether the transform robustness generalizes to V, and whether
+     K and V can use the same representation.
+
+5. **Learned data-dependent orthogonal transforms**
+   - `learned per-layer 6-bit` — PCA/KLT basis learned per layer from a
+     calibration split of the prompt set.
+   - `learned per-head 6-bit` — separate basis learned per head.
+   - Goal: compare data-dependent transforms (Codec-Gauge style) against fixed
+     transforms.
+
 ## Scope
 
-- K-only, fake-quant, small-model diagnostic.
-- V is left unchanged.
-- Generation is short (16 tokens greedy) to keep iteration fast.
+- K-only by default; optional K+V joint quantization.
+- Fake-quant, small-model diagnostic.
+- Generation is short (16–60 tokens greedy) to keep iteration fast.
 - The primary goal is mechanism isolation, not a production benchmark.
 
 ## Usage
@@ -83,6 +98,35 @@ MODEL_ID="google/gemma-3-1b-it" python experiments/mechanism_controls.py
 | Polar vs Cartesian differs strongly | Representation/codebook geometry matters independently of FFT. |
 | Optimal mag/phase allocation varies by model/metric | Rate allocation is itself a design variable (consistent with RateQuant/AATC). |
 | K-NRMSE ranks methods differently than attn-JS/logit-rRMSE | Attention-aware distortion is necessary for mechanism understanding. |
+
+## Recent findings (Gemma-3-1B, 10 calib / 10 test prompts, MAX_NEW=60)
+
+| Method | Match% | Avg divergence | K-NRMSE | Logit-rRMSE |
+|---|---:|---:|---:|---:|
+| fp16 baseline | 100.0 | 60.0 | 0.0000 | 0.0000 |
+| **rFFT mag5+phase7** | **92.7** | **54.3** | 0.0244 | 0.0168 |
+| **DCT coefficients** | **91.8** | **54.1** | 0.0251 | 0.0157 |
+| raw 6-bit | 91.7 | 48.2 | 0.0507 | 0.0525 |
+| K+V DCT 6-bit | 91.8 | 54.1 | 0.0251 | 0.0157 |
+| V-only rFFT mag4+phase8 | 91.8 | 54.1 | 0.0000 | 0.0000 |
+| learned per-head 6-bit | 85.3 | 48.3 | 0.0748 | 0.0838 |
+| rFFT mag4+phase8 | 82.0 | 48.2 | 0.0416 | 0.0331 |
+| learned per-layer 6-bit | 77.3 | 42.5 | 0.0279 | 0.0229 |
+
+Key takeaways:
+
+- **Fixed transforms (DCT, Hadamard, FFT Cartesian) are competitive with or
+  better than FFT-polar.** This supports the "transform/preconditioning
+  robustness" interpretation.
+- **5+7 outperforms 4+8** for rFFT, confirming that the rate allocation is an
+  empirical question, not settled at 4+8.
+- **K-space NRMSE is misleading.** The learned per-layer transform has the
+  lowest K-NRMSE (0.0279) but the worst token-match among competitive methods,
+  because it minimizes reconstruction error rather than model-visible error.
+- **Data-dependent transforms can overfit.** Per-head learned transforms are
+  worse than per-layer, suggesting too little calibration data per head.
+- **V is extremely robust.** V-only rFFT quantization does not change greedy
+  generation on these prompts, consistent with the repo’s K/V asymmetry result.
 
 ## Notes on the rFFT physical codec
 

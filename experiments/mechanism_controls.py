@@ -193,6 +193,62 @@ def quant_fourier_mag_exact(k: torch.Tensor, bits: int = 4) -> torch.Tensor:
 
 
 # -------------------------------------------------------------------------------
+# Learned orthogonal transform (PCA / Karhunen-Loève)
+# -------------------------------------------------------------------------------
+def learn_layer_transforms(k_calib: List[torch.Tensor],
+                           per_head: bool = False) -> List[torch.Tensor]:
+    """
+    Learn an orthogonal transform per layer from calibration K caches.
+    Returns a list of W matrices (one per layer) such that K @ W.T gives
+    coefficients in the PCA basis. W is orthogonal: W @ W.T = I.
+
+    If per_head=True, returns a list of W tensors of shape
+    (num_heads, head_dim, head_dim); otherwise (head_dim, head_dim).
+    """
+    transforms = []
+    for k in k_calib:
+        # k: (1, H, S, D) or (H, S, D)
+        if k.dim() == 4:
+            k = k.squeeze(0)
+        H, S, D = k.shape
+        kf = k.float()
+        if per_head:
+            W = torch.zeros(H, D, D, device=k.device, dtype=torch.float32)
+            for h in range(H):
+                x = kf[h].reshape(-1, D)  # (S, D)
+                # Eigendecomposition of covariance -> PCA basis
+                cov = (x.T @ x) / max(x.shape[0], 1)
+                _, V = torch.linalg.eigh(cov)
+                W[h] = V
+        else:
+            x = kf.permute(1, 0, 2).reshape(-1, D)  # (S*H, D)
+            cov = (x.T @ x) / max(x.shape[0], 1)
+            _, V = torch.linalg.eigh(cov)
+            W = V
+        transforms.append(W)
+    return transforms
+
+
+def quant_learned(k: torch.Tensor, W: torch.Tensor, bits: int,
+                  per_head: bool = False) -> torch.Tensor:
+    """Apply learned orthogonal transform, quantize, invert."""
+    kf = k.float()
+    if per_head:
+        # W: (H, D, D); k: (1, H, S, D) or (H, S, D)
+        if kf.dim() == 4:
+            kf = kf.squeeze(0)
+        H, S, D = kf.shape
+        coeff = torch.einsum("hsd,hdo->hso", kf, W)
+        coeff_q = fake_quantize(coeff, bits, dim=-1)
+        rec = torch.einsum("hso,hod->hsd", coeff_q, W.transpose(-2, -1))
+        return rec.unsqueeze(0).to(k.dtype)
+    else:
+        coeff = kf @ W.T
+        coeff_q = fake_quantize(coeff, bits, dim=-1)
+        return (coeff_q @ W).to(k.dtype)
+
+
+# -------------------------------------------------------------------------------
 # Attention-visible distortion metrics
 # -------------------------------------------------------------------------------
 @torch.no_grad()
@@ -294,6 +350,8 @@ def generate_with_kv_intervention(model, tok,
                                   ids: torch.Tensor,
                                   k_quant_fn: Callable[[torch.Tensor], torch.Tensor],
                                   v_quant_fn: Callable[[torch.Tensor], torch.Tensor] = None,
+                                  layer_k_fns: List[Callable[[torch.Tensor], torch.Tensor]] = None,
+                                  layer_v_fns: List[Callable[[torch.Tensor], torch.Tensor]] = None,
                                   max_new: int = MAX_NEW) -> torch.Tensor:
     """Greedy generation with optional K and V quantization at every step."""
     from transformers import DynamicCache
@@ -301,8 +359,10 @@ def generate_with_kv_intervention(model, tok,
     v_quant_fn = v_quant_fn or (lambda v: v)
     cache = DynamicCache()
     for li in range(nl):
-        kq = k_quant_fn(ref_k[li]).contiguous()
-        vq = v_quant_fn(ref_v[li]).contiguous()
+        k_fn = layer_k_fns[li] if layer_k_fns else k_quant_fn
+        v_fn = layer_v_fns[li] if layer_v_fns else v_quant_fn
+        kq = k_fn(ref_k[li]).contiguous()
+        vq = v_fn(ref_v[li]).contiguous()
         cache.update(kq, vq, li)
 
     gen = ids.clone()
@@ -317,10 +377,12 @@ def generate_with_kv_intervention(model, tok,
         pk = list(out.past_key_values)
         cache = DynamicCache()
         for li in range(nl):
+            k_fn = layer_k_fns[li] if layer_k_fns else k_quant_fn
+            v_fn = layer_v_fns[li] if layer_v_fns else v_quant_fn
             k_new = pk[li][0][:, :, -1:, :]
             v_new = pk[li][1][:, :, -1:, :]
-            kq = k_quant_fn(k_new).contiguous()
-            vq = v_quant_fn(v_new).contiguous()
+            kq = k_fn(k_new).contiguous()
+            vq = v_fn(v_new).contiguous()
             cache.update(kq, vq, li)
 
         if nid.item() == tok.eos_token_id:
@@ -353,11 +415,15 @@ class Method:
     fn: Callable[[torch.Tensor], torch.Tensor]
     nominal_rate: float   # bits per unique transformed coefficient / scalar
     v_fn: Callable[[torch.Tensor], torch.Tensor] = None  # if None, V is left untouched
+    layer_fns: List[Callable[[torch.Tensor], torch.Tensor]] = None  # per-layer overrides
+    layer_v_fns: List[Callable[[torch.Tensor], torch.Tensor]] = None  # per-layer V overrides
 
 
-def make_methods(total_rate: int = TOTAL_RATE) -> List[Method]:
+def make_methods(total_rate: int = TOTAL_RATE,
+                 learned_transforms: Dict[str, List[torch.Tensor]] = None) -> List[Method]:
     """Build the set of conditions for the mechanism-control experiment."""
     methods: List[Method] = []
+    learned_transforms = learned_transforms or {}
 
     # Baselines
     methods.append(Method("fp16 baseline", lambda k: k, 16.0))
@@ -431,6 +497,22 @@ def make_methods(total_rate: int = TOTAL_RATE) -> List[Method]:
         v_fn=lambda v: quant_rfft_polar(v, 4, 8, "direct")
     ))
 
+    # 4. Learned orthogonal transform controls
+    for name, W_list in learned_transforms.items():
+        bits = total_rate // 2
+        per_head = ("per-head" in name)
+        layer_fns = [
+            (lambda k, W=W_list[li], b=bits, ph=per_head:
+             quant_learned(k, W, b, per_head=ph))
+            for li in range(len(W_list))
+        ]
+        methods.append(Method(
+            f"learned {name} {bits}-bit",
+            fn=layer_fns[0],  # fallback, not used when layer_fns is set
+            nominal_rate=total_rate,
+            layer_fns=layer_fns
+        ))
+
     return methods
 
 
@@ -456,11 +538,35 @@ def run(model_id: str = None, prompts: List[str] = None):
         attn_implementation="eager",
     ).eval()
 
-    methods = make_methods()
+    # Calibration / test split for learned-transform conditions.
+    # First half of prompts is used to learn layer-wise orthogonal transforms;
+    # second half is used to evaluate all methods.
+    n_calib = len(prompts) // 2
+    calib_prompts = prompts[:n_calib]
+    test_prompts = prompts[n_calib:]
+    print(f"Calibration prompts: {n_calib}, test prompts: {len(test_prompts)}")
+
+    print("Learning per-layer orthogonal transforms from calibration prompts...")
+    calib_k: List[List[torch.Tensor]] = [[] for _ in range(model.config.num_hidden_layers)]
+    for prompt in calib_prompts:
+        ref_k, _, _, _ = build_reference(model, tok, prompt)
+        for li, k in enumerate(ref_k):
+            calib_k[li].append(k)
+    calib_k_stacked = [torch.cat(calib_k[li], dim=2) for li in range(len(calib_k))]
+    W_per_layer = learn_layer_transforms(calib_k_stacked, per_head=False)
+    W_per_head = learn_layer_transforms(calib_k_stacked, per_head=True)
+    learned_transforms = {
+        "per-layer": W_per_layer,
+        "per-head": W_per_head,
+    }
+    print("Done.")
+
+    methods = make_methods(learned_transforms=learned_transforms)
 
     all_results: List[Dict] = []
-    for pi, prompt in enumerate(prompts):
-        print(f"\nPrompt {pi+1}/{len(prompts)}: {prompt[:60]}")
+    for pi, prompt in enumerate(test_prompts):
+        real_idx = n_calib + pi
+        print(f"\nTest prompt {pi+1}/{len(test_prompts)} (idx {real_idx}): {prompt[:60]}")
         ref_k, ref_v, ids, _ = build_reference(model, tok, prompt)
 
         # Reference generation
@@ -479,6 +585,8 @@ def run(model_id: str = None, prompts: List[str] = None):
                     model, tok, ref_k, ref_v, ids,
                     k_quant_fn=method.fn,
                     v_quant_fn=method.v_fn,
+                    layer_k_fns=method.layer_fns,
+                    layer_v_fns=method.layer_v_fns,
                     max_new=MAX_NEW
                 )
                 hyp_text = tok.decode(hyp_ids[0], skip_special_tokens=True)
@@ -487,7 +595,10 @@ def run(model_id: str = None, prompts: List[str] = None):
                 m, n, first_div = token_match(ref_tokens, hyp_tokens)
 
                 # Quantize the cached K once for distortion metrics (V untouched here)
-                quant_k = [method.fn(k) for k in ref_k]
+                if method.layer_fns:
+                    quant_k = [method.layer_fns[li](k) for li, k in enumerate(ref_k)]
+                else:
+                    quant_k = [method.fn(k) for k in ref_k]
                 metrics = compute_metrics(model, ref_k, quant_k, ref_v, ids)
 
                 head_dim = ref_k[0].shape[-1]
