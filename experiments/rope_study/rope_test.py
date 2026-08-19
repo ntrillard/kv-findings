@@ -46,7 +46,7 @@ def gen(model, tok, prompt, max_new=MAX_NEW):
             gen = torch.cat([gen, nid], dim=1)
             dc = o2.past_key_values
             if nid.item() == tok.eos_token_id: break
-    return tok.decode(gen[0], skip_special_tokens=True)
+    return tok.decode(gen[0], skip_special_tokens=True), gen[0], ids.shape[1]
 
 print("Loading model once...", flush=True)
 torch.cuda.empty_cache(); gc.collect()
@@ -62,29 +62,28 @@ print("-"*50, flush=True)
 
 # Get reference output at default theta=10000
 set_rope(model, 10000)
-refs = [gen(model, tok, p) for p in PROMPTS]
-ref_long = gen(model, tok, LONG_CTX[:2000], 10)
+ref_texts, ref_gens, _ = zip(*[gen(model, tok, p) for p in PROMPTS])
+ref_long_text, ref_long_gen, ref_long_len = gen(model, tok, LONG_CTX[:2000], 10)
 
 for theta in thetas:
     set_rope(model, theta)
-    
+
     # Short prompts
     total_m = 0; total_n = 0
     for pi, prompt in enumerate(PROMPTS):
-        text = gen(model, tok, prompt)
-        ref_out = refs[pi][len(prompt):].strip()[:40]
-        out = text[len(prompt):].strip()[:40]
-        rt = tok(ref_out, return_tensors="pt").input_ids[0]
-        ot = tok(out, return_tensors="pt").input_ids[0]
+        _, hyp_gen, prompt_len = gen(model, tok, prompt)
+        ref_gen = ref_gens[pi]
+        rt = ref_gen[prompt_len:]
+        ot = hyp_gen[prompt_len:]
         n = min(len(rt), len(ot))
         if n > 0:
             total_m += (rt[:n] == ot[:n]).sum().item()
             total_n += n
-    
+
     # Long context coherence
-    text_long = gen(model, tok, LONG_CTX[:2000], 10)
-    long_out = text_long[len(LONG_CTX[:2000]):].strip()[:40]
-    
+    _, hyp_long_gen, hyp_long_len = gen(model, tok, LONG_CTX[:2000], 10)
+    long_out = tok.decode(hyp_long_gen[hyp_long_len:], skip_special_tokens=True).strip()[:40]
+
     pct = total_m / total_n * 100 if total_n > 0 else 0
     print(f"  {theta:<12.0f} {total_m:3d}/{total_n:3d} ({pct:5.1f}%)  {long_out[:35]}", flush=True)
 

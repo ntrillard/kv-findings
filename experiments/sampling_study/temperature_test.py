@@ -44,7 +44,6 @@ def generate(model, tok, prompt, temperature, top_p=1.0):
     ids = tok(prompt, return_tensors="pt").input_ids.to(DEVICE)
     with torch.no_grad():
         o = model(ids, use_cache=True)
-        pk = list(o.past_key_values)
         past = o.past_key_values
         gen = ids.clone()
         nid = ids[:, -1:]
@@ -52,7 +51,7 @@ def generate(model, tok, prompt, temperature, top_p=1.0):
             o2 = model(nid, use_cache=True, past_key_values=past)
             logits = o2.logits[:, -1, :].float() / temperature
             past = o2.past_key_values
-            
+
             if top_p < 1.0:
                 probs = torch.softmax(logits, dim=-1)
                 sorted_probs, sorted_idx = probs.sort(dim=-1, descending=True)
@@ -64,14 +63,14 @@ def generate(model, tok, prompt, temperature, top_p=1.0):
                 nid = torch.multinomial(probs, 1)
             else:
                 nid = logits.argmax(dim=-1, keepdim=True)
-            
+
             gen = torch.cat([gen, nid], dim=1)
             if nid.item() == tok.eos_token_id: break
-    return tok.decode(gen[0], skip_special_tokens=True)
+    return gen
 
-def quality_metrics(text, prompt):
-    """Compute quality metrics for generated text."""
-    suffix = text[len(prompt):].strip()
+def quality_metrics(suffix):
+    """Compute quality metrics for generated text suffix."""
+    suffix = suffix.strip()
     words = suffix.split()
     
     # Repetition rate
@@ -124,8 +123,10 @@ results = []
 for name, temp, top_p in configs:
     all_metrics = []
     for pi, prompt in enumerate(PROMPTS):
-        text = generate(model, tok, prompt, temp, top_p)
-        metrics = quality_metrics(text, prompt)
+        gen_ids = generate(model, tok, prompt, temp, top_p)
+        prompt_len = tok(prompt, return_tensors="pt").input_ids.shape[1]
+        suffix = tok.decode(gen_ids[0, prompt_len:], skip_special_tokens=True)
+        metrics = quality_metrics(suffix)
         all_metrics.append(metrics)
     
     avg_div = sum(m["diversity"] for m in all_metrics) / len(all_metrics)
@@ -143,9 +144,11 @@ for name, temp, top_p in configs:
 
 # Show example outputs for creative prompts
 print(f"\nExample outputs (creative prompts):", flush=True)
+example_prompt = "Write a short poem about the ocean."
+example_prompt_len = tok(example_prompt, return_tensors="pt").input_ids.shape[1]
 for name, temp, top_p in configs[::2]:  # Every other config
-    text = generate(model, tok, "Write a short poem about the ocean.", temp, top_p)
-    out = text[len("Write a short poem about the ocean."):].strip()[:80]
+    gen_ids = generate(model, tok, example_prompt, temp, top_p)
+    out = tok.decode(gen_ids[0, example_prompt_len:], skip_special_tokens=True).strip()[:80]
     print(f"  {name:<20}: {out}", flush=True)
 
 json.dump(results, open("temperature_results.json", "w"), indent=2)
