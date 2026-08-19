@@ -62,3 +62,17 @@ Fmag4 (per_token): 4 bits * 33 / 64 ≈ 2.06 bits / original K scalar
 
 So global scaling buys a large quality gain for a 50% increase in magnitude
 payload over the original Fmag4.
+
+## Long-generation check (MAX_NEW=150)
+
+See `experiments/fmag_longgen_check_README.md`. The top configurations were
+re-run with 150 generated tokens to rule out 60-token saturation:
+
+| Method | Match% (150 tokens) |
+|---|---:|
+| rFFT Fmag6 (global) | **97.5%** |
+| full FFT Fmag6 (global) | **97.5%** |
+| rFFT Fmag5 (per_frequency) | 95.2% |
+
+The high match rates persist, so the global-scaling improvement is not an
+artifact of short generation.

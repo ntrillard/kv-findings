@@ -139,6 +139,10 @@ Key takeaways:
   (diminishing returns in the global scaler).
 - **Per-frequency scaling is also strong** (95.5% in the all-prompts ablation,
   90.9% on held-out prompts here), with the lowest K-NRMSE of any method.
+- **The best Fmag configs are robust at 150-token generation.**
+  `rFFT Fmag6 (global)` stays at 97.5% match over 150 tokens (see
+  `experiments/fmag_longgen_check_README.md`), so the gains are not a
+  60-token saturation artifact.
 - **Fixed transforms (DCT, rFFT 5+7) beat data-dependent learned transforms on
   held-out prompts.** The learned and attention-aware transforms have low
   K-NRMSE but poor token-match, suggesting they overfit the calibration split.
