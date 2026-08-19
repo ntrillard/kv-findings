@@ -64,13 +64,32 @@ PROMPTS = [
 # -------------------------------------------------------------------------------
 # Fake-quantization primitives
 # -------------------------------------------------------------------------------
-def fake_quantize(t: torch.Tensor, bits: int, dim: int = -1) -> torch.Tensor:
-    """Per-head/channel min-max fake quantization."""
+def fake_quantize(t: torch.Tensor, bits: int, dim: int = -1,
+                  scale_mode: str = "per_token") -> torch.Tensor:
+    """Min-max fake quantization with several scaling choices.
+
+    scale_mode:
+        'per_token'      -> per-head per-token scaling (dim=-1 in head_dim).
+        'global'         -> single global min/max over the whole tensor.
+        'per_frequency'  -> per-frequency-bin min/max across heads/tokens.
+    """
     if bits >= 16:
         return t
-    lo = t.amin(dim=dim, keepdim=True)
-    hi = t.amax(dim=dim, keepdim=True)
     levels = 2 ** bits
+
+    if scale_mode == "global":
+        lo = t.amin()
+        hi = t.amax()
+    elif scale_mode == "per_frequency":
+        # t shape is (..., n_freq); compute range per frequency bin.
+        lo = t.amin(dim=tuple(range(t.ndim - 1)), keepdim=True)
+        hi = t.amax(dim=tuple(range(t.ndim - 1)), keepdim=True)
+    elif scale_mode == "per_token":
+        lo = t.amin(dim=dim, keepdim=True)
+        hi = t.amax(dim=dim, keepdim=True)
+    else:
+        raise ValueError(scale_mode)
+
     scale = (hi - lo) / max(levels - 1, 1)
     q = ((t - lo) / (scale + 1e-12)).round().clamp(0, levels - 1)
     return q * scale + lo
@@ -84,7 +103,9 @@ def quant_raw(k: torch.Tensor, bits: int) -> torch.Tensor:
 
 
 def quant_fft_polar(k: torch.Tensor, mag_bits: int, phase_bits: int,
-                    angle_mode: str = "direct") -> torch.Tensor:
+                    angle_mode: str = "direct",
+                    mag_scale_mode: str = "per_token",
+                    phase_scale_mode: str = "per_token") -> torch.Tensor:
     """
     Full FFT, quantize magnitude, quantize phase.
     angle_mode:
@@ -95,15 +116,15 @@ def quant_fft_polar(k: torch.Tensor, mag_bits: int, phase_bits: int,
     tf = torch.fft.fft(k.float(), dim=-1)
     mag = tf.abs()
     ang = tf.angle()
-    mag_q = fake_quantize(mag, mag_bits, dim=-1)
+    mag_q = fake_quantize(mag, mag_bits, dim=-1, scale_mode=mag_scale_mode)
 
     if angle_mode == "exact":
         ang_q = ang
     elif angle_mode == "direct":
-        ang_q = fake_quantize(ang, phase_bits, dim=-1)
+        ang_q = fake_quantize(ang, phase_bits, dim=-1, scale_mode=phase_scale_mode)
     elif angle_mode == "cos_sin":
-        cos_q = fake_quantize(torch.cos(ang), phase_bits, dim=-1)
-        sin_q = fake_quantize(torch.sin(ang), phase_bits, dim=-1)
+        cos_q = fake_quantize(torch.cos(ang), phase_bits, dim=-1, scale_mode=phase_scale_mode)
+        sin_q = fake_quantize(torch.sin(ang), phase_bits, dim=-1, scale_mode=phase_scale_mode)
         ang_q = torch.atan2(sin_q, cos_q)
     else:
         raise ValueError(angle_mode)
@@ -113,7 +134,9 @@ def quant_fft_polar(k: torch.Tensor, mag_bits: int, phase_bits: int,
 
 
 def quant_rfft_polar(k: torch.Tensor, mag_bits: int, phase_bits: int,
-                     angle_mode: str = "direct") -> torch.Tensor:
+                     angle_mode: str = "direct",
+                     mag_scale_mode: str = "per_token",
+                     phase_scale_mode: str = "per_token") -> torch.Tensor:
     """
     Real FFT -> one-sided spectrum. Quantize magnitude + angle of unique bins.
     This is the cleanest physical-codec candidate for real-valued K.
@@ -121,15 +144,15 @@ def quant_rfft_polar(k: torch.Tensor, mag_bits: int, phase_bits: int,
     tf = torch.fft.rfft(k.float(), dim=-1)
     mag = tf.abs()
     ang = tf.angle()
-    mag_q = fake_quantize(mag, mag_bits, dim=-1)
+    mag_q = fake_quantize(mag, mag_bits, dim=-1, scale_mode=mag_scale_mode)
 
     if angle_mode == "exact":
         ang_q = ang
     elif angle_mode == "direct":
-        ang_q = fake_quantize(ang, phase_bits, dim=-1)
+        ang_q = fake_quantize(ang, phase_bits, dim=-1, scale_mode=phase_scale_mode)
     elif angle_mode == "cos_sin":
-        cos_q = fake_quantize(torch.cos(ang), phase_bits, dim=-1)
-        sin_q = fake_quantize(torch.sin(ang), phase_bits, dim=-1)
+        cos_q = fake_quantize(torch.cos(ang), phase_bits, dim=-1, scale_mode=phase_scale_mode)
+        sin_q = fake_quantize(torch.sin(ang), phase_bits, dim=-1, scale_mode=phase_scale_mode)
         ang_q = torch.atan2(sin_q, cos_q)
     else:
         raise ValueError(angle_mode)
@@ -179,13 +202,14 @@ def quant_dct(k: torch.Tensor, bits: int) -> torch.Tensor:
     return (coeff_q @ dct).to(k.dtype)
 
 
-def quant_fourier_mag_exact(k: torch.Tensor, bits: int = 4) -> torch.Tensor:
+def quant_fourier_mag_exact(k: torch.Tensor, bits: int = 4,
+                            scale_mode: str = "per_token") -> torch.Tensor:
     """
     Exact re-implementation of the `fourier_mag` method from
     algebraic_kv_tests.py: full FFT, quantize magnitude, keep exact phase.
     """
     tf = torch.fft.fft(k.float(), dim=-1)
-    mag = fake_quantize(tf.abs(), bits, dim=-1)
+    mag = fake_quantize(tf.abs(), bits, dim=-1, scale_mode=scale_mode)
     return torch.fft.ifft(
         torch.complex(mag * torch.cos(tf.angle()), mag * torch.sin(tf.angle())),
         dim=-1
@@ -615,6 +639,33 @@ def make_methods(total_rate: int = TOTAL_RATE,
         "full FFT mag4+exact phase (algebraic)",
         lambda k: quant_fourier_mag_exact(k, 4),
         nominal_rate=4.0
+    ))
+
+    # Fmag with better scaling modes (key finding from fmag_ablation.py)
+    methods.append(Method(
+        "rFFT mag4+exact phase (global)",
+        lambda k: quant_rfft_polar(k, 4, 16, "exact", mag_scale_mode="global"),
+        nominal_rate=4.0
+    ))
+    methods.append(Method(
+        "rFFT mag5+exact phase (global)",
+        lambda k: quant_rfft_polar(k, 5, 16, "exact", mag_scale_mode="global"),
+        nominal_rate=5.0
+    ))
+    methods.append(Method(
+        "rFFT mag6+exact phase (global)",
+        lambda k: quant_rfft_polar(k, 6, 16, "exact", mag_scale_mode="global"),
+        nominal_rate=6.0
+    ))
+    methods.append(Method(
+        "rFFT mag5+exact phase (per_frequency)",
+        lambda k: quant_rfft_polar(k, 5, 16, "exact", mag_scale_mode="per_frequency"),
+        nominal_rate=5.0
+    ))
+    methods.append(Method(
+        "full FFT mag6+exact phase (global)",
+        lambda k: quant_fourier_mag_exact(k, 6, scale_mode="global"),
+        nominal_rate=6.0
     ))
 
     # 2. Transform/representation controls at matched total payload
