@@ -120,6 +120,15 @@ Sub-2-bit KV with selective-layer anchoring preserves long-context retrieval
 up to 16K wherever the base model is capable. Anchors are *necessary*, not
 cosmetic: without them retrieval is destroyed at 16K.
 
+## End-to-end stack (NF4 weights + anchored KV)
+
+On Gemma-3-1B holdout: NF4 (bnb) weights alone diverge from the bf16
+pipeline to 30.7% exact-match; adding any anchored KV recipe (ternary/
+2-bit/4.25b) changes that number by exactly 0.0 — the KV scheme is
+transparent on top of weight quantization. End-to-end fidelity is
+therefore bounded entirely by the weight quant; memory at 16K context:
+1.14-1.18 GB total (2x weight + ~3.5x KV savings).
+
 ## Limitations
 
 - Greedy exact-match vs own fp16 baseline over 50–100 tokens, 6-prompt sets;

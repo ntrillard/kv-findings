@@ -1,0 +1,30 @@
+{
+  "weights_nf4_gb": 1.006,
+  "weights_bf16_gb": 2.009,
+  "nf4_alone_match": 0.3067,
+  "nf4_alone_per_prompt": [
+    0.28,
+    0.98,
+    0.06,
+    0.06,
+    0.1,
+    0.36
+  ],
+  "champions": [
+    {
+      "name": "kv_nfv4g64_d48",
+      "match_vs_fp16_pipeline": 0.3067,
+      "time_s": 5.61
+    },
+    {
+      "name": "kv_both2_d48",
+      "match_vs_fp16_pipeline": 0.3067,
+      "time_s": 5.53
+    },
+    {
+      "name": "kv_tern_d48",
+      "match_vs_fp16_pipeline": 0.3067,
+      "time_s": 5.69
+    }
+  ]
+}
