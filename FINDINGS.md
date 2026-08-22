@@ -32,8 +32,11 @@ exact-100% claims are for horizons ≤ D.
 | 4-bit total + anchors (`nfv4g64_dp32_sens`) | 91.3–100% | 4.25 | ~5.5 | 59% |
 | int8 KV reference | 93.0% | 8.0 | 8.0 | 50% |
 
-Qwen2.5-1.5B: the 4-bit recipe beats int8 (71.7% vs 41.3% holdout). Sub-2-bit
-recipes do **not** transfer to Qwen (28–29% vs 41.3%) — Gemma-specific so far.
+Qwen2.5-1.5B with its **own probe-derived anchor layers** {0,5,9,13,15,18}
+(layer 0 dominates with ~7x the drift of any other): NF4/int4-g64 **100%**,
+sorted-2-bit **99.7%**, ternary **98.7%** — vs int8's 41.3%. The initial
+sub-2-bit transfer failure was an artifact of reusing Gemma's layer set;
+the 0.5s sensitivity probe is what makes the recipe model-general.
 
 ## The winning recipe: Selective-Layer Decode Anchoring
 
@@ -125,8 +128,10 @@ cosmetic: without them retrieval is destroyed at 16K.
 - Harness simulates quantization error in bf16 — real deployment needs
   packed sub-byte storage + dequant kernels (memory savings are projected,
   not measured end-to-end).
-- Depth: Gemma-3-1B fully validated; Qwen2.5-1.5B partially; sub-2-bit not
-  tested beyond these two.
+- Depth: Gemma-3-1B and Qwen2.5-1.5B fully validated at all bit tiers via
+  per-model sensitivity probing; larger models pending GPU memory.
+- gemma-3-4b bf16 cannot fit on the 10GB test card (~7.8GB text weights
+  alone); scale-transfer validation needs a bigger GPU.
 - Anchor overhead amortizes as O(A/T): effective bits converge to nominal
   only at long context.
 

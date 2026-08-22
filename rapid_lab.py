@@ -28,6 +28,7 @@ MODEL_KEY = "gemma"
 MODELS = {
     "gemma": {"id": "google/gemma-3-1b-it", "rope": "transformers.models.gemma3.modeling_gemma3", "hd": 256},
     "qwen": {"id": "Qwen/Qwen2.5-1.5B-Instruct", "rope": "transformers.models.qwen2.modeling_qwen2", "hd": 128},
+    "gemma4b": {"id": "google/gemma-3-4b-it", "rope": "transformers.models.gemma3.modeling_gemma3", "hd": 256, "text_only": True},
 }
 DEVICE = "cuda"
 DTYPE = torch.bfloat16
@@ -361,6 +362,21 @@ def load():
     tok = AutoTokenizer.from_pretrained(path)
     model = AutoModelForCausalLM.from_pretrained(path, dtype=DTYPE).to(DEVICE)
     model.eval()
+    if cfg.get("text_only"):
+        import gc
+        for mod_name in list(dict(model.named_modules())):
+            if "vision" in mod_name or "multi_modal" in mod_name:
+                parts = mod_name.split(".")
+                obj = model
+                for p in parts:
+                    obj = getattr(obj, p)
+                parent = model
+                for p in parts[:-1]:
+                    parent = getattr(parent, p)
+                if isinstance(getattr(parent, parts[-1], None), torch.nn.Module):
+                    delattr(parent, parts[-1])
+        gc.collect()
+        torch.cuda.empty_cache()
     ROPE_MOD = importlib.import_module(cfg["rope"])
     HEAD_DIM = cfg["hd"]
     return model, tok
@@ -1566,6 +1582,10 @@ reg_sens("kv_tern_d48", q_tern(8), q_tern(4), 1.58, 1.58, D=48)
 reg_sens("kv_tern_d64", q_tern(8), q_tern(4), 1.58, 1.58, D=64)
 reg_sens("kv_tern_d96", q_tern(8), q_tern(4), 1.58, 1.58, D=96)
 reg_sens("kv_nfv4g64_d48", q_nf4, group(lambda x: q_sym(x, 4), 64), 4.25, 4.25, D=48)
+QSENS = {0, 5, 9, 13, 15, 18}
+reg_sens("kv_tern_d48_qsens", q_tern(8), q_tern(4), 1.58, 1.58, D=48, S=QSENS)
+reg_sens("kv_both2_d48_qsens", q_sort_group(8, 2), q_sort_group(4, 2), 2, 2, D=48, S=QSENS)
+reg_sens("kv_nfv4g64_d48_qsens", q_nf4, group(lambda x: q_sym(x, 4), 64), 4.25, 4.25, D=48, S=QSENS)
 reg_sens("kv_signboth_a8", q_sign_mean(8), q_sign_mean(4), 1, 1, prot=8)
 reg_sens("kv_k1v2_a8", q_sign_mean(8), q_sort_group(4, 2), 1, 2, prot=8)
 reg_sens("kv_both2_a8", q_sort_group(8, 2), q_sort_group(4, 2), 2, 2, prot=8)
