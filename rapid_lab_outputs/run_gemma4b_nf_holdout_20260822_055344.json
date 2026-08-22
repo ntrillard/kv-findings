@@ -1,0 +1,84 @@
+{
+  "model": "google/gemma-3-4b-it",
+  "prompt_set": "holdout",
+  "prompts": [
+    "Photosynthesis converts carbon dioxide and water into glucose using energy from",
+    "def binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n",
+    "The Defenestration of Prague in 1618 sparked",
+    "The sky appears blue because air molecules scatter shorter wavelengths more strongly. This effect, called Rayleigh scattering, implies that at sunset the",
+    "Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide.  According to the passage, coral reefs support about",
+    "A shirt costs 40 dollars. The shop applies a 25 percent discount, then adds 10 percent tax. The final price is"
+  ],
+  "max_new": 50,
+  "results": [
+    {
+      "name": "kv_k8_v8",
+      "match": 1.0,
+      "prefix": 1.0,
+      "bits": 8,
+      "eff_bits": 8,
+      "degenerate": false,
+      "savings_pct": 50.0,
+      "time_s": 9.11,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "num_layer_sensitivity",
+      "error": "invalid literal for int() with base 10: 'layers'",
+      "time_s": 1.18
+    },
+    {
+      "name": "kv_sign_s0q",
+      "error": "invalid literal for int() with base 10: 'layers'",
+      "time_s": 0.0
+    },
+    {
+      "name": "kv_tern_s0q",
+      "error": "invalid literal for int() with base 10: 'layers'",
+      "time_s": 0.0
+    },
+    {
+      "name": "kv_nfv4g64_l0",
+      "error": "invalid literal for int() with base 10: 'layers'",
+      "time_s": 0.0
+    },
+    {
+      "name": "kv_sign_s01",
+      "error": "invalid literal for int() with base 10: 'layers'",
+      "time_s": 0.0
+    },
+    {
+      "name": "kv_sign_s012",
+      "error": "invalid literal for int() with base 10: 'layers'",
+      "time_s": 0.0
+    },
+    {
+      "name": "kv_sign_s0123",
+      "error": "invalid literal for int() with base 10: 'layers'",
+      "time_s": 0.0
+    },
+    {
+      "name": "kv_sign_s0",
+      "error": "invalid literal for int() with base 10: 'layers'",
+      "time_s": 0.0
+    }
+  ]
+}

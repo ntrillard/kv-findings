@@ -1,0 +1,62 @@
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "prompt_set": "holdout",
+  "prompts": [
+    "Photosynthesis converts carbon dioxide and water into glucose using energy from",
+    "def binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n",
+    "The Defenestration of Prague in 1618 sparked",
+    "The sky appears blue because air molecules scatter shorter wavelengths more strongly. This effect, called Rayleigh scattering, implies that at sunset the",
+    "Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide.  According to the passage, coral reefs support about",
+    "A shirt costs 40 dollars. The shop applies a 25 percent discount, then adds 10 percent tax. The final price is"
+  ],
+  "max_new": 50,
+  "results": [
+    {
+      "name": "num_layer_sensitivity",
+      "kind": "numeric",
+      "detail": {
+        "top_sensitive_layers": [
+          0,
+          6,
+          10,
+          17,
+          18,
+          20,
+          24,
+          27
+        ],
+        "all": {
+          "0": 0.9356,
+          "1": 0.0485,
+          "2": 0.0316,
+          "3": 0.0822,
+          "4": 0.0587,
+          "5": 0.0399,
+          "6": 0.1562,
+          "7": 0.05,
+          "8": 0.1459,
+          "9": 0.1179,
+          "10": 0.1756,
+          "11": 0.0877,
+          "12": 0.0933,
+          "13": 0.1037,
+          "14": 0.1153,
+          "15": 0.1113,
+          "16": 0.1337,
+          "17": 0.2054,
+          "18": 0.1529,
+          "19": 0.0919,
+          "20": 0.2127,
+          "21": 0.0874,
+          "22": 0.0583,
+          "23": 0.037,
+          "24": 0.198,
+          "25": 0.1087,
+          "26": 0.1219,
+          "27": 0.3688
+        }
+      },
+      "time_s": 0.86
+    }
+  ]
+}

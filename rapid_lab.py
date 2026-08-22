@@ -29,6 +29,8 @@ MODELS = {
     "gemma": {"id": "google/gemma-3-1b-it", "rope": "transformers.models.gemma3.modeling_gemma3", "hd": 256},
     "qwen": {"id": "Qwen/Qwen2.5-1.5B-Instruct", "rope": "transformers.models.qwen2.modeling_qwen2", "hd": 128},
     "gemma4b": {"id": "google/gemma-3-4b-it", "rope": "transformers.models.gemma3.modeling_gemma3", "hd": 256, "text_only": True},
+    "gemma4b_nf": {"id": "google/gemma-3-4b-it", "rope": "transformers.models.gemma3.modeling_gemma3", "hd": 256, "nf4": True},
+    "qwen7b_nf": {"id": "Qwen/Qwen2.5-7B-Instruct", "rope": "transformers.models.qwen2.modeling_qwen2", "hd": 128, "nf4": True},
 }
 DEVICE = "cuda"
 DTYPE = torch.bfloat16
@@ -234,7 +236,10 @@ def norm_hook(fn):
 
 
 def layer_idx(name):
-    return int(name.split(".")[2])
+    for p in name.split("."):
+        if p.isdigit():
+            return int(p)
+    raise ValueError(f"no layer index in {name}")
 
 
 def guard(handles, what):
@@ -360,8 +365,23 @@ def load():
         f"~/.cache/huggingface/hub/models--{cfg['id'].replace('/', '--')}/snapshots/*"))
     path = snaps[0]
     tok = AutoTokenizer.from_pretrained(path)
-    model = AutoModelForCausalLM.from_pretrained(path, dtype=DTYPE).to(DEVICE)
+    if cfg.get("nf4"):
+        from transformers import BitsAndBytesConfig
+        qcfg = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4",
+                                  bnb_4bit_compute_dtype=DTYPE,
+                                  llm_int8_skip_modules=["lm_head"])
+        model = AutoModelForCausalLM.from_pretrained(
+            path, quantization_config=qcfg, device_map={"": 0})
+    else:
+        model = AutoModelForCausalLM.from_pretrained(path, dtype=DTYPE).to(DEVICE)
     model.eval()
+    global NL
+    try:
+        NL = model.config.num_hidden_layers
+        if NL < 4:  # conditional-generation wrapper nests text config
+            NL = model.config.get_text_config().num_hidden_layers
+    except Exception:
+        pass
     if cfg.get("text_only"):
         import gc
         for mod_name in list(dict(model.named_modules())):
@@ -423,8 +443,13 @@ def match(baseline, test_ids):
 
 
 def get_hooks(model):
-    ks = [(n, m) for n, m in model.named_modules() if n.endswith("self_attn.k_proj")]
-    vs = [(n, m) for n, m in model.named_modules() if n.endswith("self_attn.v_proj")]
+    def ok(n):
+        return ("self_attn.k_proj" in n or "self_attn.v_proj" in n) \
+            and "vision" not in n and "multi_modal" not in n
+    ks = [(n, m) for n, m in model.named_modules()
+          if n.endswith("self_attn.k_proj") and ok(n)]
+    vs = [(n, m) for n, m in model.named_modules()
+          if n.endswith("self_attn.v_proj") and ok(n)]
     return ks, vs
 
 
@@ -1585,6 +1610,7 @@ reg_sens("kv_nfv4g64_d48", q_nf4, group(lambda x: q_sym(x, 4), 64), 4.25, 4.25, 
 QSENS = {0, 5, 9, 13, 15, 18}
 reg_sens("kv_sign_s0q", q_sign_mean(8), q_sign_mean(4), 1, 1, D=48, S={0})
 reg_sens("kv_tern_s0q", q_tern(8), q_tern(4), 1.58, 1.58, D=48, S={0})
+reg_sens("kv_nfv4g64_l0", q_nf4, group(lambda x: q_sym(x, 4), 64), 4.25, 4.25, D=48, S={0})
 reg_sens("kv_sign_s01", q_sign_mean(8), q_sign_mean(4), 1, 1, D=48, S={0, 1})
 reg_sens("kv_sign_s012", q_sign_mean(8), q_sign_mean(4), 1, 1, D=48, S={0, 1, 2})
 reg_sens("kv_sign_s0123", q_sign_mean(8), q_sign_mean(4), 1, 1, D=48, S={0, 1, 2, 3})
