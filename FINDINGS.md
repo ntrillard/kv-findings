@@ -17,6 +17,16 @@ fp16 on every prompt set** (holdout, hard, long-context), including sets where
 | NF4-K + int4-g64 V (**4.25b**) | 100% | 100% | 100% | ~5.9 |
 | int8 KV reference | 93% | 72% | 71% | 8.0 |
 
+Debunk audit (sign_d48): quantization verified real (K/V rel-err
+0.54-0.63 on non-anchor layers); result reproduced through clean path;
+all negative controls behaved (no-anchor 3%, references match history).
+Mechanism: greedy trajectory is set by fragile layers; other 22 layers
+are depth-redundant for token choice. CORRECTION: dp-mode keeps prompt
+fp16 on anchor layers permanently -> effective-bit floor ~4.2 regardless
+of nominal bits; nominal "1-bit" applies only as T->infinity with
+prompt-protection removed. Honest headline: ~4.2-4.6 eff bits beating
+int8 (8.0) on fidelity.
+
 Horizon boundary: at 100 generated tokens (vs 50) the 2-bit config holds
 92.3%, ternary 75.2% — anchor depth D must scale with generation length;
 exact-100% claims are for horizons ≤ D.

@@ -13,18 +13,7 @@
       "time_s": 0.0
     },
     {
-      "method": "both2_plain",
-      "exact": 0.03,
-      "hits": [
-        true,
-        false,
-        false
-      ],
-      "hit_rate": 0.3333333333333333,
-      "time_s": 6.6
-    },
-    {
-      "method": "both2",
+      "method": "sign_d48",
       "exact": 1.0,
       "hits": [
         true,
@@ -32,7 +21,7 @@
         true
       ],
       "hit_rate": 0.6666666666666666,
-      "time_s": 5.7
+      "time_s": 5.6
     }
   ]
 }
