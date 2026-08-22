@@ -4,6 +4,19 @@ Systematic discovery campaign using `rapid_lab.py`: ~150 tests, every test ≤10
 40+ logged runs, audited metrics (effective-bits accounting, prefix-match,
 held-out prompts, degeneracy flags).
 
+## Minimal recipe (post-debunk): anchor layer 0 only
+
+Sweeping nested anchor subsets revealed a single critical layer:
+fp16 anchors on **layer 0 alone** (D=48) + binary sign KV {−s,+s}
+everywhere else gives **100% exact-match** on holdout AND hard sets,
+fp16-ceiling retrieval at 16K, at **~1.6 effective bits** (90.5%
+real savings vs bf16 KV). Qwen: same single-layer recipe = 98.0%
+(vs int8 41.3%). Layer 0 is the highest-drift layer on both models
+(Gemma 0.08+, Qwen 0.985 - 7x its runner-up), consistent with
+pivot-token/attention-sink massive activations living in the first
+layer. Effective-bit floor: ~1.6 at short ctx, ->~1.1 long ctx
+(single-layer prompt protection amortizes to ~0.57 bits).
+
 ## Milestone: 100% exact-match to fp16 at sub-4-bit nominal
 
 `{quant} + sens-layer decode anchoring D=48` scores **100.0% exact-match vs

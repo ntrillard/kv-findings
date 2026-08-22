@@ -158,6 +158,10 @@ def main():
                                            n_sink=-48,
                                            layer_pred=lambda n:
                                                rl.layer_idx(n) in rl.SENS),
+        "sign_s0": lambda: rl.sink_runner(rl.q_sign_mean(8), rl.q_sign_mean(4),
+                                          n_sink=-48,
+                                          layer_pred=lambda n:
+                                              rl.layer_idx(n) == 0),
         "tern_plain": lambda: rl.kv_runner(rl.q_tern(8), rl.q_tern(4)),
     }
 
