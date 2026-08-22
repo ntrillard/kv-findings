@@ -47,12 +47,7 @@ and why, and how to reproduce everything.
 | `rapid_lab.py`, `nll_audit.py`, `long_audit.py`, `niah_lab.py` | **current** tooling |
 | `rapid_lab_outputs/`, `niah_outputs/` | raw evidence trail (60+ runs) |
 | `audits/` | debunk scripts + outputs from the two self-audits |
-| `experiments/` | Fmag-era mechanism controls (post-eval-fix) |
-| `FMAG_KV_FINDINGS.md` | Fmag4 writeup **with honest replication notes** |
-| `algebraic_kv_tests.py`, `cross_model_experiment.py`, `kv_sweep.py`, etc. | Fmag-era reproduction scripts |
-| `FMAG_APPLICABILITY.md`, `KV_ASYMMETRY_FINDING.md` | earlier mechanism studies |
-| `FINAL_RESULTS.md`, `MAX_MODEL_SIZE.md`, `SCIENTIFIC_IMPACT.md`, `USE_CASE_VALIDATION.md`, `CROSS_MODEL_RESULTS.md`, `HF_POST.md` | **historical** — pre-correction numbers, kept for the record |
-| `*.json` | raw result data from earlier experiments |
+| `old/` | **everything pre-campaign**: Fmag-era docs (`FMAG_*`, `CROSS_MODEL_RESULTS`, `HF_POST`, ...), reproduction scripts (`algebraic_kv_tests.py`, `experiments/`, ...), and raw result JSONs. Historical — see banners inside |
 
 ## Reproduce the current study
 
