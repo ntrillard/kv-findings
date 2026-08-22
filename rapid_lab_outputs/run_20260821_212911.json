@@ -1,0 +1,178 @@
+{
+  "model": "google/gemma-3-1b-it",
+  "prompts": [
+    "The capital of France is",
+    "In machine learning, gradient descent is",
+    "The three states of matter are"
+  ],
+  "max_new": 50,
+  "results": [
+    {
+      "name": "kv_k8_v8",
+      "match": 1.0,
+      "bits": 8,
+      "savings_pct": 50.0,
+      "time_s": 2.79,
+      "dq": false
+    },
+    {
+      "name": "kv_k4_v8",
+      "match": 0.1667,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.74,
+      "dq": false
+    },
+    {
+      "name": "kv_k2_v8",
+      "match": 0.0133,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 2.76,
+      "dq": false
+    },
+    {
+      "name": "kv_k8_v4",
+      "match": 0.0671,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.75,
+      "dq": false
+    },
+    {
+      "name": "kv_k4_v4",
+      "match": 0.2276,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 2.21,
+      "dq": false
+    },
+    {
+      "name": "kv_hada_k2_v8",
+      "match": 0.04,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 2.89,
+      "dq": false
+    },
+    {
+      "name": "kv_hada_k4_v4",
+      "match": 0.4333,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 2.91,
+      "dq": false
+    },
+    {
+      "name": "kv_dct_k4_v8",
+      "match": 0.2511,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.15,
+      "dq": false
+    },
+    {
+      "name": "kv_polar_m5_p7_k",
+      "match": 0.7467,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 3.44,
+      "dq": false
+    },
+    {
+      "name": "kv_polar_m4_p12_k",
+      "match": 0.7867,
+      "bits": 8,
+      "savings_pct": 50.0,
+      "time_s": 3.41,
+      "dq": false
+    },
+    {
+      "name": "kv_phase_only_p4_k",
+      "match": 0.4933,
+      "bits": 13,
+      "savings_pct": 18.8,
+      "time_s": 3.45,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_k",
+      "error": "argmin(): argument 'dim' (position 1) must be int, not Tensor",
+      "time_s": 0.0
+    },
+    {
+      "name": "kv_affine_k4_v8",
+      "match": 0.3667,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.83,
+      "dq": false
+    },
+    {
+      "name": "kv_delta_k3",
+      "error": "too many values to unpack (expected 3)",
+      "time_s": 0.0
+    },
+    {
+      "name": "kv_outlier_split_k2",
+      "match": 0.0911,
+      "bits": 3.2,
+      "savings_pct": 80.0,
+      "time_s": 3.09,
+      "dq": false
+    },
+    {
+      "name": "w_int8",
+      "match": 0.56,
+      "bits": 8,
+      "savings_pct": 50.0,
+      "time_s": 2.36,
+      "dq": false
+    },
+    {
+      "name": "w_int4",
+      "match": 0.0333,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 2.35,
+      "dq": false
+    },
+    {
+      "name": "w_nf4",
+      "error": "argmin(): argument 'dim' (position 1) must be int, not Tensor",
+      "time_s": 0.0
+    },
+    {
+      "name": "w_int4_hada_folded",
+      "error": "mat1 and mat2 shapes cannot be multiplied (6x1024 and 1152x1152)",
+      "time_s": 0.26
+    },
+    {
+      "name": "w_outlier_split_3b",
+      "match": 0.02,
+      "bits": 3.1,
+      "savings_pct": 80.6,
+      "time_s": 6.79,
+      "dq": false
+    },
+    {
+      "name": "num_hada_rounding",
+      "kind": "numeric",
+      "detail": {
+        "rel_err_ratio_by_bits": [
+          {
+            "bits": 4,
+            "mean_ratio": 0.9557489156723022,
+            "better_frac": 0.7527472376823425
+          },
+          {
+            "bits": 3,
+            "mean_ratio": 0.9741776585578918,
+            "better_frac": 0.6648351550102234
+          }
+        ]
+      },
+      "time_s": 1.22
+    }
+  ]
+}

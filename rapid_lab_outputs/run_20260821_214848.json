@@ -1,0 +1,414 @@
+{
+  "model": "google/gemma-3-1b-it",
+  "prompts": [
+    "The capital of France is",
+    "In machine learning, gradient descent is",
+    "The three states of matter are"
+  ],
+  "max_new": 50,
+  "results": [
+    {
+      "name": "kv_k8_v8",
+      "match": 1.0,
+      "bits": 8,
+      "savings_pct": 50.0,
+      "time_s": 2.81,
+      "dq": false
+    },
+    {
+      "name": "kv_k4_v8",
+      "match": 0.1667,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.82,
+      "dq": false
+    },
+    {
+      "name": "kv_k2_v8",
+      "match": 0.0133,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 2.86,
+      "dq": false
+    },
+    {
+      "name": "kv_k8_v4",
+      "match": 0.0671,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.87,
+      "dq": false
+    },
+    {
+      "name": "kv_k4_v4",
+      "match": 0.2276,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 2.28,
+      "dq": false
+    },
+    {
+      "name": "kv_hada_k2_v8",
+      "match": 0.04,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 2.93,
+      "dq": false
+    },
+    {
+      "name": "kv_hada_k4_v4",
+      "match": 0.4333,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 2.97,
+      "dq": false
+    },
+    {
+      "name": "kv_dct_k4_v8",
+      "match": 0.2511,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.14,
+      "dq": false
+    },
+    {
+      "name": "kv_polar_m5_p7_k",
+      "match": 0.7467,
+      "bits": 7,
+      "savings_pct": 56.2,
+      "time_s": 3.44,
+      "dq": false
+    },
+    {
+      "name": "kv_polar_m4_p12_k",
+      "match": 0.7867,
+      "bits": 8,
+      "savings_pct": 50.0,
+      "time_s": 3.45,
+      "dq": false
+    },
+    {
+      "name": "kv_phase_only_p4_k",
+      "match": 0.4933,
+      "bits": 8.75,
+      "savings_pct": 45.3,
+      "time_s": 3.47,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_k",
+      "match": 0.9267,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 3.23,
+      "dq": false
+    },
+    {
+      "name": "kv_affine_k4_v8",
+      "match": 0.3667,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.95,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_k4_v4",
+      "match": 0.1533,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 3.51,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_v",
+      "match": 0.74,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 3.21,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4c90_k",
+      "match": 0.3632,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.85,
+      "dq": false
+    },
+    {
+      "name": "kv_nq3_k",
+      "match": 0.2178,
+      "bits": 5.5,
+      "savings_pct": 65.6,
+      "time_s": 2.42,
+      "dq": false
+    },
+    {
+      "name": "kv_nq4_k",
+      "match": 0.7533,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 3.25,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_hada_k",
+      "match": 0.4333,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 3.33,
+      "dq": false
+    },
+    {
+      "name": "kv_nq3_hada_k",
+      "match": 0.0733,
+      "bits": 5.5,
+      "savings_pct": 65.6,
+      "time_s": 3.3,
+      "dq": false
+    },
+    {
+      "name": "kv_cache_nf4_k",
+      "match": 0.1311,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.25,
+      "dq": false
+    },
+    {
+      "name": "kv_cache_sym4_k",
+      "match": 0.0467,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.79,
+      "dq": false
+    },
+    {
+      "name": "kv_cache_nf4_both",
+      "match": 0.0733,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 3.46,
+      "dq": false
+    },
+    {
+      "name": "kv_k4_g64",
+      "match": 0.3267,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.85,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_g64_k",
+      "match": 0.1733,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 3.24,
+      "dq": false
+    },
+    {
+      "name": "kv_k4_chanstat",
+      "match": 0.0733,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.42,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_knorm",
+      "match": 0.1467,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.86,
+      "dq": false
+    },
+    {
+      "name": "kv_k4_firsthalf",
+      "match": 0.4133,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.42,
+      "dq": false
+    },
+    {
+      "name": "kv_k4_secondhalf",
+      "match": 0.4733,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.43,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_firsthalf",
+      "match": 0.3867,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.67,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_secondhalf",
+      "match": 0.7867,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.61,
+      "dq": false
+    },
+    {
+      "name": "kv_k5_v8",
+      "match": 0.24,
+      "bits": 6.5,
+      "savings_pct": 59.4,
+      "time_s": 2.78,
+      "dq": false
+    },
+    {
+      "name": "kv_v4_g64",
+      "match": 0.3733,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.8,
+      "dq": false
+    },
+    {
+      "name": "kv_cache_sym4_g64",
+      "match": 0.055,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.47,
+      "dq": false
+    },
+    {
+      "name": "kv_k4_sink4",
+      "match": 0.3933,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.51,
+      "dq": false
+    },
+    {
+      "name": "kv_km16_k",
+      "match": 0.1667,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 3.01,
+      "dq": false
+    },
+    {
+      "name": "kv_delta_k3",
+      "match": 0.12,
+      "bits": 6.75,
+      "savings_pct": 57.8,
+      "time_s": 2.74,
+      "dq": false
+    },
+    {
+      "name": "kv_outlier_split_k2",
+      "match": 0.0911,
+      "bits": 5.15,
+      "savings_pct": 67.8,
+      "time_s": 3.15,
+      "dq": false
+    },
+    {
+      "name": "w_int8",
+      "match": 0.56,
+      "bits": 8,
+      "savings_pct": 50.0,
+      "time_s": 2.36,
+      "dq": false
+    },
+    {
+      "name": "w_int7",
+      "match": 0.62,
+      "bits": 7,
+      "savings_pct": 56.2,
+      "time_s": 2.39,
+      "dq": false
+    },
+    {
+      "name": "w_int6",
+      "match": 0.0933,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.37,
+      "dq": false
+    },
+    {
+      "name": "w_int5",
+      "match": 0.06,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 2.35,
+      "dq": false
+    },
+    {
+      "name": "w_int4",
+      "match": 0.0333,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 2.39,
+      "dq": false
+    },
+    {
+      "name": "w_nf4",
+      "match": 0.0904,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 2.84,
+      "dq": false
+    },
+    {
+      "name": "w_nq6",
+      "match": 0.14,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 4.33,
+      "dq": false
+    },
+    {
+      "name": "w_int4_hada_folded",
+      "match": 0.0267,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 4.8,
+      "dq": false
+    },
+    {
+      "name": "w_nf4_hada_folded",
+      "match": 0.0933,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 5.14,
+      "dq": false
+    },
+    {
+      "name": "w_outlier_split_3b",
+      "match": 0.02,
+      "bits": 3.1,
+      "savings_pct": 80.6,
+      "time_s": 7.25,
+      "dq": false
+    },
+    {
+      "name": "num_hada_rounding",
+      "kind": "numeric",
+      "detail": {
+        "rel_err_ratio_by_bits": [
+          {
+            "bits": 4,
+            "mean_ratio": 0.9557489156723022,
+            "better_frac": 0.7527472376823425
+          },
+          {
+            "bits": 3,
+            "mean_ratio": 0.9741776585578918,
+            "better_frac": 0.6648351550102234
+          }
+        ]
+      },
+      "time_s": 1.18
+    }
+  ]
+}

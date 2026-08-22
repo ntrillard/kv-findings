@@ -1,0 +1,131 @@
+{
+  "model": "google/gemma-3-1b-it",
+  "prompt_set": "holdout",
+  "prompts": [
+    "Photosynthesis converts carbon dioxide and water into glucose using energy from",
+    "def binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n",
+    "The Defenestration of Prague in 1618 sparked",
+    "The sky appears blue because air molecules scatter shorter wavelengths more strongly. This effect, called Rayleigh scattering, implies that at sunset the",
+    "Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide.  According to the passage, coral reefs support about",
+    "A shirt costs 40 dollars. The shop applies a 25 percent discount, then adds 10 percent tax. The final price is"
+  ],
+  "max_new": 100,
+  "results": [
+    {
+      "name": "kv_k8_v8",
+      "match": 0.805,
+      "prefix": 0.795,
+      "bits": 8,
+      "eff_bits": 8,
+      "degenerate": false,
+      "savings_pct": 50.0,
+      "time_s": 10.89,
+      "dq": true,
+      "per_prompt": {
+        "exact": [
+          0.39,
+          1.0,
+          0.46,
+          0.98,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.39,
+          1.0,
+          0.4,
+          0.98,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_dp32",
+      "match": 0.6533,
+      "prefix": 0.6483,
+      "bits": 4.25,
+      "eff_bits": 10.3,
+      "degenerate": false,
+      "savings_pct": 35.6,
+      "time_s": 11.15,
+      "dq": true,
+      "per_prompt": {
+        "exact": [
+          0.46,
+          1.0,
+          0.37,
+          0.4,
+          1.0,
+          0.69
+        ],
+        "prefix": [
+          0.44,
+          1.0,
+          0.37,
+          0.39,
+          1.0,
+          0.69
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_dp32_sens",
+      "match": 0.7283,
+      "prefix": 0.705,
+      "bits": 4.25,
+      "eff_bits": 5.55,
+      "degenerate": false,
+      "savings_pct": 65.3,
+      "time_s": 9.33,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.46,
+          1.0,
+          0.46,
+          0.45,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.44,
+          1.0,
+          0.4,
+          0.39,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_both2_dp32_sens",
+      "match": 0.7567,
+      "prefix": 0.7533,
+      "bits": 2,
+      "eff_bits": 3.54,
+      "degenerate": false,
+      "savings_pct": 77.9,
+      "time_s": 9.36,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.5,
+          1.0,
+          0.42,
+          0.62,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.5,
+          1.0,
+          0.4,
+          0.62,
+          1.0,
+          1.0
+        ]
+      }
+    }
+  ]
+}

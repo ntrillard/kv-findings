@@ -1,0 +1,63 @@
+{
+  "model": "google/gemma-3-1b-it",
+  "prompt_set": "hard",
+  "prompts": [
+    "If every bloop is a razzie and every razzie is a lazzie, then which statement must be true?",
+    "def fibonacci(n):\n    \"\"\"Return the nth Fibonacci number recursively.\"\"\"\n",
+    "The Congress of Vienna redrew the map of Europe after Napoleon's defeat. Its principal architects, Metternich and Talleyrand, negotiated",
+    "To prove that the square root of 2 is irrational, assume it equals p/q in lowest terms. Then p^2 = 2q^2, which implies",
+    "The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans.  According to the passage, the western terminus of the Silk Road was",
+    "A train leaves at 14:35 and travels for 3 hours 50 minutes. It arrives at"
+  ],
+  "max_new": 50,
+  "results": [
+    {
+      "name": "kv_nfv4g64_s24",
+      "match": 0.5867,
+      "bits": 4.25,
+      "savings_pct": 73.4,
+      "time_s": 6.34,
+      "dq": false
+    },
+    {
+      "name": "kv_nfv4g64_s48",
+      "match": 0.8433,
+      "bits": 4.25,
+      "savings_pct": 73.4,
+      "time_s": 5.75,
+      "dq": false
+    },
+    {
+      "name": "kv_nfv4g64_s64",
+      "match": 0.8967,
+      "bits": 4.25,
+      "savings_pct": 73.4,
+      "time_s": 5.23,
+      "dq": false
+    },
+    {
+      "name": "kv_nfv4g64_prefillprot",
+      "match": 0.4233,
+      "bits": 4.25,
+      "savings_pct": 73.4,
+      "time_s": 6.29,
+      "dq": false
+    },
+    {
+      "name": "kv_k2sg8_prefillprot",
+      "match": 0.3167,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 6.06,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4k_prefillprot",
+      "match": 0.77,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 6.55,
+      "dq": false
+    }
+  ]
+}

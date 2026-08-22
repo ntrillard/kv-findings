@@ -1,0 +1,164 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "prompt_set": "hard",
+  "prompts": [
+    "If every bloop is a razzie and every razzie is a lazzie, then which statement must be true?",
+    "def fibonacci(n):\n    \"\"\"Return the nth Fibonacci number recursively.\"\"\"\n",
+    "The Congress of Vienna redrew the map of Europe after Napoleon's defeat. Its principal architects, Metternich and Talleyrand, negotiated",
+    "To prove that the square root of 2 is irrational, assume it equals p/q in lowest terms. Then p^2 = 2q^2, which implies",
+    "The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans.  According to the passage, the western terminus of the Silk Road was",
+    "A train leaves at 14:35 and travels for 3 hours 50 minutes. It arrives at"
+  ],
+  "max_new": 50,
+  "results": [
+    {
+      "name": "kv_k8_v8",
+      "match": 0.6567,
+      "bits": 8,
+      "savings_pct": 50.0,
+      "time_s": 4.14,
+      "dq": false,
+      "per_prompt": [
+        0.42,
+        1.0,
+        0.04,
+        0.84,
+        0.68,
+        0.96
+      ]
+    },
+    {
+      "name": "kv_polar_m5_p7_k",
+      "match": 0.0367,
+      "bits": 7,
+      "savings_pct": 56.2,
+      "time_s": 5.52,
+      "dq": false,
+      "per_prompt": [
+        0.0,
+        0.02,
+        0.02,
+        0.02,
+        0.0,
+        0.16
+      ]
+    },
+    {
+      "name": "kv_nf4_k",
+      "match": 0.01,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 4.67,
+      "dq": false,
+      "per_prompt": [
+        0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.04
+      ]
+    },
+    {
+      "name": "kv_nf4_k4_v4",
+      "match": 0.0133,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 5.52,
+      "dq": false,
+      "per_prompt": [
+        0.06,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.02
+      ]
+    },
+    {
+      "name": "kv_nf4_knorm",
+      "error": "no target modules matched: kv_nf4_knorm",
+      "time_s": 0.0
+    },
+    {
+      "name": "kv_nf4_k_v4g64",
+      "match": 0.0167,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 4.97,
+      "dq": false,
+      "per_prompt": [
+        0.06,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.04
+      ]
+    },
+    {
+      "name": "kv_nf4_k_v4g64_sink",
+      "match": 0.0133,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 4.52,
+      "dq": false,
+      "per_prompt": [
+        0.02,
+        0.04,
+        0.0,
+        0.02,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "kv_k2_sortg8_sink32",
+      "match": 0.2563,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 3.43,
+      "dq": false,
+      "per_prompt": [
+        0.353,
+        0.786,
+        0.119,
+        0.04,
+        0.02,
+        0.22
+      ]
+    },
+    {
+      "name": "kv_nfv4g64_dp32",
+      "match": 0.6933,
+      "bits": 4.25,
+      "savings_pct": 73.4,
+      "time_s": 3.66,
+      "dq": false,
+      "per_prompt": [
+        0.68,
+        0.76,
+        0.66,
+        0.72,
+        0.66,
+        0.68
+      ]
+    },
+    {
+      "name": "kv_both2_dp32",
+      "match": 0.6867,
+      "bits": 2,
+      "savings_pct": 87.5,
+      "time_s": 3.66,
+      "dq": false,
+      "per_prompt": [
+        0.7,
+        0.7,
+        0.68,
+        0.66,
+        0.66,
+        0.72
+      ]
+    }
+  ]
+}

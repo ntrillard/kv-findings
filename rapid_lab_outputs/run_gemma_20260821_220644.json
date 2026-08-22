@@ -1,0 +1,51 @@
+{
+  "model": "google/gemma-3-1b-it",
+  "prompts": [
+    "The capital of France is",
+    "In machine learning, gradient descent is",
+    "The three states of matter are"
+  ],
+  "max_new": 50,
+  "results": [
+    {
+      "name": "kv_k2_g8",
+      "match": 0.1,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 2.76,
+      "dq": false
+    },
+    {
+      "name": "kv_k2_g4",
+      "match": 0.1267,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 2.75,
+      "dq": false
+    },
+    {
+      "name": "kv_nq2_g16",
+      "match": 0.08,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 3.15,
+      "dq": false
+    },
+    {
+      "name": "kv_sign_g16",
+      "match": 0.02,
+      "bits": 4.55,
+      "savings_pct": 71.6,
+      "time_s": 2.42,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_1h_k2g16_2h",
+      "match": 0.2267,
+      "bits": 5.5,
+      "savings_pct": 65.6,
+      "time_s": 2.01,
+      "dq": false
+    }
+  ]
+}

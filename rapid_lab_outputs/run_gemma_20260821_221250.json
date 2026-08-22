@@ -1,0 +1,107 @@
+{
+  "model": "google/gemma-3-1b-it",
+  "prompts": [
+    "The capital of France is",
+    "In machine learning, gradient descent is",
+    "The three states of matter are"
+  ],
+  "max_new": 50,
+  "results": [
+    {
+      "name": "kv_k2_integral",
+      "match": 0.0,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 3.04,
+      "dq": false
+    },
+    {
+      "name": "kv_k2_integral_g16",
+      "match": 0.0133,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 3.06,
+      "dq": false
+    },
+    {
+      "name": "kv_k2_sortg16",
+      "match": 0.1333,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 3.18,
+      "dq": false
+    },
+    {
+      "name": "kv_k2_sortg8",
+      "match": 0.2067,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 3.12,
+      "dq": false
+    },
+    {
+      "name": "kv_k2_slog",
+      "match": 0.1,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 3.12,
+      "dq": false
+    },
+    {
+      "name": "kv_k3_slog",
+      "match": 0.0672,
+      "bits": 5.5,
+      "savings_pct": 65.6,
+      "time_s": 3.08,
+      "dq": false
+    },
+    {
+      "name": "kv_delta2_g16",
+      "match": 0.0333,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 2.82,
+      "dq": false
+    },
+    {
+      "name": "kv_pca_mix_r32t2",
+      "match": 0.0779,
+      "bits": 5.38,
+      "savings_pct": 66.4,
+      "time_s": 2.72,
+      "dq": false
+    },
+    {
+      "name": "kv_pca_mix_r32t1",
+      "match": 0.2333,
+      "bits": 4.94,
+      "savings_pct": 69.1,
+      "time_s": 2.8,
+      "dq": false
+    },
+    {
+      "name": "kv_pca_mix_r16t1",
+      "match": 0.1467,
+      "bits": 4.47,
+      "savings_pct": 72.1,
+      "time_s": 3.02,
+      "dq": false
+    },
+    {
+      "name": "kv_pca_mix_r64t2",
+      "match": 0.06,
+      "bits": 5.75,
+      "savings_pct": 64.1,
+      "time_s": 3.03,
+      "dq": false
+    },
+    {
+      "name": "kv_k2_hada_g16",
+      "match": 0.1267,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 3.02,
+      "dq": false
+    }
+  ]
+}

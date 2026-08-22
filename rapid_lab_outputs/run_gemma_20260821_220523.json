@@ -1,0 +1,171 @@
+{
+  "model": "google/gemma-3-1b-it",
+  "prompts": [
+    "The capital of France is",
+    "In machine learning, gradient descent is",
+    "The three states of matter are"
+  ],
+  "max_new": 50,
+  "results": [
+    {
+      "name": "kv_v4g64_sink",
+      "match": 0.5467,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.76,
+      "dq": false
+    },
+    {
+      "name": "kv_nq2_k",
+      "match": 0.0467,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 3.15,
+      "dq": false
+    },
+    {
+      "name": "kv_nq2_hada_k",
+      "match": 0.0667,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 3.32,
+      "dq": false
+    },
+    {
+      "name": "kv_tail2_b03_k",
+      "match": 0.0267,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 3.26,
+      "dq": false
+    },
+    {
+      "name": "kv_tail2_b05_k",
+      "match": 0.02,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 3.2,
+      "dq": false
+    },
+    {
+      "name": "kv_ss_nq2_k",
+      "match": 0.0133,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 9.44,
+      "dq": false
+    },
+    {
+      "name": "kv_ss_sym2_k",
+      "match": 0.0267,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 5.4,
+      "dq": false
+    },
+    {
+      "name": "kv_bitplane2_k",
+      "match": 0.0133,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 2.97,
+      "dq": false
+    },
+    {
+      "name": "kv_polar_m2p2_k",
+      "match": 0.04,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 3.57,
+      "dq": false
+    },
+    {
+      "name": "kv_k2_g64",
+      "match": 0.04,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 2.19,
+      "dq": false
+    },
+    {
+      "name": "kv_k2_g16",
+      "match": 0.1,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 2.79,
+      "dq": false
+    },
+    {
+      "name": "kv_b1_outlier_k",
+      "match": 0.0467,
+      "bits": 4.55,
+      "savings_pct": 71.6,
+      "time_s": 3.46,
+      "dq": false
+    },
+    {
+      "name": "kv_outlier2_split_k2",
+      "match": 0.0533,
+      "bits": 5.3,
+      "savings_pct": 66.9,
+      "time_s": 3.5,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_1h_nq2_2h",
+      "match": 0.5733,
+      "bits": 5.5,
+      "savings_pct": 65.6,
+      "time_s": 2.03,
+      "dq": false
+    },
+    {
+      "name": "kv_k2_2h_only",
+      "match": 0.44,
+      "bits": 6.5,
+      "savings_pct": 59.4,
+      "time_s": 2.73,
+      "dq": false
+    },
+    {
+      "name": "kv_nq2_sink",
+      "match": 0.0467,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 3.12,
+      "dq": false
+    },
+    {
+      "name": "kv_nq2_2honly",
+      "match": 0.3133,
+      "bits": 4.5,
+      "savings_pct": 71.9,
+      "time_s": 2.56,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_k_v4g64",
+      "match": 0.7267,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 3.17,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_k_v4g64_sink",
+      "match": 0.2667,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 3.13,
+      "dq": false
+    },
+    {
+      "name": "kv_v2_g64",
+      "match": 0.0333,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 2.75,
+      "dq": false
+    }
+  ]
+}

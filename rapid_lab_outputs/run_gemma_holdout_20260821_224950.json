@@ -1,0 +1,218 @@
+{
+  "model": "google/gemma-3-1b-it",
+  "prompt_set": "holdout",
+  "prompts": [
+    "Photosynthesis converts carbon dioxide and water into glucose using energy from",
+    "def binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n",
+    "The Defenestration of Prague in 1618 sparked",
+    "The sky appears blue because air molecules scatter shorter wavelengths more strongly. This effect, called Rayleigh scattering, implies that at sunset the",
+    "Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide.  According to the passage, coral reefs support about",
+    "A shirt costs 40 dollars. The shop applies a 25 percent discount, then adds 10 percent tax. The final price is"
+  ],
+  "max_new": 50,
+  "results": [
+    {
+      "name": "kv_ternK_v4",
+      "match": 1.0,
+      "prefix": 1.0,
+      "bits": 2.79,
+      "eff_bits": 5.01,
+      "degenerate": false,
+      "savings_pct": 68.7,
+      "time_s": 4.6,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_ternboth",
+      "match": 0.9267,
+      "prefix": 0.9267,
+      "bits": 1.58,
+      "eff_bits": 4.0,
+      "degenerate": false,
+      "savings_pct": 75.0,
+      "time_s": 4.53,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.78,
+          1.0,
+          1.0,
+          0.78,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.78,
+          1.0,
+          1.0,
+          0.78,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_ternboth_sorted",
+      "match": 0.9267,
+      "prefix": 0.9267,
+      "bits": 1.58,
+      "eff_bits": 4.0,
+      "degenerate": false,
+      "savings_pct": 75.0,
+      "time_s": 4.63,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.78,
+          1.0,
+          1.0,
+          0.78,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.78,
+          1.0,
+          1.0,
+          0.78,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_k2_v1",
+      "match": 0.8633,
+      "prefix": 0.8633,
+      "bits": 1.5,
+      "eff_bits": 3.94,
+      "degenerate": false,
+      "savings_pct": 75.4,
+      "time_s": 4.54,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.78,
+          1.0,
+          0.8,
+          0.78,
+          1.0,
+          0.82
+        ],
+        "prefix": [
+          0.78,
+          1.0,
+          0.8,
+          0.78,
+          1.0,
+          0.82
+        ]
+      }
+    },
+    {
+      "name": "kv_k1_v2",
+      "match": 0.9133,
+      "prefix": 0.91,
+      "bits": 1.5,
+      "eff_bits": 3.94,
+      "degenerate": false,
+      "savings_pct": 75.4,
+      "time_s": 4.54,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.9,
+          1.0,
+          0.8,
+          0.78,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.88,
+          1.0,
+          0.8,
+          0.78,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_signboth",
+      "match": 0.9133,
+      "prefix": 0.9133,
+      "bits": 1.0,
+      "eff_bits": 3.52,
+      "degenerate": false,
+      "savings_pct": 78.0,
+      "time_s": 4.51,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.78,
+          1.0,
+          0.92,
+          0.78,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.78,
+          1.0,
+          0.92,
+          0.78,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_ternK_v2",
+      "match": 0.9833,
+      "prefix": 0.98,
+      "bits": 1.79,
+      "eff_bits": 4.18,
+      "degenerate": false,
+      "savings_pct": 73.9,
+      "time_s": 4.61,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.9,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.88,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    }
+  ]
+}

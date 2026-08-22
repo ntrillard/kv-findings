@@ -1,0 +1,189 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "prompt_set": "holdout",
+  "prompts": [
+    "Photosynthesis converts carbon dioxide and water into glucose using energy from",
+    "def binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n",
+    "The Defenestration of Prague in 1618 sparked",
+    "The sky appears blue because air molecules scatter shorter wavelengths more strongly. This effect, called Rayleigh scattering, implies that at sunset the",
+    "Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide.  According to the passage, coral reefs support about",
+    "A shirt costs 40 dollars. The shop applies a 25 percent discount, then adds 10 percent tax. The final price is"
+  ],
+  "max_new": 50,
+  "results": [
+    {
+      "name": "kv_k8_v8",
+      "match": 0.4133,
+      "prefix": 0.2933,
+      "bits": 8,
+      "eff_bits": 8,
+      "degenerate": false,
+      "savings_pct": 50.0,
+      "time_s": 4.02,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.18,
+          1.0,
+          0.44,
+          0.72,
+          0.14,
+          0.0
+        ],
+        "prefix": [
+          0.18,
+          1.0,
+          0.44,
+          0.06,
+          0.08,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "kv_ternK_v4",
+      "match": 0.6767,
+      "prefix": 0.6633,
+      "bits": 2.79,
+      "eff_bits": 5.0,
+      "degenerate": false,
+      "savings_pct": 68.8,
+      "time_s": 3.08,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.7,
+          0.68,
+          0.66,
+          0.68,
+          0.66,
+          0.68
+        ],
+        "prefix": [
+          0.66,
+          0.66,
+          0.66,
+          0.68,
+          0.66,
+          0.66
+        ]
+      }
+    },
+    {
+      "name": "kv_ternboth",
+      "match": 0.6767,
+      "prefix": 0.6633,
+      "bits": 1.58,
+      "eff_bits": 3.99,
+      "degenerate": false,
+      "savings_pct": 75.1,
+      "time_s": 3.1,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.68,
+          0.7,
+          0.66,
+          0.66,
+          0.66,
+          0.7
+        ],
+        "prefix": [
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.68
+        ]
+      }
+    },
+    {
+      "name": "kv_ternboth_sorted",
+      "match": 0.6767,
+      "prefix": 0.6633,
+      "bits": 1.58,
+      "eff_bits": 3.99,
+      "degenerate": false,
+      "savings_pct": 75.1,
+      "time_s": 3.09,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.68,
+          0.7,
+          0.66,
+          0.66,
+          0.66,
+          0.7
+        ],
+        "prefix": [
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.68
+        ]
+      }
+    },
+    {
+      "name": "kv_k1_v2",
+      "match": 0.6667,
+      "prefix": 0.6633,
+      "bits": 1.5,
+      "eff_bits": 3.92,
+      "degenerate": false,
+      "savings_pct": 75.5,
+      "time_s": 3.03,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.66,
+          0.68,
+          0.66,
+          0.66,
+          0.66,
+          0.68
+        ],
+        "prefix": [
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.66,
+          0.68
+        ]
+      }
+    },
+    {
+      "name": "kv_ternK_v2",
+      "match": 0.6733,
+      "prefix": 0.6667,
+      "bits": 1.79,
+      "eff_bits": 4.17,
+      "degenerate": false,
+      "savings_pct": 74.0,
+      "time_s": 3.06,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.68,
+          0.66,
+          0.66,
+          0.68,
+          0.66,
+          0.7
+        ],
+        "prefix": [
+          0.66,
+          0.66,
+          0.66,
+          0.68,
+          0.66,
+          0.68
+        ]
+      }
+    }
+  ]
+}

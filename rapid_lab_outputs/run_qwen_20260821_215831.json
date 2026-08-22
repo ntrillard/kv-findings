@@ -1,0 +1,99 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "prompts": [
+    "The capital of France is",
+    "In machine learning, gradient descent is",
+    "The three states of matter are"
+  ],
+  "max_new": 50,
+  "results": [
+    {
+      "name": "kv_k8_v8",
+      "match": 0.5733,
+      "bits": 8,
+      "savings_pct": 50.0,
+      "time_s": 2.03,
+      "dq": false
+    },
+    {
+      "name": "kv_k4_v8",
+      "match": 0.0067,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.05,
+      "dq": false
+    },
+    {
+      "name": "kv_polar_m5_p7_k",
+      "match": 0.0867,
+      "bits": 7,
+      "savings_pct": 56.2,
+      "time_s": 2.82,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_k",
+      "match": 0.0067,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.47,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_k4_v4",
+      "match": 0.0067,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 2.7,
+      "dq": false
+    },
+    {
+      "name": "kv_cache_nf4_k",
+      "match": 0.02,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.22,
+      "dq": false
+    },
+    {
+      "name": "kv_k4_g64",
+      "match": 0.0133,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 2.01,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_knorm",
+      "match": 1.0,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 1.49,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_secondhalf",
+      "match": 0.1667,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 1.83,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_2h_sink",
+      "match": 0.1467,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 1.93,
+      "dq": false
+    },
+    {
+      "name": "kv_k4_sink4",
+      "match": 0.02,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 1.75,
+      "dq": false
+    }
+  ]
+}

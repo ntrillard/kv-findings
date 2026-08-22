@@ -1,0 +1,334 @@
+{
+  "model": "google/gemma-3-1b-it",
+  "prompt_set": "holdout",
+  "prompts": [
+    "Photosynthesis converts carbon dioxide and water into glucose using energy from",
+    "def binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n",
+    "The Defenestration of Prague in 1618 sparked",
+    "The sky appears blue because air molecules scatter shorter wavelengths more strongly. This effect, called Rayleigh scattering, implies that at sunset the",
+    "Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide.  According to the passage, coral reefs support about",
+    "A shirt costs 40 dollars. The shop applies a 25 percent discount, then adds 10 percent tax. The final price is"
+  ],
+  "max_new": 50,
+  "results": [
+    {
+      "name": "kv_k8_v8",
+      "match": 0.93,
+      "prefix": 0.93,
+      "bits": 8,
+      "eff_bits": 8,
+      "degenerate": false,
+      "savings_pct": 50.0,
+      "time_s": 5.4,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.78,
+          1.0,
+          0.8,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.78,
+          1.0,
+          0.8,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nf4_k_v4g64",
+      "match": 0.3981,
+      "prefix": 0.2448,
+      "bits": 4,
+      "eff_bits": 4,
+      "degenerate": false,
+      "savings_pct": 75.0,
+      "time_s": 6.19,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.28,
+          1.0,
+          0.08,
+          0.0,
+          0.049,
+          0.98
+        ],
+        "prefix": [
+          0.28,
+          1.0,
+          0.08,
+          0.0,
+          0.049,
+          0.06
+        ]
+      }
+    },
+    {
+      "name": "kv_nf4_k_v4g64_sink",
+      "match": 0.4133,
+      "prefix": 0.4033,
+      "bits": 4,
+      "eff_bits": 4,
+      "degenerate": false,
+      "savings_pct": 75.0,
+      "time_s": 6.21,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.48,
+          1.0,
+          0.08,
+          0.2,
+          0.06,
+          0.66
+        ],
+        "prefix": [
+          0.46,
+          1.0,
+          0.08,
+          0.18,
+          0.04,
+          0.66
+        ]
+      }
+    },
+    {
+      "name": "kv_k2_sortg8_sink32",
+      "match": 0.4867,
+      "prefix": 0.4767,
+      "bits": 5,
+      "eff_bits": 9.21,
+      "degenerate": false,
+      "savings_pct": 42.4,
+      "time_s": 5.65,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.46,
+          1.0,
+          0.66,
+          0.18,
+          0.04,
+          0.58
+        ],
+        "prefix": [
+          0.44,
+          1.0,
+          0.66,
+          0.18,
+          0.04,
+          0.54
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_s128",
+      "match": 0.84,
+      "prefix": 0.8367,
+      "bits": 4.25,
+      "eff_bits": 14.55,
+      "degenerate": true,
+      "savings_pct": 9.1,
+      "time_s": 4.71,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.04,
+          1.0
+        ],
+        "prefix": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.02,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_dp32",
+      "match": 0.9033,
+      "prefix": 0.9,
+      "bits": 4.25,
+      "eff_bits": 13.47,
+      "degenerate": false,
+      "savings_pct": 15.8,
+      "time_s": 5.18,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.9,
+          1.0,
+          0.74,
+          0.78,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.88,
+          1.0,
+          0.74,
+          0.78,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_both2_dp32",
+      "match": 0.9033,
+      "prefix": 0.9033,
+      "bits": 2,
+      "eff_bits": 12.99,
+      "degenerate": false,
+      "savings_pct": 18.8,
+      "time_s": 5.14,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.82,
+          1.0,
+          0.82,
+          0.78,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.82,
+          1.0,
+          0.82,
+          0.78,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nf4k_dp32",
+      "match": 0.9033,
+      "prefix": 0.9,
+      "bits": 6,
+      "eff_bits": 13.85,
+      "degenerate": false,
+      "savings_pct": 13.5,
+      "time_s": 5.12,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.9,
+          1.0,
+          0.74,
+          0.78,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.88,
+          1.0,
+          0.74,
+          0.78,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_pw0dp32",
+      "match": 0.4048,
+      "prefix": 0.2448,
+      "bits": 4.25,
+      "eff_bits": 8.75,
+      "degenerate": false,
+      "savings_pct": 45.3,
+      "time_s": 4.97,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.28,
+          1.0,
+          0.08,
+          0.04,
+          0.049,
+          0.98
+        ],
+        "prefix": [
+          0.28,
+          1.0,
+          0.08,
+          0.0,
+          0.049,
+          0.06
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_pw8dp32",
+      "match": 0.56,
+      "prefix": 0.55,
+      "bits": 4.25,
+      "eff_bits": 9.87,
+      "degenerate": false,
+      "savings_pct": 38.3,
+      "time_s": 5.11,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.48,
+          1.0,
+          0.06,
+          0.78,
+          0.04,
+          1.0
+        ],
+        "prefix": [
+          0.46,
+          1.0,
+          0.02,
+          0.78,
+          0.04,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_dp32_sens",
+      "match": 0.9133,
+      "prefix": 0.91,
+      "bits": 4.25,
+      "eff_bits": 4.25,
+      "degenerate": false,
+      "savings_pct": 73.4,
+      "time_s": 4.58,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.9,
+          1.0,
+          0.8,
+          0.78,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.88,
+          1.0,
+          0.8,
+          0.78,
+          1.0,
+          1.0
+        ]
+      }
+    }
+  ]
+}

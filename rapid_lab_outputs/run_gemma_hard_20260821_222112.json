@@ -1,0 +1,199 @@
+{
+  "model": "google/gemma-3-1b-it",
+  "prompt_set": "hard",
+  "prompts": [
+    "If every bloop is a razzie and every razzie is a lazzie, then which statement must be true?",
+    "def fibonacci(n):\n    \"\"\"Return the nth Fibonacci number recursively.\"\"\"\n",
+    "The Congress of Vienna redrew the map of Europe after Napoleon's defeat. Its principal architects, Metternich and Talleyrand, negotiated",
+    "To prove that the square root of 2 is irrational, assume it equals p/q in lowest terms. Then p^2 = 2q^2, which implies",
+    "The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans. The ancient Silk Road connected Chang'an to Constantinople, passing through Samarkand, Bukhara, Merv, and Kashgar. Merchants traded silk, spices, glass, and paper, while monks and diplomats traveled alongside the caravans.  According to the passage, the western terminus of the Silk Road was",
+    "A train leaves at 14:35 and travels for 3 hours 50 minutes. It arrives at"
+  ],
+  "max_new": 50,
+  "results": [
+    {
+      "name": "kv_k8_v8",
+      "match": 0.72,
+      "bits": 8,
+      "savings_pct": 50.0,
+      "time_s": 5.63,
+      "dq": false
+    },
+    {
+      "name": "kv_k4_v8",
+      "match": 0.45,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 5.53,
+      "dq": false
+    },
+    {
+      "name": "kv_k4_v4",
+      "match": 0.23,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 5.53,
+      "dq": false
+    },
+    {
+      "name": "kv_hada_k4_v4",
+      "match": 0.6233,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 5.84,
+      "dq": false
+    },
+    {
+      "name": "kv_polar_m5_p7_k",
+      "match": 0.7,
+      "bits": 7,
+      "savings_pct": 56.2,
+      "time_s": 6.77,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_k",
+      "match": 0.4033,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 6.34,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_k4_v4",
+      "match": 0.36,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 6.82,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_knorm",
+      "match": 0.2033,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 5.89,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_k_v4g64",
+      "match": 0.3333,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 6.51,
+      "dq": false
+    },
+    {
+      "name": "kv_nf4_k_v4g64_sink",
+      "match": 0.7067,
+      "bits": 4,
+      "savings_pct": 75.0,
+      "time_s": 6.44,
+      "dq": false
+    },
+    {
+      "name": "kv_sortg8_sink",
+      "match": 0.1633,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 6.13,
+      "dq": false
+    },
+    {
+      "name": "kv_pca_r32t1_2h",
+      "match": 0.51,
+      "bits": 4.47,
+      "savings_pct": 72.1,
+      "time_s": 5.12,
+      "dq": false
+    },
+    {
+      "name": "kv_v2_sortg8_sink",
+      "match": 0.1167,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 6.1,
+      "dq": false
+    },
+    {
+      "name": "kv_both2_sortg8_sink",
+      "match": 0.0733,
+      "bits": 2,
+      "savings_pct": 87.5,
+      "time_s": 6.41,
+      "dq": false
+    },
+    {
+      "name": "kv_k2_sortg8_sink2",
+      "match": 0.1567,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 6.09,
+      "dq": false
+    },
+    {
+      "name": "kv_k2_sortg8_sink8",
+      "match": 0.1533,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 6.1,
+      "dq": false
+    },
+    {
+      "name": "kv_both2_ks8v4",
+      "match": 0.0833,
+      "bits": 2,
+      "savings_pct": 87.5,
+      "time_s": 6.41,
+      "dq": false
+    },
+    {
+      "name": "kv_both2_ks4v8",
+      "match": 0.08,
+      "bits": 2,
+      "savings_pct": 87.5,
+      "time_s": 6.37,
+      "dq": false
+    },
+    {
+      "name": "kv_k2_sortg8_sink16",
+      "match": 0.1767,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 6.06,
+      "dq": false
+    },
+    {
+      "name": "kv_k2_sortg8_sink32",
+      "match": 0.5167,
+      "bits": 5,
+      "savings_pct": 68.8,
+      "time_s": 5.98,
+      "dq": false
+    },
+    {
+      "name": "kv_both2_s8_ks8v4",
+      "match": 0.0733,
+      "bits": 2,
+      "savings_pct": 87.5,
+      "time_s": 6.55,
+      "dq": false
+    },
+    {
+      "name": "kv_both2_s16_ks8v4",
+      "match": 0.1467,
+      "bits": 2,
+      "savings_pct": 87.5,
+      "time_s": 6.44,
+      "dq": false
+    },
+    {
+      "name": "kv_km16_k",
+      "match": 0.2467,
+      "bits": 6,
+      "savings_pct": 62.5,
+      "time_s": 6.01,
+      "dq": false
+    }
+  ]
+}
