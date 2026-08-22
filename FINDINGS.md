@@ -1,234 +1,94 @@
-# KV Cache Quantization — Rapid Lab Findings (Aug 2026)
+# KV Cache Quantization Findings — validated results only
 
-# RETRACTION & CORRECTION (post user-audit)
+Repo of a systematic KV-cache quantization study (~170 micro-tests ≤30s each,
+60+ logged runs). This file lists **only claims that survived audit**; see
+"Retracted" below for what didn't and why. Harness: `rapid_lab.py`;
+validators: `nll_audit.py`, `long_audit.py`, `niah_lab.py`.
 
-`sink_runner`'s `layer_pred` filtered which layers received QUANTIZATION
-hooks, not which layers received ANCHORS. Every "_sens/_l0/_s0/_qsens"
-result therefore left non-anchor layers COMPLETELY fp16 - the selective-
-layer anchoring claims, depth-redundancy conclusion, minimal-recipe,
-scale-validation 100%s and their NLL verifications were measuring
-near-no-op interventions. All such rows are RETRACTED.
+## Context
 
-Corrected semantics (quantize ALL layers, anchors only protect) on
-Gemma holdout:
-- NF4/g64, no anchors:            39.8% @ 4.25b
-- NF4/g64 + dp32 anchors ALL layers: 90.3% @ 13.47 eff bits
-- NF4/g64 + L0-only anchors:      56.8% @ 4.69 eff bits
-- 2-bit sorted + d48 anchors:     25.0% | ternary 6.0% | sign 2.3%
-- sliding window s64 (all layers): 100% @ 13.21 eff bits
+Starting point: the repo's earlier Fmag4 thread work (FFT magnitude/phase KV
+quantization). Replication showed the original 96.9% was prompt-set dependent
+and not Fourier-specific; corrected best was rFFT mag5+phase7 ≈ 95% on 20
+prompts. The subsequent campaign searched for what actually drives low-bit KV
+quality.
 
-Surviving truths: anchoring works (39.8->90.3) but only applied to ALL
-layers; its dp-mode cost SCALES WITH PREFILL (A=L+D), so effective bits
-->16 at long prefill - dp-mode is memory-theater for long prompts. Fixed-
-size windows (s64) do amortize (eff -> ~4.25) and passed 16K retrieval,
-but their short-ctx fidelity was window-coverage, not compression.
-Sub-int8-bit KV with int8-level fidelity at true sub-int8 memory is NOT
-achieved in this repo. int8 KV (93%) remains the honest baseline.
+## Validated findings
 
+**Baselines are metric- and set-sensitive.** int8 KV exact-match vs fp16:
+93% (holdout), 72% (adversarial prompts), 41–49% (Qwen), 100% (4B set).
+Any single-number quality claim without prompt-set context is meaningless.
+Even "lossless" int8 breaks code/arithmetic continuations under greedy
+exact-match.
 
+**Uniform low-bit quantization fails fast.** All-layers results on holdout:
+K-int4-symmetric+V-int8 → ~17–44% depending on set; K-int2 → ~1–3%;
+1-bit sign everywhere → ~2–5%; V is more robust than K but not robust at
+≤2-bit ungrouped. Nonuniform NF4 levels for K beat uniform int4 at matched
+budget; grouping along head_dim rescues uniform V quantization (int4:
+ungrouped 6.7% → grouped g64 37%). Codebook shape matters: fixed NF4 levels
+beat k-means-fitted and normal-quantile codebooks — outlier/tail
+preservation dominates. Hadamard rotation helps symmetric int quantization,
+destroys range-mapped codebooks. These replicate mechanisms in KIVI/KVQuant/
+RotateKV rather than novelty claims.
 
-Systematic discovery campaign using `rapid_lab.py`: ~150 tests, every test ≤10s,
-40+ logged runs, audited metrics (effective-bits accounting, prefix-match,
-held-out prompts, degeneracy flags).
+**Anchoring helps, but costs scale honestly.** Protecting prefill + first-D
+decoded tokens in fp16 across ALL layers monotonically improves fidelity
+(int8-referenced NF4/g64 recipe: no anchors 39.8% → dp8 75.3% → dp32 90.3%
+on holdout). Fixed-size sliding windows behave similarly (s48 92.7%, s64
+100%) and their cost amortizes as O(window/T).
 
-## Minimal recipe (post-debunk): anchor layer 0 only
+**The dominant failure mode is autoregressive snowball**, not classic
+attention sinks: protecting the prompt alone underperforms protecting
+prompt + early decoded tokens; rankings flip between short-prompt and
+long-prompt regimes (e.g., windowed protection hurt NF4 on short prompts,
+helped at long context). Evaluation on short prompts alone can invert
+conclusions.
 
-Sweeping nested anchor subsets revealed a single critical layer:
-fp16 anchors on **layer 0 alone** (D=48) + binary sign KV {−s,+s}
-everywhere else gives **100% exact-match** on holdout AND hard sets,
-fp16-ceiling retrieval at 16K, at **~1.6 effective bits** (90.5%
-real savings vs bf16 KV). Qwen: same single-layer recipe = 98.0%
-(vs int8 41.3%). Layer 0 is the highest-drift layer on both models
-(Gemma 0.08+, Qwen 0.985 - 7x its runner-up), consistent with
-pivot-token/attention-sink massive activations living in the first
-layer. Effective-bit floor: ~1.6 at short ctx, ->~1.1 long ctx
-(single-layer prompt protection amortizes to ~0.57 bits).
+**Distributional metrics are mandatory.** Greedy token-match hides real
+damage: configurations with identical greedy output differed by up to +6.6%
+NLL. KL(fp16‖quantized) proved the most sensitive dial (int8 ≈ 0.0004,
+NF4/g64 ≈ 0.0012, ternary ≈ 0.044 at 3K tokens). Teacher-forced NLL at
+multiple lengths is the minimum bar for any losslessness claim.
 
-## Milestone: 100% exact-match to fp16 at sub-4-bit nominal
+**Per-model probing is necessary.** Single-layer logit-drift profiles differ
+across models (Gemma: early-layer cluster; Qwen 1.5B/7B: dominant layer 0 +
+scattered mid/late layers). Any layer-selective scheme must probe per model;
+reusing another model's profile fails.
 
-`{quant} + sens-layer decode anchoring D=48` scores **100.0% exact-match vs
-fp16 on every prompt set** (holdout, hard, long-context), including sets where
-**int8 KV only reaches 72%**:
+## Retracted (with root cause)
 
-| Quant (nominal) | holdout | hard | longctx | Eff bits @142 tok |
-|---|---|---|---|---|
-| ternary {−s,0,+s} g8/g4 (**1.58b total**) | 100% | 100% | 100% | ~4.5 |
-| sorted-group int2 g8/g4 (**2-bit total**) | 100% | 100% | 100% | ~4.6 |
-| NF4-K + int4-g64 V (**4.25b**) | 100% | 100% | 100% | ~5.9 |
-| int8 KV reference | 93% | 72% | 71% | 8.0 |
+A harness bug made `layer_pred` select which layers received *hooks*
+(quantization) instead of which layers received *anchor protection*. Every
+result of the form "quantize X bits everywhere except fp16 anchors on
+layers L" actually left all non-L layers at fp16 — measuring near-no-op
+interventions. Retracted: selective-layer anchoring gains, depth-redundancy
+conclusion, minimal single-layer recipe, sub-int8-bit (ternary/sign) high-
+fidelity claims, their NLL verifications, and the 4B/7B "100%" rows.
+Corrected reference points: NF4/g64 all-layers no-anchor = 39.8%; + dp32
+anchors (all layers) = 90.3% but at ~13.5 effective bits at short context
+(dp-mode anchor bytes grow with prefill length — they do NOT amortize);
+sliding-window s64 = 100% at ~13.2 effective bits for the same reason.
+Sub-int8-bit KV at int8-level fidelity and true sub-int8 memory was **not**
+achieved. Root cause and corrected runs: commit `7e5522f`; debunk scripts
+in `audits/`.
 
-Debunk audit (sign_d48): quantization verified real (K/V rel-err
-0.54-0.63 on non-anchor layers); result reproduced through clean path;
-all negative controls behaved (no-anchor 3%, references match history).
-Mechanism: greedy trajectory is set by fragile layers; other 22 layers
-are depth-redundant for token choice. CORRECTION: dp-mode keeps prompt
-fp16 on anchor layers permanently -> effective-bit floor ~4.2 regardless
-of nominal bits; nominal "1-bit" applies only as T->infinity with
-prompt-protection removed. Honest headline: ~4.2-4.6 eff bits beating
-int8 (8.0) on fidelity.
+Earlier Fmag-era retractions (prompt-stripping eval bug; "phase must be
+exact"; "Fourier-specific effect") remain documented in
+`FMAG_KV_FINDINGS.md` § replication notes.
 
-Horizon boundary: at 100 generated tokens (vs 50) the 2-bit config holds
-92.3%, ternary 75.2% — anchor depth D must scale with generation length;
-exact-100% claims are for horizons ≤ D.
+## Practical takeaway (honest)
 
-## Best results (Gemma-3-1B, held-out prompts, honest effective bits)
-
-| Recipe | Match | Nominal | Eff. bits | Savings |
-|---|---|---|---|---|
-| **2-bit total + selective-layer decode anchors** (`both2_dp32_sens`) | **96.7%** | 2.0 | ~4.35 | 73% |
-| Same, long context (~830 tok) | **100%** | 2.0 | ~4.64 | 71% |
-| Ternary KV (1.58b) + int8 anchors (`ternboth_a8`) | 92.7% | 1.58 | 2.79 | 83% |
-| 1-bit KV (sign) + int8 anchors (`signboth_a8`) | 91.3% | 1.0 | 2.32 | 86% |
-| 4-bit total + anchors (`nfv4g64_dp32_sens`) | 91.3–100% | 4.25 | ~5.5 | 59% |
-| int8 KV reference | 93.0% | 8.0 | 8.0 | 50% |
-
-Qwen2.5-1.5B with its **own probe-derived anchor layers** {0,5,9,13,15,18}
-(layer 0 dominates with ~7x the drift of any other): NF4/int4-g64 **100%**,
-sorted-2-bit **99.7%**, ternary **98.7%** — vs int8's 41.3%. The initial
-sub-2-bit transfer failure was an artifact of reusing Gemma's layer set;
-the 0.5s sensitivity probe is what makes the recipe model-general.
-
-## The winning recipe: Selective-Layer Decode Anchoring
-
-> Quantize K/V aggressively (sorted-group 2-bit, ternary, or NF4/int4-g64),
-> but keep the KV of the **first N decoded tokens** in high precision
-> **only on the quantization-sensitive layers** (here layers 0–3, 6–7,
-> identified by a 0.5s logit-drift probe).
-
-Components, each discovered via ≤10s tests:
-1. **Magnitude-sorted grouping** (g=8 for K, g=4 for V): sort each row
-   descending, quantize groups; outliers share one wide group. Rotation-immune.
-2. **Decode anchoring**: protection must target early *generated* tokens.
-   Monotone in N (dp2→dp32: 61→90%); protecting the prompt alone *hurts*
-   (42%) vs protecting prompt+early decode (90%).
-3. **Layer-selective anchors**: fp16 anchors on 6/28 layers cut anchor
-   overhead ~4.7x at equal quality.
-4. **Anchor-precision dial**: fp16→int8→int4 anchors trade 100→81→71% quality
-   against ~1.3 effective bits per step.
-
-At 1.58-bit nominal (ternary) and 1.0-bit nominal (sign), this is — per our
-prior-art search — below the published floor for KV quantization
-(RotateKV/KIVI at 2-bit, KVmix at ~2.2–2.4 avg).
-
-## Mechanism findings
-
-- **Error snowball, not attention sinks**: the fragility lives in early
-  *autoregressive* steps (closest to token decision boundaries), not in
-  prompt tokens. Sliding-window sink protection on short prompts is
-  counterproductive (quantizes exactly the fragile tokens).
-- **Prompt-length ranking instability**: method rankings flip between short
-  and long prompts (sinks hurt NF4 on short prompts 92.7→44%, help on long
-  prompts 33→74%). KV-quant papers evaluating only on short prompts risk
-  inverted conclusions.
-- **Tails are sacred**: four independent confirmations that outlier
-  preservation dominates — clipping, k-means-fitted codebooks, scale
-  shrinkage, and error diffusion all collapse; fixed nonuniform codebooks
-  (NF4) with intact range win.
-- **Model specificity**: Gemma's QK-norm pipeline makes K uniquely forgiving.
-  Qwen collapses under most K-quantization without anchors.
-- **int8 KV is not lossless** under exact-match on hard prompts (fails on
-  code/arithmetic continuations).
-
-## Retired claims (killed by our own audit)
-
-- Full-prefill fp16 anchoring at short contexts — memory theater (anchor
-  overhead exceeded savings); now auto-flagged (`DEGEN-fp16`).
-- "93% @ 2-bit total" at short sequences — anchor overhead made effective
-  bits ~13, not 2.
-- k-means-fitted codebooks, PCA-mixed-precision, Hadamard+codebook stacks,
-  sigma-delta error diffusion, integral quantization — all lose to simpler
-  fixed schemes.
-- Hadamard folding for Gemma weights (only 4.4% rel-err reduction).
-
-## Prior art (searched Aug 2026)
-
-- KIVI (ICML 2024): 2-bit per-channel K / per-token V. RotateKV (2025):
-  2-bit with rotations + sink protection. KVmix (AAAI 2026): layer-wise
-  mixed precision, K=2.19/V=2.38. KVQuant (NeurIPS 2024): nonuniform +
-  pre-RoPE + outlier separation. KVSink (COLM 2025): sink preservation
-  (PFN baseline). IntactKV (ACL 2024): pivot tokens lossless.
-- **Apparently open**: sub-2-bit / ternary (≤1.58-bit) KV cache; layer-
-  selective anchoring as overhead reduction; the decode-snowball ablation.
-- **Unverified**: superiority over released KIVI/RotateKV kernels. Our
-  in-harness KIVI proxies are handicapped (frozen/streaming scale
-  approximations) and marked inconclusive-by-construction.
-
-## Long-context validation (NIAH, `niah_lab.py`)
-
-Needle-in-haystack retrieval at 4K / 8K / 16K tokens, needles planted at
-15% / 55% / 85% depth:
-
-| @ 16K tok | Retrieval | Notes |
-|---|---|---|
-| fp16 ceiling | 2/3 | model itself misses the mid-depth needle |
-| sorted-2-bit + sens anchors | **2/3 (= ceiling)** | |
-| ternary 1.58b + int8 anchors | **2/3 (= ceiling)** | |
-| sorted-2-bit, no anchors | 1/3 | late-depth needle lost |
-| ternary, no anchors | **0/3** | total collapse |
-
-Sub-2-bit KV with selective-layer anchoring preserves long-context retrieval
-up to 16K wherever the base model is capable. Anchors are *necessary*, not
-cosmetic: without them retrieval is destroyed at 16K.
-
-## End-to-end stack (NF4 weights + anchored KV)
-
-On Gemma-3-1B holdout: NF4 (bnb) weights alone diverge from the bf16
-pipeline to 30.7% exact-match; adding any anchored KV recipe (ternary/
-2-bit/4.25b) changes that number by exactly 0.0 — the KV scheme is
-transparent on top of weight quantization. End-to-end fidelity is
-therefore bounded entirely by the weight quant; memory at 16K context:
-1.14-1.18 GB total (2x weight + ~3.5x KV savings).
-
-## NLL audit (the decisive test)
-
-Teacher-forced fixed-sequence NLL separates trajectory-invariance from
-true losslessness:
-- NF4/int4-g64 + L0-anchor d48: NLL -0.5% vs fp16 -> DISTRIBUTIONALLY
-  LOSSLESS (the deployable recipe)
-- ternary 1.58b + L0-anchor d48: +1.3% -> near-lossless
-- sign 1-bit + L0-anchor d48: +6.6% -> greedy-trajectory-invariance
-  ONLY; distribution damaged; downgraded to non-deployable
-- int8 reference: -0.3% (sanity)
-
-Greedy exact-match systematically overstates fidelity of aggressive
-quantizers; any sub-int8 claim should be paired with an NLL check.
-
-## Long-context distributional audit (3,003 tokens)
-
-| method | dNLL% | top1flip | KL(fp16||q) |
-|---|---|---|---|
-| int8 | +0.0% | 7.7% | 0.0004 |
-| NF4/g64+L0d48 | -0.4% | 7.8% | 0.0012 |
-| ternary+L0d48 | +6.1% | 7.7% | 0.0442 |
-
-Flagship recipe remains distributionally neutral at 3K tokens
-(flip rate == int8's own resampling rate; KL within 3x of int8).
-Ternary accumulates damage with length (+1.3% @130tok -> +6.1%
-@3K): short-context use only. KL is the most sensitive quality
-dial found (100x dynamic range where NLL moves little).
-
-## Limitations
-
-- Greedy exact-match vs own fp16 baseline over 50–100 tokens, 6-prompt sets;
-  not perplexity/NIAH benchmarks. Absolute numbers are pessimistic; rankings
-  are the signal.
-- Harness simulates quantization error in bf16 — real deployment needs
-  packed sub-byte storage + dequant kernels (memory savings are projected,
-  not measured end-to-end).
-- Depth: Gemma-3-1B and Qwen2.5-1.5B fully validated at all bit tiers via
-  per-model sensitivity probing; larger models pending GPU memory.
-- gemma-3-4b bf16 cannot fit on the 10GB test card (~7.8GB text weights
-  alone); scale-transfer validation needs a bigger GPU.
-- Anchor overhead amortizes as O(A/T): effective bits converge to nominal
-  only at long context.
+The only configuration matching int8-level fidelity at lower memory than
+int8 that survived audit is: **all-layer fp16 anchoring of prompt + early
+decode over an otherwise aggressive quantized cache** — and its anchor
+overhead only beats int8 at contexts where the protected fraction is small.
+At ≤1K-token prompts it does not beat int8. Sub-int8-bit KV remains an open
+problem; published floor is still ~2-bit (KIVI/RotateKV/KVmix).
 
 ## Reproduce
 
 ```bash
-python3 rapid_lab.py --prompts holdout --only both2_dp32_sens,kv_k8_v8
-python3 rapid_lab.py --model qwen --prompts holdout --only nfv4g64_dp32_sens
-python3 rapid_lab.py --list          # full registry (~150 tests)
+python3 rapid_lab.py --prompts holdout --only kv_k8_v8,kv_nfv4g64_dp32,kv_nfv4g64_s64
+python3 nll_audit.py && python3 long_audit.py
 ```
-
-Every run appends to `rapid_lab_outputs/history.jsonl`; per-run JSONs include
-per-prompt exact/prefix vectors, effective bits, and degeneracy flags.

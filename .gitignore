@@ -5,3 +5,12 @@ __pycache__/
 .Python
 *.egg-info/
 .ipynb_checkpoints
+
+# pre-existing local experiments (untracked, not part of the study)
+50t_hampq*
+inr_*
+lowrank_inr*
+multi_lowrank_inr*
+parasite_llm_test.py
+quick_50t*
+tersc_*
