@@ -1,0 +1,60 @@
+{
+  "ctx_tokens": 15327,
+  "rows": [
+    {
+      "method": "fp16",
+      "exact": 1.0,
+      "hits": [
+        true,
+        false,
+        true
+      ],
+      "hit_rate": 0.6666666666666666,
+      "time_s": 0.0
+    },
+    {
+      "method": "both2_plain",
+      "exact": 0.03,
+      "hits": [
+        true,
+        false,
+        false
+      ],
+      "hit_rate": 0.3333333333333333,
+      "time_s": 7.0
+    },
+    {
+      "method": "tern_plain",
+      "exact": 0.044,
+      "hits": [
+        false,
+        false,
+        false
+      ],
+      "hit_rate": 0.0,
+      "time_s": 6.2
+    },
+    {
+      "method": "both2",
+      "exact": 1.0,
+      "hits": [
+        true,
+        false,
+        true
+      ],
+      "hit_rate": 0.6666666666666666,
+      "time_s": 5.9
+    },
+    {
+      "method": "tern_a8",
+      "exact": 1.0,
+      "hits": [
+        true,
+        false,
+        true
+      ],
+      "hit_rate": 0.6666666666666666,
+      "time_s": 5.8
+    }
+  ]
+}

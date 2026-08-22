@@ -83,6 +83,23 @@ prior-art search — below the published floor for KV quantization
   in-harness KIVI proxies are handicapped (frozen/streaming scale
   approximations) and marked inconclusive-by-construction.
 
+## Long-context validation (NIAH, `niah_lab.py`)
+
+Needle-in-haystack retrieval at 4K / 8K / 16K tokens, needles planted at
+15% / 55% / 85% depth:
+
+| @ 16K tok | Retrieval | Notes |
+|---|---|---|
+| fp16 ceiling | 2/3 | model itself misses the mid-depth needle |
+| sorted-2-bit + sens anchors | **2/3 (= ceiling)** | |
+| ternary 1.58b + int8 anchors | **2/3 (= ceiling)** | |
+| sorted-2-bit, no anchors | 1/3 | late-depth needle lost |
+| ternary, no anchors | **0/3** | total collapse |
+
+Sub-2-bit KV with selective-layer anchoring preserves long-context retrieval
+up to 16K wherever the base model is capable. Anchors are *necessary*, not
+cosmetic: without them retrieval is destroyed at 16K.
+
 ## Limitations
 
 - Greedy exact-match vs own fp16 baseline over 50–100 tokens, 6-prompt sets;
