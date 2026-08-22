@@ -1494,6 +1494,126 @@ def _(model, tok, baseline):
     return {"rel_err_ratio_by_bits": rows}
 
 
+
+
+# ---------------------------------------------------------------- embedding tests
+
+def nf4_rows(p, chunk=4096):
+    """Row-chunked NF4 for large tables (avoids multi-GB fp32 transients)."""
+    for i in range(0, p.shape[0], chunk):
+        p[i:i + chunk] = q_nf4(p[i:i + chunk])
+
+
+def embed_param(model):
+    for n, p in model.named_parameters():
+        if "embed_tokens" in n:
+            return n, p
+    return None, None
+
+
+def e_surgery(quant_fn):
+    def run(model, tok, baseline):
+        n, p = embed_param(model)
+        saved = p.data.clone()
+        p.data.copy_(quant_fn(p.data))
+        try:
+            return match(baseline, gen_ids(model, tok))
+        finally:
+            p.data.copy_(saved)
+    return run
+
+
+def e_freq_keep(model, tok, keep=2000):
+    corpus = " ".join(PROMPTS) + " " + " ".join(FILLER_SENTENCES) if False else \
+        "the a of and to in is was for that with as on at by this it from be are"
+    ids = tok(corpus, return_tensors="pt")["input_ids"][0]
+    freq = torch.bincount(ids, minlength=next(p.numel() for n, p in model.named_parameters()
+                                             if "embed_tokens" in n))
+    top = torch.topk(freq, keep).indices
+    return top
+
+
+@test("e_int8", 8, desc="embed table int8 per-row")
+def _(model, tok, baseline):
+    return e_surgery(lambda w: q_sym(w, 8))(model, tok, baseline)
+
+
+@test("e_nf4", 4, desc="embed table NF4 per-row (chunked)")
+def _(model, tok, baseline):
+    n, p = embed_param(model)
+    saved = p.data.clone()
+    nf4_rows(p.data)
+    try:
+        return match(baseline, gen_ids(model, tok))
+    finally:
+        p.data.copy_(saved)
+
+
+@test("e_int4_g64", 4, desc="embed table int4 grouped g64")
+def _(model, tok, baseline):
+    return e_surgery(group(lambda w: q_sym(w, 4), 64))(model, tok, baseline)
+
+
+@test("e_int2", 2, desc="embed table int2 per-row")
+def _(model, tok, baseline):
+    return e_surgery(lambda w: q_sym(w, 2))(model, tok, baseline)
+
+
+@test("e_nf4_freq2k", 4, desc="NF4 embeds, top-2k frequent token rows fp16")
+def _(model, tok, baseline):
+    n, p = embed_param(model)
+    top = e_freq_keep(model, tok)
+    saved = p.data.clone()
+    nf4_rows(p.data)
+    p.data[top] = saved[top]
+    try:
+        return match(baseline, gen_ids(model, tok))
+    finally:
+        p.data.copy_(saved)
+
+
+@test("e_nf4_bignorm", 4, desc="NF4 embeds, top-1% norm rows fp16")
+def _(model, tok, baseline):
+    n, p = embed_param(model)
+    saved = p.data.clone()
+    norms = p.data.float().norm(dim=1)
+    k = max(1, int(norms.numel() * 0.01))
+    top = torch.topk(norms, k).indices
+    nf4_rows(p.data)
+    p.data[top] = saved[top]
+    try:
+        return match(baseline, gen_ids(model, tok))
+    finally:
+        p.data.copy_(saved)
+
+
+@test("num_weight_layer_sensitivity", 0, kind="numeric",
+      desc="per-layer weight int4 logit-drift probe")
+def _(model, tok, baseline):
+    inp = tok(PROMPTS[0], return_tensors="pt").to(DEVICE)
+    with torch.no_grad():
+        ref = model(**inp).logits[0, -1].float()
+    layer_ids = {}
+    for n, p in list(model.named_parameters()):
+        if p.dim() == 2 and "embed" not in n and "norm" not in n and "lm_head" not in n:
+            li = layer_idx(n) if any(c.isdigit() for c in n.split(".")) else -1
+            layer_ids.setdefault(li, []).append((n, p))
+    drifts = {}
+    for li, params in sorted(layer_ids.items()):
+        saved = [(n, p.data.clone()) for n, p in params]
+        for n, p in params:
+            p.data.copy_(q_sym(p.data.t(), 4).t())
+        with torch.no_grad():
+            out = model(**inp).logits[0, -1].float()
+        for (n, p), (sn, sv) in zip(params, saved):
+            p.data.copy_(sv)
+        drifts[li] = round(((out - ref).norm() / ref.norm().clamp_min(1e-8)).item(), 4)
+    ranked = sorted(drifts.items(), key=lambda kv: -kv[1])
+    return {"top_weight_sensitive_layers": [k for k, _ in ranked[:6]], "all": drifts}
+
+
+FILLER_SENTENCES = []
+
 # ---------------------------------------------------------------- runner
 def main():
     global MODEL_KEY, PROMPTS, CHAT, MAX_NEW

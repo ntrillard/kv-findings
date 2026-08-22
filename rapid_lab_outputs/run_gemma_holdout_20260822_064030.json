@@ -1,0 +1,218 @@
+{
+  "model": "google/gemma-3-1b-it",
+  "prompt_set": "holdout",
+  "prompts": [
+    "Photosynthesis converts carbon dioxide and water into glucose using energy from",
+    "def binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n",
+    "The Defenestration of Prague in 1618 sparked",
+    "The sky appears blue because air molecules scatter shorter wavelengths more strongly. This effect, called Rayleigh scattering, implies that at sunset the",
+    "Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide.  According to the passage, coral reefs support about",
+    "A shirt costs 40 dollars. The shop applies a 25 percent discount, then adds 10 percent tax. The final price is"
+  ],
+  "max_new": 50,
+  "results": [
+    {
+      "name": "kv_cache_nf4_k",
+      "match": 0.06,
+      "prefix": 0.0367,
+      "bits": 6,
+      "eff_bits": 6,
+      "degenerate": false,
+      "savings_pct": 62.5,
+      "time_s": 6.33,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.02,
+          0.02,
+          0.04,
+          0.06,
+          0.14,
+          0.08
+        ],
+        "prefix": [
+          0.02,
+          0.02,
+          0.02,
+          0.06,
+          0.04,
+          0.06
+        ]
+      }
+    },
+    {
+      "name": "kv_cache_nf4_both",
+      "match": 0.0967,
+      "prefix": 0.04,
+      "bits": 4,
+      "eff_bits": 4,
+      "degenerate": false,
+      "savings_pct": 75.0,
+      "time_s": 6.77,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.12,
+          0.22,
+          0.04,
+          0.08,
+          0.06,
+          0.06
+        ],
+        "prefix": [
+          0.08,
+          0.02,
+          0.0,
+          0.04,
+          0.04,
+          0.06
+        ]
+      }
+    },
+    {
+      "name": "e_int8",
+      "match": 0.8533,
+      "prefix": 0.8533,
+      "bits": 8,
+      "eff_bits": 8,
+      "degenerate": false,
+      "savings_pct": 50.0,
+      "time_s": 4.47,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.78,
+          1.0,
+          0.34,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.78,
+          1.0,
+          0.34,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "e_nf4",
+      "error": "CUDA out of memory. Tried to allocate 1.12 GiB. GPU 0 has a total capacity of 9.64 GiB of which 624.94 MiB is free. Including non-PyTorch memory, this process has 7.26 GiB memory in use. Of the alloca",
+      "time_s": 0.37
+    },
+    {
+      "name": "e_int4_g64",
+      "match": 0.54,
+      "prefix": 0.5333,
+      "bits": 4,
+      "eff_bits": 4,
+      "degenerate": false,
+      "savings_pct": 75.0,
+      "time_s": 4.6,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.1,
+          1.0,
+          0.08,
+          0.06,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.08,
+          1.0,
+          0.06,
+          0.06,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "e_int2",
+      "match": 0.0167,
+      "prefix": 0.0033,
+      "bits": 2,
+      "eff_bits": 2,
+      "degenerate": false,
+      "savings_pct": 87.5,
+      "time_s": 4.5,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.0,
+          0.04,
+          0.0,
+          0.0,
+          0.02,
+          0.04
+        ],
+        "prefix": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.02,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "e_nf4_freq2k",
+      "error": "CUDA out of memory. Tried to allocate 1.12 GiB. GPU 0 has a total capacity of 9.64 GiB of which 624.94 MiB is free. Including non-PyTorch memory, this process has 7.26 GiB memory in use. Of the alloca",
+      "time_s": 3.37
+    },
+    {
+      "name": "e_nf4_bignorm",
+      "error": "CUDA out of memory. Tried to allocate 1.12 GiB. GPU 0 has a total capacity of 9.64 GiB of which 620.94 MiB is free. Including non-PyTorch memory, this process has 7.27 GiB memory in use. Of the alloca",
+      "time_s": 0.37
+    },
+    {
+      "name": "num_weight_layer_sensitivity",
+      "kind": "numeric",
+      "detail": {
+        "top_weight_sensitive_layers": [
+          9,
+          6,
+          8,
+          19,
+          7,
+          12
+        ],
+        "all": {
+          "0": 0.0485,
+          "1": 0.0398,
+          "2": 0.0502,
+          "3": 0.048,
+          "4": 0.0563,
+          "5": 0.0684,
+          "6": 0.1388,
+          "7": 0.1141,
+          "8": 0.1356,
+          "9": 0.2673,
+          "10": 0.0832,
+          "11": 0.0547,
+          "12": 0.1102,
+          "13": 0.0688,
+          "14": 0.0671,
+          "15": 0.0872,
+          "16": 0.0902,
+          "17": 0.082,
+          "18": 0.09,
+          "19": 0.1261,
+          "20": 0.0857,
+          "21": 0.0717,
+          "22": 0.0806,
+          "23": 0.0714,
+          "24": 0.0757,
+          "25": 0.0893
+        }
+      },
+      "time_s": 0.54
+    }
+  ]
+}

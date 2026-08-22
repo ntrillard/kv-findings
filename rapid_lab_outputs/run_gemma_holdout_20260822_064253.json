@@ -1,0 +1,189 @@
+{
+  "model": "google/gemma-3-1b-it",
+  "prompt_set": "holdout",
+  "prompts": [
+    "Photosynthesis converts carbon dioxide and water into glucose using energy from",
+    "def binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n",
+    "The Defenestration of Prague in 1618 sparked",
+    "The sky appears blue because air molecules scatter shorter wavelengths more strongly. This effect, called Rayleigh scattering, implies that at sunset the",
+    "Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide.  According to the passage, coral reefs support about",
+    "A shirt costs 40 dollars. The shop applies a 25 percent discount, then adds 10 percent tax. The final price is"
+  ],
+  "max_new": 50,
+  "results": [
+    {
+      "name": "kv_k8_v8",
+      "match": 0.93,
+      "prefix": 0.93,
+      "bits": 8,
+      "eff_bits": 8,
+      "degenerate": false,
+      "savings_pct": 50.0,
+      "time_s": 5.47,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.78,
+          1.0,
+          0.8,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.78,
+          1.0,
+          0.8,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_cache_nf4_k",
+      "match": 0.06,
+      "prefix": 0.0367,
+      "bits": 6,
+      "eff_bits": 6,
+      "degenerate": false,
+      "savings_pct": 62.5,
+      "time_s": 6.21,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.02,
+          0.02,
+          0.04,
+          0.06,
+          0.14,
+          0.08
+        ],
+        "prefix": [
+          0.02,
+          0.02,
+          0.02,
+          0.06,
+          0.04,
+          0.06
+        ]
+      }
+    },
+    {
+      "name": "kv_cache_nf4_both",
+      "match": 0.0967,
+      "prefix": 0.04,
+      "bits": 4,
+      "eff_bits": 4,
+      "degenerate": false,
+      "savings_pct": 75.0,
+      "time_s": 6.68,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.12,
+          0.22,
+          0.04,
+          0.08,
+          0.06,
+          0.06
+        ],
+        "prefix": [
+          0.08,
+          0.02,
+          0.0,
+          0.04,
+          0.04,
+          0.06
+        ]
+      }
+    },
+    {
+      "name": "e_nf4",
+      "match": 0.1533,
+      "prefix": 0.04,
+      "bits": 4,
+      "eff_bits": 4,
+      "degenerate": false,
+      "savings_pct": 75.0,
+      "time_s": 4.7,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.06,
+          0.56,
+          0.08,
+          0.12,
+          0.08,
+          0.02
+        ],
+        "prefix": [
+          0.06,
+          0.06,
+          0.02,
+          0.06,
+          0.02,
+          0.02
+        ]
+      }
+    },
+    {
+      "name": "e_nf4_freq2k",
+      "match": 0.2867,
+      "prefix": 0.2633,
+      "bits": 4,
+      "eff_bits": 4,
+      "degenerate": false,
+      "savings_pct": 75.0,
+      "time_s": 10.04,
+      "dq": true,
+      "per_prompt": {
+        "exact": [
+          0.32,
+          1.0,
+          0.08,
+          0.2,
+          0.04,
+          0.08
+        ],
+        "prefix": [
+          0.28,
+          1.0,
+          0.08,
+          0.18,
+          0.02,
+          0.02
+        ]
+      }
+    },
+    {
+      "name": "e_nf4_bignorm",
+      "match": 0.26,
+      "prefix": 0.2567,
+      "bits": 4,
+      "eff_bits": 4,
+      "degenerate": false,
+      "savings_pct": 75.0,
+      "time_s": 4.72,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.08,
+          1.0,
+          0.02,
+          0.06,
+          0.04,
+          0.36
+        ],
+        "prefix": [
+          0.06,
+          1.0,
+          0.02,
+          0.06,
+          0.04,
+          0.36
+        ]
+      }
+    }
+  ]
+}
