@@ -294,7 +294,7 @@ def sink_runner(k_fn=None, v_fn=None, layer_pred=None, n_sink=4, v_n_sink=None,
         ks, vs = get_hooks(model)
         counters, handles = {}, []
 
-        def mk(fn, name, width):
+        def mk(fn, name, width, anchored=True):
             st = {"n": 0}
             counters[name] = st
 
@@ -305,6 +305,8 @@ def sink_runner(k_fn=None, v_fn=None, layer_pred=None, n_sink=4, v_n_sink=None,
 
             def hook(module, args, output):
                 T = output.shape[1]
+                if not anchored:
+                    return fn(output)      # CORRECTED: quantize non-anchor layers fully
                 if st["n"] == 0:
                     st["prefill"] = T
                     st["n"] = T
@@ -338,11 +340,15 @@ def sink_runner(k_fn=None, v_fn=None, layer_pred=None, n_sink=4, v_n_sink=None,
 
         vw = v_n_sink if v_n_sink is not None else n_sink
         for n, m in ks:
-            if k_fn and (not layer_pred or layer_pred(n)):
-                handles.append(m.register_forward_hook(mk(k_fn, "k" + n, n_sink)))
+            if k_fn:
+                handles.append(m.register_forward_hook(
+                    mk(k_fn, "k" + n, n_sink,
+                       anchored=(not layer_pred) or layer_pred(n))))
         for n, m in vs:
-            if v_fn and (not layer_pred or layer_pred(n)):
-                handles.append(m.register_forward_hook(mk(v_fn, "v" + n, vw)))
+            if v_fn:
+                handles.append(m.register_forward_hook(
+                    mk(v_fn, "v" + n, vw,
+                       anchored=(not layer_pred) or layer_pred(n))))
         guard(handles, f"sink_runner:{'k' if k_fn else ''}{'v' if v_fn else ''}")
 
         def reset():

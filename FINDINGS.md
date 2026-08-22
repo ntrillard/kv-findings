@@ -1,5 +1,32 @@
 # KV Cache Quantization — Rapid Lab Findings (Aug 2026)
 
+# RETRACTION & CORRECTION (post user-audit)
+
+`sink_runner`'s `layer_pred` filtered which layers received QUANTIZATION
+hooks, not which layers received ANCHORS. Every "_sens/_l0/_s0/_qsens"
+result therefore left non-anchor layers COMPLETELY fp16 - the selective-
+layer anchoring claims, depth-redundancy conclusion, minimal-recipe,
+scale-validation 100%s and their NLL verifications were measuring
+near-no-op interventions. All such rows are RETRACTED.
+
+Corrected semantics (quantize ALL layers, anchors only protect) on
+Gemma holdout:
+- NF4/g64, no anchors:            39.8% @ 4.25b
+- NF4/g64 + dp32 anchors ALL layers: 90.3% @ 13.47 eff bits
+- NF4/g64 + L0-only anchors:      56.8% @ 4.69 eff bits
+- 2-bit sorted + d48 anchors:     25.0% | ternary 6.0% | sign 2.3%
+- sliding window s64 (all layers): 100% @ 13.21 eff bits
+
+Surviving truths: anchoring works (39.8->90.3) but only applied to ALL
+layers; its dp-mode cost SCALES WITH PREFILL (A=L+D), so effective bits
+->16 at long prefill - dp-mode is memory-theater for long prompts. Fixed-
+size windows (s64) do amortize (eff -> ~4.25) and passed 16K retrieval,
+but their short-ctx fidelity was window-coverage, not compression.
+Sub-int8-bit KV with int8-level fidelity at true sub-int8 memory is NOT
+achieved in this repo. int8 KV (93%) remains the honest baseline.
+
+
+
 Systematic discovery campaign using `rapid_lab.py`: ~150 tests, every test ≤10s,
 40+ logged runs, audited metrics (effective-bits accounting, prefix-match,
 held-out prompts, degeneracy flags).

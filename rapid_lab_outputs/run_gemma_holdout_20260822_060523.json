@@ -1,0 +1,1175 @@
+{
+  "model": "google/gemma-3-1b-it",
+  "prompt_set": "holdout",
+  "prompts": [
+    "Photosynthesis converts carbon dioxide and water into glucose using energy from",
+    "def binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n",
+    "The Defenestration of Prague in 1618 sparked",
+    "The sky appears blue because air molecules scatter shorter wavelengths more strongly. This effect, called Rayleigh scattering, implies that at sunset the",
+    "Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide. Coral reefs occupy less than one percent of the ocean floor yet support roughly a quarter of all marine species, providing food, coastal protection, and tourism income to millions of people worldwide.  According to the passage, coral reefs support about",
+    "A shirt costs 40 dollars. The shop applies a 25 percent discount, then adds 10 percent tax. The final price is"
+  ],
+  "max_new": 50,
+  "results": [
+    {
+      "name": "kv_k8_v8",
+      "match": 0.93,
+      "prefix": 0.93,
+      "bits": 8,
+      "eff_bits": 8,
+      "degenerate": false,
+      "savings_pct": 50.0,
+      "time_s": 5.43,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.78,
+          1.0,
+          0.8,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.78,
+          1.0,
+          0.8,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nf4_k",
+      "match": 0.44,
+      "prefix": 0.43,
+      "bits": 6,
+      "eff_bits": 6,
+      "degenerate": false,
+      "savings_pct": 62.5,
+      "time_s": 6.28,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.48,
+          1.0,
+          0.08,
+          0.04,
+          0.04,
+          1.0
+        ],
+        "prefix": [
+          0.46,
+          1.0,
+          0.08,
+          0.0,
+          0.04,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nf4_k4_v4",
+      "match": 0.37,
+      "prefix": 0.31,
+      "bits": 4,
+      "eff_bits": 4,
+      "degenerate": false,
+      "savings_pct": 75.0,
+      "time_s": 6.79,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.46,
+          1.0,
+          0.32,
+          0.04,
+          0.04,
+          0.36
+        ],
+        "prefix": [
+          0.44,
+          1.0,
+          0.32,
+          0.0,
+          0.04,
+          0.06
+        ]
+      }
+    },
+    {
+      "name": "kv_nf4_knorm",
+      "match": 0.05,
+      "prefix": 0.0433,
+      "bits": 6,
+      "eff_bits": 6,
+      "degenerate": false,
+      "savings_pct": 62.5,
+      "time_s": 5.72,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.1,
+          0.02,
+          0.02,
+          0.06,
+          0.04,
+          0.06
+        ],
+        "prefix": [
+          0.08,
+          0.02,
+          0.02,
+          0.06,
+          0.02,
+          0.06
+        ]
+      }
+    },
+    {
+      "name": "kv_nf4_k_v4g64",
+      "match": 0.3981,
+      "prefix": 0.2448,
+      "bits": 4,
+      "eff_bits": 4,
+      "degenerate": false,
+      "savings_pct": 75.0,
+      "time_s": 6.17,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.28,
+          1.0,
+          0.08,
+          0.0,
+          0.049,
+          0.98
+        ],
+        "prefix": [
+          0.28,
+          1.0,
+          0.08,
+          0.0,
+          0.049,
+          0.06
+        ]
+      }
+    },
+    {
+      "name": "kv_nf4_k_v4g64_sink",
+      "match": 0.4133,
+      "prefix": 0.4033,
+      "bits": 4,
+      "eff_bits": 4,
+      "degenerate": false,
+      "savings_pct": 75.0,
+      "time_s": 6.25,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.48,
+          1.0,
+          0.08,
+          0.2,
+          0.06,
+          0.66
+        ],
+        "prefix": [
+          0.46,
+          1.0,
+          0.08,
+          0.18,
+          0.04,
+          0.66
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_sink8",
+      "match": 0.6867,
+      "prefix": 0.6833,
+      "bits": 4.25,
+      "eff_bits": 4.25,
+      "degenerate": false,
+      "savings_pct": 73.4,
+      "time_s": 6.26,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.46,
+          1.0,
+          0.84,
+          0.78,
+          0.04,
+          1.0
+        ],
+        "prefix": [
+          0.46,
+          1.0,
+          0.82,
+          0.78,
+          0.04,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_sink16",
+      "match": 0.58,
+      "prefix": 0.5567,
+      "bits": 4.25,
+      "eff_bits": 4.25,
+      "degenerate": false,
+      "savings_pct": 73.4,
+      "time_s": 6.24,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.1,
+          1.0,
+          0.48,
+          0.32,
+          1.0,
+          0.58
+        ],
+        "prefix": [
+          0.08,
+          1.0,
+          0.48,
+          0.24,
+          1.0,
+          0.54
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_sink32",
+      "match": 0.5967,
+      "prefix": 0.59,
+      "bits": 4.25,
+      "eff_bits": 4.25,
+      "degenerate": false,
+      "savings_pct": 73.4,
+      "time_s": 5.92,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.48,
+          1.0,
+          0.48,
+          0.78,
+          0.04,
+          0.8
+        ],
+        "prefix": [
+          0.46,
+          1.0,
+          0.48,
+          0.78,
+          0.04,
+          0.78
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_s24",
+      "match": 0.5348,
+      "prefix": 0.5248,
+      "bits": 4.25,
+      "eff_bits": 7.62,
+      "degenerate": false,
+      "savings_pct": 52.4,
+      "time_s": 5.95,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.46,
+          1.0,
+          0.5,
+          0.2,
+          0.049,
+          1.0
+        ],
+        "prefix": [
+          0.44,
+          1.0,
+          0.48,
+          0.18,
+          0.049,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_s48",
+      "match": 0.9267,
+      "prefix": 0.9267,
+      "bits": 4.25,
+      "eff_bits": 11.0,
+      "degenerate": false,
+      "savings_pct": 31.3,
+      "time_s": 5.46,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.82,
+          1.0,
+          0.74,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.82,
+          1.0,
+          0.74,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_s64",
+      "match": 1.0,
+      "prefix": 1.0,
+      "bits": 4.25,
+      "eff_bits": 13.21,
+      "degenerate": true,
+      "savings_pct": 17.4,
+      "time_s": 4.97,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_prefillprot",
+      "match": 0.73,
+      "prefix": 0.7167,
+      "bits": 4.25,
+      "eff_bits": 4.25,
+      "degenerate": false,
+      "savings_pct": 73.4,
+      "time_s": 6.2,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.38,
+          1.0,
+          0.8,
+          0.2,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.32,
+          1.0,
+          0.8,
+          0.18,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_s96",
+      "match": 0.9341,
+      "prefix": 0.8682,
+      "bits": 4.25,
+      "eff_bits": 14.42,
+      "degenerate": true,
+      "savings_pct": 9.9,
+      "time_s": 4.79,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.605,
+          1.0
+        ],
+        "prefix": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.209,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_s128",
+      "match": 0.84,
+      "prefix": 0.8367,
+      "bits": 4.25,
+      "eff_bits": 14.55,
+      "degenerate": true,
+      "savings_pct": 9.1,
+      "time_s": 4.87,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.04,
+          1.0
+        ],
+        "prefix": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.02,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_dp8",
+      "match": 0.7533,
+      "prefix": 0.6233,
+      "bits": 4.25,
+      "eff_bits": 4.25,
+      "degenerate": false,
+      "savings_pct": 73.4,
+      "time_s": 5.96,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.48,
+          1.0,
+          0.32,
+          0.78,
+          0.94,
+          1.0
+        ],
+        "prefix": [
+          0.46,
+          1.0,
+          0.32,
+          0.78,
+          0.18,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_dp32",
+      "match": 0.9033,
+      "prefix": 0.9,
+      "bits": 4.25,
+      "eff_bits": 13.47,
+      "degenerate": false,
+      "savings_pct": 15.8,
+      "time_s": 5.2,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.9,
+          1.0,
+          0.74,
+          0.78,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.88,
+          1.0,
+          0.74,
+          0.78,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_dp64",
+      "match": 1.0,
+      "prefix": 1.0,
+      "bits": 4.25,
+      "eff_bits": 16.0,
+      "degenerate": true,
+      "savings_pct": 0.0,
+      "time_s": 4.53,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_d16",
+      "match": 0.7467,
+      "prefix": 0.7367,
+      "bits": 4.25,
+      "eff_bits": 11.22,
+      "degenerate": false,
+      "savings_pct": 29.9,
+      "time_s": 5.74,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.46,
+          1.0,
+          0.66,
+          0.78,
+          1.0,
+          0.58
+        ],
+        "prefix": [
+          0.44,
+          1.0,
+          0.66,
+          0.78,
+          1.0,
+          0.54
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_d24",
+      "match": 0.9267,
+      "prefix": 0.9267,
+      "bits": 4.25,
+      "eff_bits": 12.35,
+      "degenerate": false,
+      "savings_pct": 22.8,
+      "time_s": 5.4,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.82,
+          1.0,
+          0.74,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.82,
+          1.0,
+          0.74,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_pw0dp32",
+      "match": 0.4048,
+      "prefix": 0.2448,
+      "bits": 4.25,
+      "eff_bits": 8.75,
+      "degenerate": false,
+      "savings_pct": 45.3,
+      "time_s": 5.02,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.28,
+          1.0,
+          0.08,
+          0.04,
+          0.049,
+          0.98
+        ],
+        "prefix": [
+          0.28,
+          1.0,
+          0.08,
+          0.0,
+          0.049,
+          0.06
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_pw8dp32",
+      "match": 0.56,
+      "prefix": 0.55,
+      "bits": 4.25,
+      "eff_bits": 9.87,
+      "degenerate": false,
+      "savings_pct": 38.3,
+      "time_s": 5.23,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.48,
+          1.0,
+          0.06,
+          0.78,
+          0.04,
+          1.0
+        ],
+        "prefix": [
+          0.46,
+          1.0,
+          0.02,
+          0.78,
+          0.04,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_dp32_sens",
+      "match": 0.4081,
+      "prefix": 0.3282,
+      "bits": 4.25,
+      "eff_bits": 6.38,
+      "degenerate": false,
+      "savings_pct": 60.1,
+      "time_s": 5.87,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.3,
+          1.0,
+          0.62,
+          0.2,
+          0.049,
+          0.28
+        ],
+        "prefix": [
+          0.28,
+          1.0,
+          0.4,
+          0.18,
+          0.049,
+          0.06
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_sens_d48",
+      "match": 0.4081,
+      "prefix": 0.3282,
+      "bits": 4.25,
+      "eff_bits": 6.9,
+      "degenerate": false,
+      "savings_pct": 56.9,
+      "time_s": 5.79,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.3,
+          1.0,
+          0.62,
+          0.2,
+          0.049,
+          0.28
+        ],
+        "prefix": [
+          0.28,
+          1.0,
+          0.4,
+          0.18,
+          0.049,
+          0.06
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_sens_d64",
+      "match": 0.4081,
+      "prefix": 0.3282,
+      "bits": 4.25,
+      "eff_bits": 7.42,
+      "degenerate": false,
+      "savings_pct": 53.7,
+      "time_s": 5.8,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.3,
+          1.0,
+          0.62,
+          0.2,
+          0.049,
+          0.28
+        ],
+        "prefix": [
+          0.28,
+          1.0,
+          0.4,
+          0.18,
+          0.049,
+          0.06
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_first8_d32",
+      "match": 0.5833,
+      "prefix": 0.5567,
+      "bits": 4.25,
+      "eff_bits": 7.09,
+      "degenerate": false,
+      "savings_pct": 55.7,
+      "time_s": 6.02,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.28,
+          1.0,
+          0.16,
+          0.06,
+          1.0,
+          1.0
+        ],
+        "prefix": [
+          0.28,
+          1.0,
+          0.06,
+          0.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_ends_d32",
+      "match": 0.5067,
+      "prefix": 0.4967,
+      "bits": 4.25,
+      "eff_bits": 7.09,
+      "degenerate": false,
+      "savings_pct": 55.7,
+      "time_s": 6.23,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.46,
+          1.0,
+          0.36,
+          0.18,
+          0.04,
+          1.0
+        ],
+        "prefix": [
+          0.44,
+          1.0,
+          0.32,
+          0.18,
+          0.04,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_dp2",
+      "match": 0.5833,
+      "prefix": 0.56,
+      "bits": 4.25,
+      "eff_bits": 4.25,
+      "degenerate": false,
+      "savings_pct": 73.4,
+      "time_s": 6.2,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.48,
+          1.0,
+          0.48,
+          0.2,
+          1.0,
+          0.34
+        ],
+        "prefix": [
+          0.46,
+          1.0,
+          0.48,
+          0.18,
+          1.0,
+          0.24
+        ]
+      }
+    },
+    {
+      "name": "kv_both2_d48",
+      "match": 0.25,
+      "prefix": 0.2433,
+      "bits": 2.0,
+      "eff_bits": 5.15,
+      "degenerate": false,
+      "savings_pct": 67.8,
+      "time_s": 6.05,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.06,
+          1.0,
+          0.06,
+          0.1,
+          0.18,
+          0.1
+        ],
+        "prefix": [
+          0.06,
+          1.0,
+          0.06,
+          0.1,
+          0.18,
+          0.06
+        ]
+      }
+    },
+    {
+      "name": "kv_tern_d48",
+      "match": 0.06,
+      "prefix": 0.0367,
+      "bits": 1.58,
+      "eff_bits": 4.83,
+      "degenerate": false,
+      "savings_pct": 69.8,
+      "time_s": 5.4,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.1,
+          0.1,
+          0.04,
+          0.04,
+          0.04,
+          0.04
+        ],
+        "prefix": [
+          0.08,
+          0.08,
+          0.02,
+          0.0,
+          0.04,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_d48",
+      "match": 0.4081,
+      "prefix": 0.3282,
+      "bits": 4.25,
+      "eff_bits": 6.9,
+      "degenerate": false,
+      "savings_pct": 56.9,
+      "time_s": 5.64,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.3,
+          1.0,
+          0.62,
+          0.2,
+          0.049,
+          0.28
+        ],
+        "prefix": [
+          0.28,
+          1.0,
+          0.4,
+          0.18,
+          0.049,
+          0.06
+        ]
+      }
+    },
+    {
+      "name": "kv_sign_s0q",
+      "match": 0.0233,
+      "prefix": 0.01,
+      "bits": 1.0,
+      "eff_bits": 1.56,
+      "degenerate": false,
+      "savings_pct": 90.2,
+      "time_s": 5.08,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.0,
+          0.1,
+          0.02,
+          0.0,
+          0.0,
+          0.02
+        ],
+        "prefix": [
+          0.0,
+          0.02,
+          0.02,
+          0.0,
+          0.0,
+          0.02
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_l0",
+      "match": 0.5679,
+      "prefix": 0.5047,
+      "bits": 4.25,
+      "eff_bits": 4.69,
+      "degenerate": false,
+      "savings_pct": 70.7,
+      "time_s": 5.95,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.1,
+          1.0,
+          0.3,
+          1.0,
+          0.048,
+          0.96
+        ],
+        "prefix": [
+          0.08,
+          1.0,
+          0.3,
+          1.0,
+          0.048,
+          0.6
+        ]
+      }
+    },
+    {
+      "name": "kv_sign_s01",
+      "match": 0.02,
+      "prefix": 0.01,
+      "bits": 1.0,
+      "eff_bits": 2.13,
+      "degenerate": false,
+      "savings_pct": 86.7,
+      "time_s": 5.05,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.02,
+          0.02,
+          0.04,
+          0.0,
+          0.02,
+          0.02
+        ],
+        "prefix": [
+          0.0,
+          0.02,
+          0.02,
+          0.0,
+          0.02,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "kv_sign_s012",
+      "match": 0.0267,
+      "prefix": 0.01,
+      "bits": 1.0,
+      "eff_bits": 2.69,
+      "degenerate": false,
+      "savings_pct": 83.2,
+      "time_s": 5.06,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.06,
+          0.04,
+          0.02,
+          0.0,
+          0.0,
+          0.04
+        ],
+        "prefix": [
+          0.02,
+          0.02,
+          0.02,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "kv_sign_s0123",
+      "match": 0.0333,
+      "prefix": 0.0167,
+      "bits": 1.0,
+      "eff_bits": 3.25,
+      "degenerate": false,
+      "savings_pct": 79.7,
+      "time_s": 5.08,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.06,
+          0.04,
+          0.02,
+          0.04,
+          0.04,
+          0.0
+        ],
+        "prefix": [
+          0.02,
+          0.02,
+          0.02,
+          0.0,
+          0.04,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "kv_sign_s0",
+      "match": 0.0233,
+      "prefix": 0.01,
+      "bits": 1.0,
+      "eff_bits": 1.56,
+      "degenerate": false,
+      "savings_pct": 90.2,
+      "time_s": 5.11,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.0,
+          0.1,
+          0.02,
+          0.0,
+          0.0,
+          0.02
+        ],
+        "prefix": [
+          0.0,
+          0.02,
+          0.02,
+          0.0,
+          0.0,
+          0.02
+        ]
+      }
+    },
+    {
+      "name": "kv_tern_d48_qsens",
+      "match": 0.0367,
+      "prefix": 0.01,
+      "bits": 1.58,
+      "eff_bits": 4.83,
+      "degenerate": false,
+      "savings_pct": 69.8,
+      "time_s": 5.18,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.0,
+          0.12,
+          0.04,
+          0.0,
+          0.04,
+          0.02
+        ],
+        "prefix": [
+          0.0,
+          0.04,
+          0.02,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "kv_both2_d48_qsens",
+      "match": 0.2433,
+      "prefix": 0.2267,
+      "bits": 2.0,
+      "eff_bits": 5.15,
+      "degenerate": false,
+      "savings_pct": 67.8,
+      "time_s": 5.97,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.1,
+          1.0,
+          0.08,
+          0.06,
+          0.16,
+          0.06
+        ],
+        "prefix": [
+          0.08,
+          1.0,
+          0.06,
+          0.06,
+          0.16,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "kv_nfv4g64_d48_qsens",
+      "match": 0.4433,
+      "prefix": 0.4333,
+      "bits": 4.25,
+      "eff_bits": 6.9,
+      "degenerate": false,
+      "savings_pct": 56.9,
+      "time_s": 6.16,
+      "dq": false,
+      "per_prompt": {
+        "exact": [
+          0.1,
+          1.0,
+          0.32,
+          0.2,
+          0.04,
+          1.0
+        ],
+        "prefix": [
+          0.08,
+          1.0,
+          0.3,
+          0.18,
+          0.04,
+          1.0
+        ]
+      }
+    }
+  ]
+}
