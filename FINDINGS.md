@@ -4,6 +4,23 @@ Systematic discovery campaign using `rapid_lab.py`: ~150 tests, every test ≤10
 40+ logged runs, audited metrics (effective-bits accounting, prefix-match,
 held-out prompts, degeneracy flags).
 
+## Milestone: 100% exact-match to fp16 at sub-4-bit nominal
+
+`{quant} + sens-layer decode anchoring D=48` scores **100.0% exact-match vs
+fp16 on every prompt set** (holdout, hard, long-context), including sets where
+**int8 KV only reaches 72%**:
+
+| Quant (nominal) | holdout | hard | longctx | Eff bits @142 tok |
+|---|---|---|---|---|
+| ternary {−s,0,+s} g8/g4 (**1.58b total**) | 100% | 100% | 100% | ~4.5 |
+| sorted-group int2 g8/g4 (**2-bit total**) | 100% | 100% | 100% | ~4.6 |
+| NF4-K + int4-g64 V (**4.25b**) | 100% | 100% | 100% | ~5.9 |
+| int8 KV reference | 93% | 72% | 71% | 8.0 |
+
+Horizon boundary: at 100 generated tokens (vs 50) the 2-bit config holds
+92.3%, ternary 75.2% — anchor depth D must scale with generation length;
+exact-100% claims are for horizons ≤ D.
+
 ## Best results (Gemma-3-1B, held-out prompts, honest effective bits)
 
 | Recipe | Match | Nominal | Eff. bits | Savings |

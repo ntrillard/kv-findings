@@ -1555,6 +1555,17 @@ def main():
 
 
 reg_sens("kv_ternboth_a8", q_tern(8), q_tern(4), 1.58, 1.58, prot=8)
+
+def reg_sens2(name, k_fn, v_fn, kbits, vbits, D, prot=None):
+    reg_sens(name, k_fn, v_fn, kbits, vbits, D=D, prot=prot)
+
+
+reg_sens("kv_both2_d48", q_sort_group(8, 2), q_sort_group(4, 2), 2, 2, D=48)
+reg_sens("kv_both2_d64", q_sort_group(8, 2), q_sort_group(4, 2), 2, 2, D=64)
+reg_sens("kv_tern_d48", q_tern(8), q_tern(4), 1.58, 1.58, D=48)
+reg_sens("kv_tern_d64", q_tern(8), q_tern(4), 1.58, 1.58, D=64)
+reg_sens("kv_tern_d96", q_tern(8), q_tern(4), 1.58, 1.58, D=96)
+reg_sens("kv_nfv4g64_d48", q_nf4, group(lambda x: q_sym(x, 4), 64), 4.25, 4.25, D=48)
 reg_sens("kv_signboth_a8", q_sign_mean(8), q_sign_mean(4), 1, 1, prot=8)
 reg_sens("kv_k1v2_a8", q_sign_mean(8), q_sort_group(4, 2), 1, 2, prot=8)
 reg_sens("kv_both2_a8", q_sort_group(8, 2), q_sort_group(4, 2), 2, 2, prot=8)
