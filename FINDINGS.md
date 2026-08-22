@@ -152,6 +152,20 @@ transparent on top of weight quantization. End-to-end fidelity is
 therefore bounded entirely by the weight quant; memory at 16K context:
 1.14-1.18 GB total (2x weight + ~3.5x KV savings).
 
+## NLL audit (the decisive test)
+
+Teacher-forced fixed-sequence NLL separates trajectory-invariance from
+true losslessness:
+- NF4/int4-g64 + L0-anchor d48: NLL -0.5% vs fp16 -> DISTRIBUTIONALLY
+  LOSSLESS (the deployable recipe)
+- ternary 1.58b + L0-anchor d48: +1.3% -> near-lossless
+- sign 1-bit + L0-anchor d48: +6.6% -> greedy-trajectory-invariance
+  ONLY; distribution damaged; downgraded to non-deployable
+- int8 reference: -0.3% (sanity)
+
+Greedy exact-match systematically overstates fidelity of aggressive
+quantizers; any sub-int8 claim should be paired with an NLL check.
+
 ## Limitations
 
 - Greedy exact-match vs own fp16 baseline over 50–100 tokens, 6-prompt sets;
