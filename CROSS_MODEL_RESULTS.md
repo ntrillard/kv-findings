@@ -1,3 +1,6 @@
+> **HISTORICAL — superseded.** Numbers here predate the evaluation-bug fixes and
+> the audits in [FINDINGS.md](FINDINGS.md). Kept for the record; do not cite.
+
 ## Cross-Model Fmag4 Results
 
 | Model | Family | Head Dim | Norm | Pos Encoding | Fmag4 Match |

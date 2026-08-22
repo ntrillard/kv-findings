@@ -1,3 +1,6 @@
+> **HISTORICAL — superseded.** Numbers here predate the evaluation-bug fixes and
+> the audits in [FINDINGS.md](FINDINGS.md). Kept for the record; do not cite.
+
 # Asymmetric KV Cache: Practical Capability
 
 ## What changes

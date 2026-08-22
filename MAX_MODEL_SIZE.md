@@ -1,3 +1,6 @@
+> **HISTORICAL — superseded.** Numbers here predate the evaluation-bug fixes and
+> the audits in [FINDINGS.md](FINDINGS.md). Kept for the record; do not cite.
+
 # Largest Model on 3080 Ti (10 GB) with Asymmetric KV Cache
 
 ## With K=3b V=8b KV Cache (+ standard weight quantization)

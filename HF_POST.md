@@ -1,3 +1,6 @@
+> **HISTORICAL — superseded.** Numbers here predate the evaluation-bug fixes and
+> the audits in [FINDINGS.md](FINDINGS.md). Kept for the record; do not cite.
+
 # Fmag4: Fourier Magnitude 4-bit KV Cache Quantization
 
 ## Short Title
