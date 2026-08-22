@@ -166,6 +166,20 @@ true losslessness:
 Greedy exact-match systematically overstates fidelity of aggressive
 quantizers; any sub-int8 claim should be paired with an NLL check.
 
+## Long-context distributional audit (3,003 tokens)
+
+| method | dNLL% | top1flip | KL(fp16||q) |
+|---|---|---|---|
+| int8 | +0.0% | 7.7% | 0.0004 |
+| NF4/g64+L0d48 | -0.4% | 7.8% | 0.0012 |
+| ternary+L0d48 | +6.1% | 7.7% | 0.0442 |
+
+Flagship recipe remains distributionally neutral at 3K tokens
+(flip rate == int8's own resampling rate; KL within 3x of int8).
+Ternary accumulates damage with length (+1.3% @130tok -> +6.1%
+@3K): short-context use only. KL is the most sensitive quality
+dial found (100x dynamic range where NLL moves little).
+
 ## Limitations
 
 - Greedy exact-match vs own fp16 baseline over 50–100 tokens, 6-prompt sets;
